@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Submit the published-domain sitemap here when a stable custom domain is connected.

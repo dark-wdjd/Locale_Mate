@@ -1,37 +1,55 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import {
+  AdminAnalyticsPage,
+  AdminArticlesPage,
+  AdminGuidesPage,
+  AdminOverviewPage,
+  AdminRequestsPage,
+  AdminTagsPage,
+} from "@/pages/AdminPages";
+import {
+  AboutPage,
+  BlogArticlePage,
+  BlogIndexPage,
+  ClaimPage,
+  GuideDetailPage,
+  GuidesDirectoryPage,
+  HomePage,
+} from "@/pages/PublicPages";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={HomePage} />
+      <Route path="/guides" component={GuidesDirectoryPage} />
+      <Route path="/guides/:slug" component={GuideDetailPage} />
+      <Route path="/blog" component={BlogIndexPage} />
+      <Route path="/blog/:slug" component={BlogArticlePage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/claim" component={ClaimPage} />
+      <Route path="/admin" component={AdminOverviewPage} />
+      <Route path="/admin/guides" component={AdminGuidesPage} />
+      <Route path="/admin/articles" component={AdminArticlesPage} />
+      <Route path="/admin/tags" component={AdminTagsPage} />
+      <Route path="/admin/requests" component={AdminRequestsPage} />
+      <Route path="/admin/analytics" component={AdminAnalyticsPage} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <Toaster />
+          <Toaster richColors position="top-center" />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
