@@ -73,3 +73,13 @@
 - [x] 修复 AdminGuidesPage 列表缺少稳定 key 的 React 警告，并重新检查浏览器日志
 - [x] 对 /guides/huage-harry 与 /claim 执行带明确路径的桌面端双语截图回归，并保留成功记录
 - [x] 读取并核对 AdminGuidesPage 列表映射代码，确认 Fragment 与 TableRow 使用稳定 key
+
+# 公开导航精简
+
+- [x] 移除桌面端中英文导航中的 How it works / 收录方法入口
+- [x] 移除桌面端中英文导航中的 Claim or correct / 认领或纠错入口
+- [x] 同步移除移动菜单中的上述两个入口并优化剩余导航间距
+- [x] 执行类型检查、完整测试、生产构建及桌面/移动视觉回归
+- [x] 调整精简后桌面导航与移动菜单的间距、对齐和菜单宽度
+- [x] 对精简后的桌面与移动导航执行明确视觉回归并确认两个入口均已消失
+- [x] 展开移动端汉堡菜单并执行视觉回归，明确确认 How it works / Claim or correct 两个入口已消失

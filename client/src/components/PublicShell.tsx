@@ -8,8 +8,6 @@ import { cn } from "@/lib/utils";
 const navigation = [
   { href: "/guides", labelKey: "nav.findGuide" },
   { href: "/blog", labelKey: "nav.journal" },
-  { href: "/about", labelKey: "nav.method" },
-  { href: "/claim", labelKey: "nav.claim" },
 ];
 
 function LanguageToggle({ mobile = false }: { mobile?: boolean }) {
@@ -59,9 +57,9 @@ export function PublicShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/92 backdrop-blur-xl">
-        <div className="container flex h-[4.75rem] items-center justify-between gap-6">
+        <div className="container flex h-[4.75rem] items-center justify-between gap-8">
           <BrandMark />
-          <nav className="hidden items-center gap-1 lg:flex" aria-label={t("nav.primary")}>
+          <nav className="hidden items-center gap-2 lg:flex" aria-label={t("nav.primary")}>
             {navigation.map(item => {
               const active = location === item.href || location.startsWith(`${item.href}/`);
               return (
@@ -98,19 +96,19 @@ export function PublicShell({ children }: { children: ReactNode }) {
           </button>
         </div>
         {open && (
-          <div className="border-t border-border bg-background px-4 py-4 lg:hidden">
-            <nav className="mx-auto grid max-w-lg gap-1" aria-label={t("nav.mobile")}>
+          <div className="border-t border-border bg-background px-4 py-3 lg:hidden">
+            <nav className="mx-auto grid max-w-sm gap-2" aria-label={t("nav.mobile")}>
               {navigation.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-base font-medium text-foreground hover:bg-muted"
+                  className="rounded-xl px-5 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted"
                 >
                   {t(item.labelKey)}
                 </Link>
               ))}
-              <div className="mt-2 border-t border-border pt-3"><LanguageToggle mobile /></div>
+              <div className="mt-1 border-t border-border pt-3"><LanguageToggle mobile /></div>
             </nav>
           </div>
         )}
