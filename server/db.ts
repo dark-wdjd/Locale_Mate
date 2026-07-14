@@ -14,6 +14,7 @@ import {
   blogGuideLinks,
   blogPosts,
   claimRequests,
+  contentEvents,
   guideSources,
   guideTagLinks,
   guides,
@@ -338,6 +339,12 @@ export async function updateClaimRequest(id: number, values: { status: "pending"
   return { success: true } as const;
 }
 
+export async function recordContentEvent(values: typeof contentEvents.$inferInsert) {
+  const db = await requireDb();
+  await db.insert(contentEvents).values(values);
+  return { success: true } as const;
+}
+
 export async function recordOutboundClick(values: typeof outboundClicks.$inferInsert) {
   const db = await requireDb();
   await db.insert(outboundClicks).values(values);
@@ -348,10 +355,12 @@ export async function getAnalyticsSummary() {
   const db = await requireDb();
   const recentWindowStart = new Date();
   recentWindowStart.setUTCDate(recentWindowStart.getUTCDate() - 30);
-  const [guideCount, postCount, requestCount, clickCount, topGuides, recentClickRows] = await Promise.all([
+  const [guideCount, postCount, requestCount, blogViewCount, guideCardClickCount, clickCount, topGuides, recentClickRows] = await Promise.all([
     db.select({ value: count() }).from(guides).where(or(eq(guides.status, "active"), eq(guides.status, "unclaimed"))),
     db.select({ value: count() }).from(blogPosts).where(eq(blogPosts.status, "published")),
     db.select({ value: count() }).from(claimRequests).where(eq(claimRequests.status, "pending")),
+    db.select({ value: count() }).from(contentEvents).where(eq(contentEvents.eventType, "blog_view")),
+    db.select({ value: count() }).from(contentEvents).where(eq(contentEvents.eventType, "guide_card_click")),
     db.select({ value: count() }).from(outboundClicks),
     db
       .select({ guideId: outboundClicks.guideId, displayName: guides.displayName, clicks: count() })
@@ -379,6 +388,8 @@ export async function getAnalyticsSummary() {
       guides: Number(guideCount[0]?.value ?? 0),
       publishedPosts: Number(postCount[0]?.value ?? 0),
       pendingRequests: Number(requestCount[0]?.value ?? 0),
+      blogViews: Number(blogViewCount[0]?.value ?? 0),
+      guideCardClicks: Number(guideCardClickCount[0]?.value ?? 0),
       outboundClicks: Number(clickCount[0]?.value ?? 0),
     },
     topGuides: topGuides.map(row => ({ ...row, clicks: Number(row.clicks) })),

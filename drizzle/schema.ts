@@ -149,6 +149,26 @@ export const blogGuideLinks = mysqlTable(
   ],
 );
 
+export const contentEvents = mysqlTable(
+  "content_events",
+  {
+    id: int("id").autoincrement().primaryKey(),
+    eventType: mysqlEnum("eventType", ["blog_view", "guide_card_click"]).notNull(),
+    pagePath: varchar("pagePath", { length: 500 }).notNull(),
+    guideId: int("guideId").references(() => guides.id, { onDelete: "set null" }),
+    blogPostId: int("blogPostId").references(() => blogPosts.id, { onDelete: "set null" }),
+    sessionHash: varchar("sessionHash", { length: 128 }),
+    referrerPath: varchar("referrerPath", { length: 500 }),
+    occurredAt: timestamp("occurredAt").defaultNow().notNull(),
+  },
+  table => [
+    index("content_events_occurred_idx").on(table.occurredAt),
+    index("content_events_type_idx").on(table.eventType),
+    index("content_events_guide_idx").on(table.guideId),
+    index("content_events_blog_idx").on(table.blogPostId),
+  ],
+);
+
 export const outboundClicks = mysqlTable(
   "outbound_clicks",
   {
@@ -200,6 +220,8 @@ export type Tag = typeof tags.$inferSelect;
 export type InsertTag = typeof tags.$inferInsert;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = typeof blogPosts.$inferInsert;
+export type ContentEvent = typeof contentEvents.$inferSelect;
+export type InsertContentEvent = typeof contentEvents.$inferInsert;
 export type OutboundClick = typeof outboundClicks.$inferSelect;
 export type ClaimRequest = typeof claimRequests.$inferSelect;
 export type InsertClaimRequest = typeof claimRequests.$inferInsert;

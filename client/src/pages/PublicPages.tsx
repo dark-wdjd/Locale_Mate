@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation, useParams } from "wouter";
 import { Streamdown } from "streamdown";
 import {
@@ -136,6 +136,17 @@ function Tag({ children, active = false }: { children: ReactNode; active?: boole
 }
 
 function GuideCard({ guide }: { guide: GuideSummary }) {
+  const recordEvent = trpc.operations.recordContentEvent.useMutation();
+
+  const recordGuideCardClick = () => {
+    recordEvent.mutate({
+      eventType: "guide_card_click",
+      guideId: guide.id,
+      pagePath: `${window.location.pathname}${window.location.search}`,
+      referrerPath: document.referrer ? new URL(document.referrer).pathname : undefined,
+    });
+  };
+
   return (
     <article className="group flex h-full flex-col rounded-[1.75rem] border border-border/80 bg-card p-5 shadow-[0_16px_50px_rgba(44,43,36,.06)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(44,43,36,.11)]">
       <div className="flex items-start justify-between gap-4">
@@ -153,7 +164,7 @@ function GuideCard({ guide }: { guide: GuideSummary }) {
           {guide.tags.slice(0, 4).map(tag => <Tag key={tag.id}>{tag.name}</Tag>)}
         </div>
       </div>
-      <Link href={`/guides/${guide.slug}`} className="mt-6 inline-flex items-center justify-between border-t border-border pt-4 text-sm font-semibold text-foreground">
+      <Link href={`/guides/${guide.slug}`} onClick={recordGuideCardClick} className="mt-6 inline-flex items-center justify-between border-t border-border pt-4 text-sm font-semibold text-foreground">
         Review public evidence <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
       </Link>
     </article>
@@ -401,7 +412,20 @@ export function BlogIndexPage() {
 export function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const post = trpc.blog.getBySlug.useQuery({ slug: slug ?? "" }, { enabled: Boolean(slug) });
+  const recordEvent = trpc.operations.recordContentEvent.useMutation();
+  const recordedPostId = useRef<number | null>(null);
   usePageMeta(post.data?.seoTitle ?? post.data?.title ?? "Chengdu journal", post.data?.seoDescription ?? post.data?.excerpt ?? "A LocalMate China field note.", post.data?.coverImageUrl ?? HERO_IMAGE, "article");
+
+  useEffect(() => {
+    if (!post.data || recordedPostId.current === post.data.id) return;
+    recordedPostId.current = post.data.id;
+    recordEvent.mutate({
+      eventType: "blog_view",
+      blogPostId: post.data.id,
+      pagePath: window.location.pathname,
+      referrerPath: document.referrer ? new URL(document.referrer).pathname : undefined,
+    });
+  }, [post.data, recordEvent]);
   if (post.isLoading) return <PublicShell><div className="container py-20"><Skeleton className="h-[40rem] rounded-[2rem]" /></div></PublicShell>;
   if (post.error || !post.data) return <PublicShell><div className="container py-20"><ErrorPanel message={post.error?.message ?? "Article not found"} /></div></PublicShell>;
   return <PublicShell><article><header className="border-b border-border bg-[#f5eddf] py-12 sm:py-20"><div className="container max-w-5xl"><Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4f5b53]"><ArrowLeft className="size-4" /> Back to the journal</Link><div className="mt-9 flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#743926]"><span>{post.data.category}</span><span className="size-1 rounded-full bg-[#743926]/35" /><span>{post.data.readingMinutes} min read</span></div><h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold leading-[1.02] tracking-[-0.05em] text-[#17382f] sm:text-7xl">{post.data.title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-[#4f5b53]">{post.data.excerpt}</p></div></header>{post.data.coverImageUrl && <div className="container max-w-6xl -translate-y-0 pt-8"><img src={post.data.coverImageUrl} alt="" className="max-h-[35rem] w-full rounded-[2rem] object-cover shadow-[0_25px_80px_rgba(44,43,36,.12)]" /></div>}<div className="container grid max-w-6xl gap-12 py-12 lg:grid-cols-[1fr_.36fr] lg:py-16"><div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:tracking-[-0.025em] prose-a:text-primary prose-blockquote:border-primary prose-blockquote:bg-muted/60 prose-blockquote:px-6 prose-blockquote:py-4"><Streamdown>{post.data.bodyMarkdown}</Streamdown></div><aside>{post.data.relatedGuides.length > 0 && <div className="rounded-[1.75rem] border border-border bg-card p-5"><p className="text-xs font-bold uppercase tracking-[0.17em] text-primary">Profiles mentioned</p><div className="mt-5 grid gap-4">{post.data.relatedGuides.map(guide => <Link key={guide.id} href={`/guides/${guide.slug}`} className="group flex items-center gap-3 rounded-xl bg-muted/65 p-3"><InitialAvatar name={guide.displayName} /><div><p className="font-serif text-lg font-semibold">{guide.displayName}</p><p className="mt-1 text-xs text-muted-foreground">Review public evidence</p></div><ChevronRight className="ml-auto size-4 text-muted-foreground transition-transform group-hover:translate-x-1" /></Link>)}</div></div>}<div className="mt-5 rounded-[1.5rem] bg-[#eadcae] p-5 text-[#17382f]"><BadgeCheck className="size-6 text-[#743926]" /><p className="mt-4 font-serif text-xl font-semibold">Editorial note</p><p className="mt-2 text-sm leading-6 text-[#435248]">LocalMate China does not receive payment for rankings and does not publish fabricated ratings or testimonials.</p></div></aside></div></article></PublicShell>;
