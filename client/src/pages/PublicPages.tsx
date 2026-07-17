@@ -228,7 +228,7 @@ export function HomePage() {
   return (
     <PublicShell>
       <section className="relative overflow-hidden border-b border-border bg-[#f5eddf]">
-        <div className="container grid min-h-[42rem] items-center gap-10 py-12 lg:grid-cols-[.92fr_1.08fr] lg:py-16">
+        <div className="container grid min-h-[42rem] items-center gap-10 py-12 lg:min-h-[36rem] lg:grid-cols-[.92fr_1.08fr] lg:py-16">
           <div className="relative z-10 max-w-2xl">
             <SectionLabel>{t("home.eyebrow")}</SectionLabel>
             <h1 className="mt-6 max-w-[12ch] font-serif text-[clamp(3.4rem,7vw,6.9rem)] font-semibold leading-[.91] tracking-[-0.055em] text-[#17382f]">
@@ -237,24 +237,16 @@ export function HomePage() {
             <p className="mt-7 max-w-xl text-base leading-8 text-[#4f5b53] sm:text-lg">
               {t("home.intro")}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9">
               <Button asChild size="lg" className="h-13 rounded-full px-7 text-base">
                 <Link href="/guides">{t("home.findGuide")} <ArrowRight className="size-5" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="h-13 rounded-full border-[#17382f]/25 bg-white/45 px-7 text-base text-[#17382f]">
-                <Link href="/about">{t("home.seeMethod")}</Link>
-              </Button>
-            </div>
-            <div className="mt-10 grid max-w-xl grid-cols-3 gap-3 border-t border-[#17382f]/15 pt-6">
-              <div><p className="font-serif text-2xl font-semibold text-[#17382f]">5</p><p className="mt-1 text-xs leading-5 text-[#4f5b53]">{t("home.statProfiles")}</p></div>
-              <div><p className="font-serif text-2xl font-semibold text-[#17382f]">0</p><p className="mt-1 text-xs leading-5 text-[#4f5b53]">{t("home.statRankings")}</p></div>
-              <div><p className="font-serif text-2xl font-semibold text-[#17382f]">100%</p><p className="mt-1 text-xs leading-5 text-[#4f5b53]">{t("home.statSources")}</p></div>
             </div>
           </div>
           <div className="relative lg:pl-5">
             <div className="absolute -left-10 top-12 hidden size-32 rounded-full border border-[#af3926]/20 lg:block" />
             <div className="relative overflow-hidden rounded-[2.5rem] bg-[#17382f] shadow-[0_35px_90px_rgba(31,57,49,.25)]">
-              <img src={HERO_IMAGE} alt={t("home.heroAlt")} className="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-[4/5]" />
+              <img src={HERO_IMAGE} alt={t("home.heroAlt")} className="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-[6/5]" />
               <div className="absolute inset-x-5 bottom-5 rounded-[1.5rem] border border-white/25 bg-[#17382f]/88 p-5 text-white backdrop-blur-md">
                 <div className="flex items-start gap-4">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-[#efb055]" />
