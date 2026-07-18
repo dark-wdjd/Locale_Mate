@@ -91,6 +91,30 @@ const guides = [
       ["douyin", "search", "https://www.douyin.com/search/%E8%8B%B1%E6%96%87%E5%AF%BC%E6%B8%B8%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E5%BC%80%E5%9C%BA%E7%99%BD%E4%B8%80%E5%88%86%E9%92%9F", "Search: English guide self-introduction", "Search route only; locate the Cecilia/Wei video and verify the profile before contact.", true],
     ],
   },
+  {
+    slug: "chengdu-english-guide-susan",
+    displayName: "Chengdu English Guide Susan",
+    shortBio: "An English-speaking Chengdu guide with a verified public Xiaohongshu profile reviewed by LocalMate China.",
+    longBio: "This profile is editorially compiled from Susan's public Xiaohongshu presence, which connects her with English-language guiding in Chengdu. The profile is unclaimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+    status: "unclaimed",
+    featured: false,
+    editorsPick: false,
+    tags: ["english"],
+    sources: [
+      ["xiaohongshu", "profile", "https://www.xiaohongshu.com/user/profile/5ed4f2a1000000000101d629", "Xiaohongshu public profile", "Verified public profile associated with English-language guiding in Chengdu.", true],
+    ],
+  },
+  {
+    slug: "chengdu-english-guide-penny",
+    displayName: "Chengdu English Guide Penny",
+    shortBio: "An English-speaking Chengdu guide with a public Xiaohongshu profile reviewed by LocalMate China.",
+    longBio: "This profile is editorially compiled from Penny's public Xiaohongshu presence, which connects her with English-language guiding in Chengdu. The profile is unclaimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+    status: "unclaimed",
+    featured: false,
+    editorsPick: false,
+    tags: ["english"],
+    sources: [],
+  },
 ];
 
 for (const guide of guides) {
@@ -120,6 +144,36 @@ for (const guide of guides) {
 }
 
 const articles = [
+  {
+    slug: "after-sunset-fun-in-chengdu",
+    title: "After sunset fun in Chengdu",
+    excerpt: "An external interactive 3D map for exploring Chengdu after dark—bar-crawl, KTV, and dance routes through Jinjiang District.",
+    cover: null,
+    category: "Nightlife",
+    minutes: 2,
+    featured: false,
+    status: "published",
+    sortOrder: 100,
+    publishedAt: "2026-07-18 00:08:57",
+    body: `## An interactive map for Chengdu nights
+
+[After Sunset in Chengdu](https://after-sunset.netlify.app) is an external interactive resource for planning an evening in the city. It presents Chengdu's night scene on a 3D map you can rotate, zoom, and explore venue by venue.
+
+## What you'll find there
+
+- **Bar crawl** — a curated six-stop classic cocktail route through Jinjiang District
+- **KTV** — karaoke venues for a group night out
+- **Dance** — clubs for later in the evening
+
+The map includes practical touches such as ride suggestions between stops and a "must try" shortlist.
+
+## Before you go
+
+This is an independent external resource; LocalMate China does not operate the venues or the map. As with any night out in an unfamiliar city, confirm opening hours and prices directly, keep venue addresses in Chinese for taxi rides, and arrange your return trip in advance.
+
+> Explore the map at [after-sunset.netlify.app](https://after-sunset.netlify.app).`,
+    guides: [],
+  },
   {
     slug: "first-48-hours-in-chengdu",
     title: "Your First 48 Hours in Chengdu",
@@ -160,7 +214,8 @@ Keep venue addresses in Chinese, allow extra transfer time, and avoid building a
     cover: null,
     category: "Methodology",
     minutes: 6,
-    featured: true,
+    featured: false,
+    status: "archived",
     body: `## A directory, not a booking marketplace
 
 LocalMate China helps English-speaking travelers discover public evidence about potential local guides. We do not take payment, promise availability, or present unclaimed profiles as endorsements.
@@ -220,13 +275,13 @@ Jiuzhaigou and western Sichuan involve more planning than a city walk. Confirm t
 for (const article of articles) {
   await connection.execute(
     `INSERT INTO blog_posts
-      (slug, title, excerpt, bodyMarkdown, coverImageUrl, category, seoTitle, seoDescription, status, isFeatured, readingMinutes, publishedAt)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'published', ?, ?, '2026-07-13 12:00:00')
+      (slug, title, excerpt, bodyMarkdown, coverImageUrl, category, seoTitle, seoDescription, status, isFeatured, readingMinutes, sortOrder, publishedAt)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON DUPLICATE KEY UPDATE title = VALUES(title), excerpt = VALUES(excerpt), bodyMarkdown = VALUES(bodyMarkdown),
        coverImageUrl = VALUES(coverImageUrl), category = VALUES(category), seoTitle = VALUES(seoTitle),
        seoDescription = VALUES(seoDescription), status = VALUES(status), isFeatured = VALUES(isFeatured),
-       readingMinutes = VALUES(readingMinutes), publishedAt = VALUES(publishedAt)`,
-    [article.slug, article.title, article.excerpt, article.body, article.cover, article.category, article.title, article.excerpt, article.featured, article.minutes],
+       readingMinutes = VALUES(readingMinutes), sortOrder = VALUES(sortOrder), publishedAt = VALUES(publishedAt)`,
+    [article.slug, article.title, article.excerpt, article.body, article.cover, article.category, article.title, article.excerpt, article.status ?? "published", article.featured, article.minutes, article.sortOrder ?? 0, article.publishedAt ?? "2026-07-13 12:00:00"],
   );
   const [[postRow]] = await connection.execute("SELECT id FROM blog_posts WHERE slug = ?", [article.slug]);
   await connection.execute("DELETE FROM blog_guide_links WHERE blogPostId = ?", [postRow.id]);
