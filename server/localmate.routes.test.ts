@@ -125,6 +125,34 @@ describe("LocalMate public routes", () => {
     );
   });
 
+  it("preserves a canonical Xiaohongshu profile URL for a verified guide", async () => {
+    const source = {
+      id: 88,
+      platform: "xiaohongshu" as const,
+      sourceType: "profile" as const,
+      url: "https://www.xiaohongshu.com/user/profile/5ed4f2a1000000000101d629",
+    };
+    vi.mocked(db.getGuideById).mockResolvedValue({
+      id: 88,
+      status: "unclaimed",
+      sources: [source],
+    } as never);
+    vi.mocked(db.recordOutboundClick).mockResolvedValue(undefined as never);
+
+    const caller = appRouter.createCaller(createContext());
+    await expect(
+      caller.guides.recordClick({
+        guideId: 88,
+        sourceId: 88,
+        pagePath: "/guides/chengdu-english-guide-susan",
+      }),
+    ).resolves.toEqual({ success: true, targetUrl: source.url });
+
+    expect(db.recordOutboundClick).toHaveBeenCalledWith(
+      expect.objectContaining({ targetUrl: source.url, clickType: "xiaohongshu_profile" }),
+    );
+  });
+
   it("accepts a valid public correction request for administrator review", async () => {
     const stored = { id: 44, status: "pending" as const };
     vi.mocked(db.submitClaimRequest).mockResolvedValue(stored as never);

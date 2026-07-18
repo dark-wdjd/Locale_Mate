@@ -132,6 +132,23 @@ function InitialAvatar({ name, large = false }: { name: string; large?: boolean 
   );
 }
 
+function GuideAvatar({ name, avatarUrl, large = false }: { name: string; avatarUrl?: string | null; large?: boolean }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  if (!avatarUrl || imageFailed) return <InitialAvatar name={name} large={large} />;
+
+  return (
+    <img
+      src={avatarUrl}
+      alt={`${name} profile`}
+      onError={() => setImageFailed(true)}
+      className={cn(
+        "shrink-0 rounded-[1.35rem] border border-[#17382f]/10 object-cover shadow-inner",
+        large ? "size-28 sm:size-36" : "size-16",
+      )}
+    />
+  );
+}
+
 function Tag({ children, active = false }: { children: ReactNode; active?: boolean }) {
   return <span className={cn("inline-flex rounded-full px-3 py-1 text-xs font-semibold", active ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground")}>{children}</span>;
 }
@@ -152,7 +169,7 @@ function GuideCard({ guide }: { guide: GuideSummary }) {
   return (
     <article className="group flex h-full flex-col rounded-[1.75rem] border border-border/80 bg-card p-5 shadow-[0_16px_50px_rgba(44,43,36,.06)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(44,43,36,.11)]">
       <div className="flex items-start justify-between gap-4">
-        <InitialAvatar name={guide.displayName} />
+        <GuideAvatar name={guide.displayName} avatarUrl={guide.avatarUrl} />
         <div className="flex flex-wrap justify-end gap-2">
           {guide.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}
           {guide.status === "unclaimed" && <Tag>{t("common.unclaimed")}</Tag>}
@@ -394,7 +411,7 @@ export function GuideDetailPage() {
         <div className="container">
           <Link href="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4f5b53] hover:text-[#17382f]"><ArrowLeft className="size-4" /> {t("guide.back")}</Link>
           <div className="mt-9 grid gap-8 lg:grid-cols-[auto_1fr_.42fr] lg:items-start">
-            <InitialAvatar name={item.displayName} large />
+            <GuideAvatar name={item.displayName} avatarUrl={item.avatarUrl} large />
             <div><div className="flex flex-wrap gap-2">{item.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}<Tag>{item.isClaimed ? t("common.claimed") : t("common.unclaimedProfile")}</Tag></div><h1 className="mt-5 font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{item.displayName}</h1><p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5b53]">{item.shortBio}</p><div className="mt-6 flex flex-wrap gap-2">{item.tags.map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}</div></div>
             <div className="rounded-[1.5rem] border border-[#17382f]/12 bg-white/55 p-5"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#743926]">{t("guide.status")}</p><dl className="mt-4 grid gap-4 text-sm"><div><dt className="text-[#4f5b53]">{t("guide.location")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.city}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.languages")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.languages}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.reviewed")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.lastVerifiedAt ? new Date(item.lastVerifiedAt).toLocaleDateString(language === "zh" ? "zh-CN" : "en-US", { year: "numeric", month: "short", day: "numeric" }) : t("guide.reviewUnavailable")}</dd></div></dl></div>
           </div>
