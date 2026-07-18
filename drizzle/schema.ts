@@ -118,6 +118,7 @@ export const blogPosts = mysqlTable(
     seoDescription: varchar("seoDescription", { length: 320 }),
     status: mysqlEnum("status", ["draft", "published", "archived"]).default("draft").notNull(),
     isFeatured: boolean("isFeatured").default(false).notNull(),
+    sortOrder: int("sortOrder").default(0).notNull(),
     readingMinutes: int("readingMinutes").default(5).notNull(),
     publishedAt: timestamp("publishedAt"),
     createdAt: timestamp("createdAt").defaultNow().notNull(),
@@ -125,7 +126,7 @@ export const blogPosts = mysqlTable(
   },
   table => [
     uniqueIndex("blog_posts_slug_unique").on(table.slug),
-    index("blog_posts_status_published_idx").on(table.status, table.publishedAt),
+    index("blog_posts_status_published_idx").on(table.status, table.sortOrder, table.publishedAt),
     index("blog_posts_category_idx").on(table.category),
   ],
 );

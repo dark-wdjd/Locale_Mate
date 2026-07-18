@@ -15,6 +15,7 @@ const postFields = z.object({
   seoDescription: z.string().max(320).nullable().optional(),
   status: postStatus.default("draft"),
   isFeatured: z.boolean().default(false),
+  sortOrder: z.number().int().min(-1000).max(10000).default(0),
   readingMinutes: z.number().int().min(1).max(90).default(5),
   publishedAt: z.coerce.date().nullable().optional(),
   guideIds: z.array(z.number().int().positive()).default([]),

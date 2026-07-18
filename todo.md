@@ -119,3 +119,13 @@
 - [x] 核对已上传头像资源的实际图像内容与加载状态，修正详情页出现的空白头像区域
 - [x] 审阅 /guides 桌面与移动截图及 Susan/Penny 详情页桌面/移动截图：Susan 白衣头像与 Penny 户外招牌头像均真实显示，未出现 initials、空白或窄屏溢出
 - [x] 核对 PublicPages.tsx：GuideAvatar 以 avatarUrl 作为 img src、加载失败时回退 initials，且导游卡片与详情页均复用该组件；视觉回归通过，无需进一步修复
+
+# Chengdu Journal：After Sunset 排序与封面更新
+
+- [x] 核对 After sunset fun in Chengdu 的真实文章记录、现有发布时间与公开列表排序逻辑
+- [x] 生成并准备一张不含文字、适合作为成都夜生活外部资源文章封面的原创图片
+- [x] 将 After sunset fun in Chengdu 排列为 Chengdu Journal 公开列表的最后一篇，并保存封面图片地址
+- [x] 补充或更新排序与封面字段测试，执行类型检查、完整测试、生产构建及桌面/移动视觉回归
+- [x] 为 Journal 引入可维护的显式排序字段，使 After Sunset 可置底而不伪造或篡改其真实发布时间
+- [x] 人工审阅 /home/ubuntu/webdev-static-assets/after-sunset-chengdu-cover.png：成品为雨后成都夜街、红灯笼、传统屋檐、暖色酒吧窗光与远处城市轮廓的 2560×1440 原创画面，无文字/水印；/blog 与 /blog/after-sunset-fun-in-chengdu 的桌面/移动视图均显示该真实封面，非生成占位图或失败图
+- [x] 补充博客回归测试，断言管理员更新会保存并返回 coverImageUrl，同时继续覆盖 sortOrder 与 publishedAt 行为

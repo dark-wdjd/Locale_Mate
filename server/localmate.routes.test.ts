@@ -10,6 +10,7 @@ vi.mock("./db", () => ({
   submitClaimRequest: vi.fn(),
   listBlogPosts: vi.fn(),
   getBlogPostBySlug: vi.fn(),
+  updateBlogPost: vi.fn(),
 }));
 
 import * as db from "./db";
@@ -174,6 +175,22 @@ describe("LocalMate public routes", () => {
 });
 
 describe("LocalMate administrator authorization", () => {
+  it("allows an admin to save Journal order and cover data without overwriting its published date", async () => {
+    const publishedAt = new Date("2026-07-18T00:08:57.000Z");
+    const coverImageUrl = "https://cdn.example.com/after-sunset-chengdu.jpg";
+    const updatedPost = { id: 30001, sortOrder: 100, coverImageUrl, publishedAt };
+    vi.mocked(db.updateBlogPost).mockResolvedValue(updatedPost as never);
+
+    const caller = appRouter.createCaller(createContext("admin"));
+    await expect(caller.blog.adminUpdate({ id: 30001, sortOrder: 100, coverImageUrl, publishedAt, guideIds: [] })).resolves.toEqual(updatedPost);
+
+    expect(db.updateBlogPost).toHaveBeenCalledWith(
+      30001,
+      expect.objectContaining({ sortOrder: 100, coverImageUrl, publishedAt }),
+      [],
+    );
+  });
+
   it("rejects a signed-in non-admin before the guide management query runs", async () => {
     const caller = appRouter.createCaller(createContext("user"));
 

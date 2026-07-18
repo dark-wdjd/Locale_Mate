@@ -245,7 +245,7 @@ export async function listBlogPosts(input: { publishedOnly?: boolean; category?:
     .select()
     .from(blogPosts)
     .where(filters.length ? and(...filters) : undefined)
-    .orderBy(desc(blogPosts.isFeatured), desc(blogPosts.publishedAt), desc(blogPosts.updatedAt));
+    .orderBy(asc(blogPosts.sortOrder), desc(blogPosts.isFeatured), desc(blogPosts.publishedAt), desc(blogPosts.updatedAt));
   if (!posts.length) return [];
   const links = await db
     .select({ blogPostId: blogGuideLinks.blogPostId, guideId: blogGuideLinks.guideId })
