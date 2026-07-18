@@ -72,6 +72,21 @@ describe("LocalMate public routes", () => {
     });
   });
 
+  it("exposes only published journal entries through the public blog list", async () => {
+    const published = [{ id: 30001, slug: "after-sunset-fun-in-chengdu", title: "After sunset fun in Chengdu" }];
+    vi.mocked(db.listBlogPosts).mockResolvedValue(published as never);
+
+    const caller = appRouter.createCaller(createContext());
+    const result = await caller.blog.list({});
+
+    expect(result).toEqual(published);
+    expect(db.listBlogPosts).toHaveBeenCalledWith({
+      publishedOnly: true,
+      category: undefined,
+      featuredOnly: undefined,
+    });
+  });
+
   it("records an anonymous hashed outbound click and returns only the verified source URL", async () => {
     const source = {
       id: 31,
