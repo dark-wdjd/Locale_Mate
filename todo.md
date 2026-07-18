@@ -129,3 +129,13 @@
 - [x] 为 Journal 引入可维护的显式排序字段，使 After Sunset 可置底而不伪造或篡改其真实发布时间
 - [x] 人工审阅 /home/ubuntu/webdev-static-assets/after-sunset-chengdu-cover.png：成品为雨后成都夜街、红灯笼、传统屋檐、暖色酒吧窗光与远处城市轮廓的 2560×1440 原创画面，无文字/水印；/blog 与 /blog/after-sunset-fun-in-chengdu 的桌面/移动视图均显示该真实封面，非生成占位图或失败图
 - [x] 补充博客回归测试，断言管理员更新会保存并返回 coverImageUrl，同时继续覆盖 sortOrder 与 publishedAt 行为
+
+# Penny 头像视觉编辑核验
+
+- [x] 核对 PublicPages.tsx 中 Penny 头像的渲染路径、avatarUrl 数据来源与视觉编辑定位为何失效：GuideAvatar 使用动态 avatarUrl，Penny 记录的 /manus-storage/penny-xiaohongshu-avatar_e28dd177.webp 并未以静态字符串写在 JSX 中
+- [x] 判断将 img src 清空是否符合用户意图；用户确认仅隐藏 Penny 的头像并回退为姓名首字母，不影响其他导游
+- [x] 用户确认后安全清除 Penny 的 avatarUrl；目录和详情页桌面/移动均显示 CE 首字母，Susan 头像继续正常显示
+- [x] 按用户确认仅清除 Penny 的 avatarUrl，使其目录与详情页显示姓名首字母，同时保留其他导游头像
+- [x] 核验 Penny 回退头像及 Susan 等其他导游头像在桌面/移动端均符合预期，并完成类型检查、完整测试与生产构建
+- [x] 人工审阅 /guides、/guides/chengdu-english-guide-penny、/guides/chengdu-english-guide-susan 的桌面/移动截图：Penny 卡片与详情页均显示浅绿色 CE 首字母回退块；Susan 卡片与详情页均保留白衣真实头像；页面无头像空白、裁切异常或窄屏溢出
+- [x] 为 GuideAvatar 添加组件回归测试：avatarUrl 为空时渲染 initials，avatarUrl 存在时渲染图片与替代文本（2 项断言通过）

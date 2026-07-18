@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import React, { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Link, useLocation, useParams } from "wouter";
 import { Streamdown } from "streamdown";
 import {
@@ -132,7 +132,7 @@ function InitialAvatar({ name, large = false }: { name: string; large?: boolean 
   );
 }
 
-function GuideAvatar({ name, avatarUrl, large = false }: { name: string; avatarUrl?: string | null; large?: boolean }) {
+export function GuideAvatar({ name, avatarUrl, large = false }: { name: string; avatarUrl?: string | null; large?: boolean }) {
   const [imageFailed, setImageFailed] = useState(false);
   if (!avatarUrl || imageFailed) return <InitialAvatar name={name} large={large} />;
 
