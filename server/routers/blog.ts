@@ -4,12 +4,18 @@ import * as db from "../db";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 
 const postStatus = z.enum(["draft", "published", "archived"]);
+const imageUrlOrPath = z
+  .string()
+  .max(2048)
+  .refine(value => /^https?:\/\//.test(value) || value.startsWith("/"), {
+    message: "Use a full http(s) URL or a site path starting with /",
+  });
 const postFields = z.object({
   slug: z.string().min(2).max(180).regex(/^[a-z0-9-]+$/),
-  title: z.string().min(8).max(240),
-  excerpt: z.string().min(20).max(500),
-  bodyMarkdown: z.string().min(100).max(100000),
-  coverImageUrl: z.string().url().max(2048).nullable().optional(),
+  title: z.string().min(2).max(240),
+  excerpt: z.string().min(4).max(500),
+  bodyMarkdown: z.string().min(20).max(100000),
+  coverImageUrl: imageUrlOrPath.nullable().optional(),
   category: z.string().min(2).max(100),
   seoTitle: z.string().max(240).nullable().optional(),
   seoDescription: z.string().max(320).nullable().optional(),

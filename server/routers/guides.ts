@@ -5,6 +5,12 @@ import * as db from "../db";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 
 const guideStatus = z.enum(["active", "unclaimed", "removed"]);
+const imageUrlOrPath = z
+  .string()
+  .max(2048)
+  .refine(value => /^https?:\/\//.test(value) || value.startsWith("/"), {
+    message: "Use a full http(s) URL or a site path starting with /",
+  });
 const sourcePlatform = z.enum(["xiaohongshu", "douyin", "media", "website"]);
 const sourceType = z.enum(["profile", "post", "article", "search"]);
 const tagCategory = z.enum(["language", "interest", "audience", "route", "style"]);
@@ -12,7 +18,7 @@ const tagCategory = z.enum(["language", "interest", "audience", "route", "style"
 const guideFields = z.object({
   slug: z.string().min(2).max(160).regex(/^[a-z0-9-]+$/),
   displayName: z.string().min(1).max(160),
-  shortBio: z.string().min(20).max(320),
+  shortBio: z.string().min(4).max(320),
   longBio: z.string().max(8000).nullable().optional(),
   city: z.string().min(2).max(80).default("Chengdu"),
   languages: z.string().min(2).max(240),
@@ -20,7 +26,7 @@ const guideFields = z.object({
   isClaimed: z.boolean().default(false),
   isFeatured: z.boolean().default(false),
   isEditorsPick: z.boolean().default(false),
-  avatarUrl: z.string().url().max(2048).nullable().optional(),
+  avatarUrl: imageUrlOrPath.nullable().optional(),
   lastVerifiedAt: z.coerce.date().nullable().optional(),
   tagIds: z.array(z.number().int().positive()).default([]),
 });
