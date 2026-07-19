@@ -127,7 +127,6 @@ export function PublicShell({ children }: { children: ReactNode }) {
             <div className="mt-4 grid gap-3 text-sm text-[#f7f0df]/78">
               <Link href="/guides" className="hover:text-white">{t("footer.guideDirectory")}</Link>
               <Link href="/blog" className="hover:text-white">{t("nav.journal")}</Link>
-              <Link href="/about" className="hover:text-white">{t("footer.methodology")}</Link>
             </div>
           </div>
           <div>
@@ -141,7 +140,10 @@ export function PublicShell({ children }: { children: ReactNode }) {
         <div className="border-t border-white/10">
           <div className="container flex flex-col gap-2 py-5 text-xs text-[#f7f0df]/55 sm:flex-row sm:items-center sm:justify-between">
             <span>{t("footer.copyright")}</span>
-            <span>{t("footer.disclaimer")}</span>
+            <span className="flex flex-wrap gap-x-4 gap-y-1 sm:justify-end">
+              {t("footer.disclaimer")}
+              <Link href="/about" className="underline decoration-white/30 hover:text-white">{t("footer.credits")}</Link>
+            </span>
           </div>
         </div>
       </footer>
