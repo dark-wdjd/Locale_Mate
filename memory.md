@@ -31,16 +31,15 @@ Typecheck (`pnpm check`) and all 19 tests (`pnpm test`) pass.
 2. `.env` in the repo root (gitignored) holds: `DATABASE_URL=mysql://root@localhost:3306/locale_mate`, `JWT_SECRET` (any string), `VITE_APP_ID=local-dev-app`, `OWNER_OPEN_ID=local-admin`; the Manus vars (`OAUTH_SERVER_URL`, `BUILT_IN_FORGE_API_*`) are empty.
 3. First-time database setup: `pnpm drizzle-kit migrate`, then `node --env-file=.env scripts/seed-content.mjs`.
 4. Start: `pnpm dev` → http://localhost:3000
-5. Admin login: `node --env-file=.env scripts/dev-admin-login.mjs` prints a token; in the browser console run
-   `document.cookie = "app_session_id=<token>; path=/; max-age=31536000"` and reload `/admin`.
+5. Admin login: open http://localhost:3000/admin and enter the `ADMIN_PASSWORD` from `.env` (currently `chengdu-admin-2026`). (The older cookie-based `scripts/dev-admin-login.mjs` helper still works too.)
 
 GitHub pushes from this machine use the `dark-wdjd` account via the `gh` CLI (`gh auth status` to confirm).
 
 ## Remaining work (in priority order)
 
 1. **Publish publicly** — the original goal. Recommended: Railway (~$5/mo, Node app + MySQL together, deploys from GitHub). Required alongside hosting:
-   - Replace the Manus OAuth admin login with simple self-hosted auth. The session layer (HS256 JWT signed with `JWT_SECRET`, cookie `app_session_id`) already works standalone — only the sign-in flow needs building.
-   - Set production env vars: `DATABASE_URL`, `JWT_SECRET` (strong random), `OWNER_OPEN_ID`, `NODE_ENV=production`. Build with `pnpm build`, run with `pnpm start`.
+   - ~~Replace the Manus OAuth admin login~~ **Done** — `/admin` now shows a password form; POST `/api/auth/admin-login` checks `ADMIN_PASSWORD` and issues the standard session cookie (`server/_core/oauth.ts`). Local password is in `.env`; set a strong `ADMIN_PASSWORD` in production.
+   - Set production env vars: `DATABASE_URL`, `JWT_SECRET` (strong random), `ADMIN_PASSWORD` (strong random), `VITE_APP_ID` (any string), `OWNER_OPEN_ID`, `NODE_ENV=production`. Build with `pnpm build`, run with `pnpm start`.
    - Run migrations + seed against the production database.
 2. **Penny's Xiaohongshu profile URL** — never recorded in the repo; the owner must supply it, then add as her source (admin panel or seed).
 3. **Susan's avatar** — original lived on Manus storage; she currently shows initials. Optionally add a new image.

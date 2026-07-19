@@ -21,7 +21,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { DashboardLayoutSkeleton } from "@/components/DashboardLayoutSkeleton";
-import { startLogin } from "@/const";
+import { Input } from "@/components/ui/input";
 import { useIsMobile } from "@/hooks/useMobile";
 import {
   BarChart3,
@@ -58,10 +58,35 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     return saved ? parseInt(saved, 10) : DEFAULT_WIDTH;
   });
   const { loading, user } = useAuth();
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [signingIn, setSigningIn] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(SIDEBAR_WIDTH_KEY, sidebarWidth.toString());
   }, [sidebarWidth]);
+
+  const submitAdminLogin = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setSigningIn(true);
+    setLoginError(null);
+    try {
+      const response = await fetch("/api/auth/admin-login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ password }),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(data?.error ?? "Sign-in failed");
+      }
+      window.location.reload();
+    } catch (error) {
+      setLoginError(error instanceof Error ? error.message : "Sign-in failed");
+      setSigningIn(false);
+    }
+  };
 
   if (loading) return <DashboardLayoutSkeleton />;
 
@@ -71,8 +96,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="w-full max-w-md rounded-[2rem] border border-border bg-card p-8 text-center shadow-xl">
           <div className="mx-auto grid size-14 place-items-center rounded-full bg-primary text-primary-foreground"><ShieldAlert className="size-6" /></div>
           <h1 className="mt-6 font-serif text-3xl font-semibold tracking-[-0.03em]">管理员登录 / Admin sign-in</h1>
-          <p className="mt-3 text-sm leading-6 text-muted-foreground">运营后台需要 Manus 身份认证。请登录后继续。</p>
-          <Button onClick={() => startLogin()} size="lg" className="mt-7 w-full rounded-full">登录并继续 / Sign in</Button>
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">请输入管理员密码以继续。/ Enter the admin password to continue.</p>
+          <form onSubmit={submitAdminLogin} className="mt-7 grid gap-3">
+            <Input
+              type="password"
+              required
+              autoFocus
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              placeholder="管理员密码 / Admin password"
+              className="h-12 rounded-xl text-center"
+            />
+            {loginError && <p className="text-sm text-destructive">{loginError}</p>}
+            <Button type="submit" size="lg" disabled={signingIn} className="w-full rounded-full">
+              {signingIn ? "登录中… / Signing in…" : "登录并继续 / Sign in"}
+            </Button>
+          </form>
           <Button asChild variant="ghost" className="mt-2 w-full rounded-full"><a href="/">返回网站 / Back to site</a></Button>
         </div>
       </div>
