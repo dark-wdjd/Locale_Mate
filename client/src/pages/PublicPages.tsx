@@ -367,7 +367,11 @@ function OffsiteSourceButton({ guide, source }: { guide: GuideSummary; source: G
   const [open, setOpen] = useState(false);
   const record = trpc.guides.recordClick.useMutation();
   const leave = async () => {
-    const externalWindow = window.open("about:blank", "_blank", "noopener,noreferrer");
+    // NOTE: passing "noopener" in window.open features makes it return null,
+    // which previously forced the same-tab fallback. Open normally and detach
+    // the opener on the handle instead.
+    const externalWindow = window.open("about:blank", "_blank");
+    if (externalWindow) externalWindow.opener = null;
     try {
       const result = await record.mutateAsync({ guideId: guide.id, sourceId: source.id, pagePath: window.location.pathname, referrerPath: document.referrer ? new URL(document.referrer).pathname : undefined });
       if (externalWindow) externalWindow.location.href = result.targetUrl;
