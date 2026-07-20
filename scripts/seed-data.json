@@ -1,0 +1,369 @@
+{
+  "tags": [
+    {
+      "slug": "english",
+      "name": "English",
+      "category": "language",
+      "description": "Public evidence indicates English-language guiding or interpretation experience."
+    },
+    {
+      "slug": "pandas",
+      "name": "Pandas",
+      "category": "interest",
+      "description": "Public content references Chengdu panda visits or guiding."
+    },
+    {
+      "slug": "tea-culture",
+      "name": "Tea culture",
+      "category": "interest",
+      "description": "Public content references teahouses, parks, or Chengdu tea culture."
+    },
+    {
+      "slug": "sichuan-opera",
+      "name": "Sichuan opera",
+      "category": "interest",
+      "description": "Public content references Sichuan opera, face-changing, or local performance culture."
+    },
+    {
+      "slug": "city-classics",
+      "name": "City classics",
+      "category": "route",
+      "description": "Suitable evidence for classic Chengdu city sights and neighborhoods."
+    },
+    {
+      "slug": "western-sichuan",
+      "name": "Western Sichuan",
+      "category": "route",
+      "description": "Public evidence also references western Sichuan or Jiuzhaigou trips."
+    },
+    {
+      "slug": "private-tour",
+      "name": "Private tours",
+      "category": "style",
+      "description": "Public evidence describes small-group or private guiding."
+    },
+    {
+      "slug": "first-time-visitors",
+      "name": "First-time visitors",
+      "category": "audience",
+      "description": "A useful starting point for first-time Chengdu trip planning."
+    }
+  ],
+  "guides": [
+    {
+      "slug": "huage-harry",
+      "displayName": "Huage Harry",
+      "shortBio": "An English-language guide whose public videos connect Chengdu, Sichuan culture, panda visits, parks, and Sichuan opera.",
+      "longBio": "Publicly indexed videos show Huage Harry presenting English-guiding content around Sichuan cultural experiences. One verified Douyin video is framed around Sichuan opera, including face-changing and fire-spitting; other indexed content references hosting Australian visitors in Chengdu. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 1,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Harry.png",
+      "lastVerifiedAt": "2026-07-19T23:21:52.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "first-time-visitors",
+        "pandas",
+        "sichuan-opera"
+      ],
+      "sources": [
+        {
+          "platform": "douyin",
+          "sourceType": "post",
+          "url": "https://www.douyin.com/video/7605139238754171385",
+          "publicTitle": "Sichuan opera: face-changing and local performance",
+          "evidenceSummary": "Verified public video associated with English-guide and Sichuan-culture tags.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-07-12T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "april",
+      "displayName": "成都英语导游April",
+      "shortBio": "A Chengdu-based English guide for guiding international visitors through Chengdu and western Sichuan.",
+      "longBio": "✨18岁考取英语导游证\n🌍人类学与世界民族硕士在读\n🌈Do whatever you want !",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/April.png",
+      "lastVerifiedAt": "2026-07-19T23:32:05.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "tea-culture",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://xhslink.com/m/1uFaQlInDNF",
+          "publicTitle": null,
+          "evidenceSummary": null,
+          "isPrimary": 1,
+          "verifiedAt": "2026-07-19T23:32:27.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "xu-yao",
+      "displayName": "Xu Yao",
+      "shortBio": "An English guide reported to publish English tour commentary and to guide visitors in Chengdu, Jiuzhaigou, and western Sichuan.",
+      "longBio": "Tencent News reports that Xu Yao began English-guiding work in 2024 after experience in overseas hotel management and travel services. The article says she publishes English explanations on Xiaohongshu and has guided visitors from several countries in Chengdu and western Sichuan. A verified public account URL was not available during review, so the link below is a search route rather than a confirmed profile. This listing is unclaimed; confirm the account and all service details before contacting.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "removed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": null,
+      "lastVerifiedAt": "2026-07-12T17:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "search",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BE%90%E7%91%B6%20%E6%88%90%E9%83%BD%20%E8%8B%B1%E8%AF%AD%E5%AF%BC%E6%B8%B8",
+          "publicTitle": "Search: Xu Yao Chengdu English guide",
+          "evidenceSummary": "Search route only; confirm the creator's identity and current professional status.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-07-12T17:00:00.000Z"
+        },
+        {
+          "platform": "media",
+          "sourceType": "article",
+          "url": "https://news.qq.com/rain/a/20250225A044N900",
+          "publicTitle": "Tencent News profile of English guides",
+          "evidenceSummary": "Independent media coverage describing Xu Yao's background and service locations.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-07-12T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "yanny",
+      "displayName": "四川中级英文导游yanny",
+      "shortBio": "An English-major guide who wrote about hosting one- and two-person foreign-language tours around Chengdu's classic sights.",
+      "longBio": "四川中级中英文导游",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Yanny.png",
+      "lastVerifiedAt": "2026-07-19T23:30:48.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "tea-culture"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://xhslink.com/m/3eaM0Iww7YN",
+          "publicTitle": null,
+          "evidenceSummary": null,
+          "isPrimary": 0,
+          "verifiedAt": "2026-07-19T23:30:58.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "penny",
+      "displayName": "成都英语导游Penny",
+      "shortBio": "A Chengdu-linked English guide ",
+      "longBio": "高级中英文导游\n记录生活美好",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": "/guide_profile/Penny.png",
+      "lastVerifiedAt": "2026-07-19T23:33:14.000Z",
+      "tags": [
+        "city-classics",
+        "english"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://xhslink.com/m/Aq4OnhtD0mq",
+          "publicTitle": null,
+          "evidenceSummary": null,
+          "isPrimary": 1,
+          "verifiedAt": "2026-07-19T23:33:36.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu-english-guide-susan",
+      "displayName": "Chengdu English Guide Susan",
+      "shortBio": "An English-speaking Chengdu guide with a verified public Xiaohongshu profile reviewed by LocalMate China.",
+      "longBio": "This profile is editorially compiled from Susan's public Xiaohongshu presence, which connects her with English-language guiding in Chengdu. The profile is unclaimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "removed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": null,
+      "lastVerifiedAt": "2026-07-12T17:00:00.000Z",
+      "tags": [
+        "english"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5ed4f2a1000000000101d629",
+          "publicTitle": "Xiaohongshu public profile",
+          "evidenceSummary": "Verified public profile associated with English-language guiding in Chengdu.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-07-12T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu-english-guide-penny",
+      "displayName": "Chengdu English Guide Penny",
+      "shortBio": "An English-speaking Chengdu guide with a public Xiaohongshu profile reviewed by LocalMate China.",
+      "longBio": "This profile is editorially compiled from Penny's public Xiaohongshu presence, which connects her with English-language guiding in Chengdu. The profile is unclaimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "removed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": null,
+      "lastVerifiedAt": "2026-07-12T17:00:00.000Z",
+      "tags": [
+        "english"
+      ],
+      "sources": []
+    },
+    {
+      "slug": "susan",
+      "displayName": "成都英语导游Susan",
+      "shortBio": "10年资深英语导游\n带团足迹遍布全球50多个国家\n10 years experience of guiding foreign groups\nLocal guide in Chengdu",
+      "longBio": "10年资深英语导游\n带团足迹遍布全球50多个国家\n10 years experience of guiding foreign groups\nLocal guide in Chengdu",
+      "city": "Chengdu",
+      "languages": "English, Chinese",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Susan.png",
+      "lastVerifiedAt": "2026-07-19T23:29:28.000Z",
+      "tags": [
+        "english",
+        "tea-culture"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://xhslink.com/m/1ThhJbnHooU",
+          "publicTitle": null,
+          "evidenceSummary": null,
+          "isPrimary": 0,
+          "verifiedAt": "2026-07-19T23:29:55.000Z"
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "slug": "first-48-hours-in-chengdu",
+      "title": "Your First 48 Hours in Chengdu",
+      "excerpt": "A calm, first-timer-friendly route through pandas, teahouses, old lanes, and the everyday rhythm that makes Chengdu memorable.",
+      "bodyMarkdown": "## Start with pace, not a checklist\n\nChengdu rewards a slower rhythm. For a first visit, choose **one anchor experience per half-day** and leave space for tea, food, and unplanned neighborhood walks. Your first 48 hours should help you understand the city rather than race across it.\n\n## Day one: pandas, parks, and a relaxed evening\n\nBegin early if the panda base is important to you. Conditions, opening arrangements, and transport details can change, so check the venue's current official information before leaving. Later, return to the city for a park or teahouse. People's Park is frequently included in public accounts of English-language Chengdu tours, but the real value is the contrast between a major attraction and ordinary city life.\n\nFor the evening, keep the plan flexible. A Sichuan opera performance can add cultural context, while a neighborhood dinner gives you time to ask practical questions about spice levels and local dishes.\n\n## Day two: historic Chengdu and a guide-led theme\n\nChoose a compact group of city sights rather than crossing Chengdu repeatedly. Kuanzhai Alley and Wenshu Monastery are commonly referenced in the public guiding sources reviewed by LocalMate China. Pair them with one theme that matters to you: food, tea culture, architecture, photography, or contemporary city life.\n\n## When a local English guide helps most\n\nA guide is most useful when you want interpretation, not just transport. Before committing, ask about the exact meeting point, duration, route, language level, credentials where relevant, included costs, cancellation terms, and how payment is handled. LocalMate China does not process bookings; contact happens on the linked source platform.\n\n> Every guide profile on this site is compiled from public evidence and may be unclaimed. Verify identity and current service details directly before making arrangements.\n\n## Practical final check\n\nKeep venue addresses in Chinese, allow extra transfer time, and avoid building a day around too many distant districts. A good Chengdu introduction should leave you curious, not exhausted.",
+      "coverImageUrl": "/images/cover-first-48-hours-panda.jpg",
+      "category": "Trip planning",
+      "seoTitle": "Your First 48 Hours in Chengdu",
+      "seoDescription": "A calm, first-timer-friendly route through pandas, teahouses, old lanes, and the everyday rhythm that makes Chengdu memorable.",
+      "status": "published",
+      "isFeatured": 1,
+      "readingMinutes": 7,
+      "sortOrder": 0,
+      "publishedAt": "2026-07-13T17:00:00.000Z",
+      "guides": [
+        "huage-harry",
+        "april",
+        "yanny"
+      ]
+    },
+    {
+      "slug": "how-we-review-public-guide-profiles",
+      "title": "How LocalMate China Reviews Public Guide Profiles",
+      "excerpt": "Our evidence ladder, confidence language, correction process, and rules for keeping unclaimed profiles useful without overstating certainty.",
+      "bodyMarkdown": "## A directory, not a booking marketplace\n\nLocalMate China helps English-speaking travelers discover public evidence about potential local guides. We do not take payment, promise availability, or present unclaimed profiles as endorsements.\n\n## Our evidence ladder\n\nWe prefer a direct public post or profile that clearly connects a person with English-language guiding in Chengdu. Independent media coverage can strengthen a profile when it names the person and describes relevant experience. A platform search result without a confirmed profile is treated as a lead and labeled accordingly.\n\nWe do **not** copy private contact details, infer personal information, reproduce customer comments as testimonials, or invent ratings. Search snippets that cannot be reliably attributed are not presented as confirmed facts.\n\n## Confidence is expressed in words\n\nA profile may include strong, moderate, or limited public evidence. The source cards on each profile explain what was observed and when it was last reviewed. Evidence of past guiding does not prove current availability, licensing status, price, insurance, or service quality.\n\n## Corrections and removal\n\nThe person shown, an authorized representative, or a reader with evidence can use the Claim / Correct / Remove form. Requests are reviewed by an administrator. We may update wording, add evidence, mark a profile as claimed after verification, or remove the public listing.\n\n## What travelers should verify\n\nConfirm identity on the destination platform, ask for current credentials where relevant, agree on itinerary and fees in writing, and understand cancellation and payment arrangements. Never send sensitive identity documents through an unverified channel.",
+      "coverImageUrl": null,
+      "category": "Methodology",
+      "seoTitle": "How LocalMate China Reviews Public Guide Profiles",
+      "seoDescription": "Our evidence ladder, confidence language, correction process, and rules for keeping unclaimed profiles useful without overstating certainty.",
+      "status": "archived",
+      "isFeatured": 0,
+      "readingMinutes": 6,
+      "sortOrder": 0,
+      "publishedAt": "2026-07-13T17:00:00.000Z",
+      "guides": []
+    },
+    {
+      "slug": "tea-food-and-neighborhoods-chengdu",
+      "title": "Tea, Food, and Neighborhoods: Choosing a Chengdu Guide by Interest",
+      "excerpt": "Use interests—not generic popularity—to find a guide whose public work matches the kind of Chengdu day you actually want.",
+      "bodyMarkdown": "## Begin with the day you want\n\nInstead of searching for the “best” guide, define the experience you want help interpreting. A tea-focused morning, a food walk, a classic-sights introduction, and a western Sichuan extension require different knowledge and pacing.\n\n## Tea culture and everyday Chengdu\n\nIf you want parks, teahouses, and neighborhood conversation, look for public evidence that mentions those settings—not simply a broad “city tour” label. Ask whether the guide can explain etiquette, ordering, and the social role of tea without turning the visit into a scripted stop.\n\n## Food without assumptions\n\nTell a guide about allergies, dietary restrictions, and your comfort with spice before the day begins. Ask whether tasting costs are included and whether the route can adapt. Public content can suggest an interest in food, but only a direct conversation can confirm the actual itinerary.\n\n## Classic sights for a first visit\n\nFor pandas, Kuanzhai Alley, Wenshu Monastery, or Sichuan opera, use the source cards to see which topics have appeared in a guide's public work. This is evidence of a connection, not a quality score.\n\n## Longer routes\n\nJiuzhaigou and western Sichuan involve more planning than a city walk. Confirm transport, permits or venue requirements where applicable, overnight arrangements, weather contingencies, and who is responsible for each booking.\n\n> Match on evidence, then verify in conversation. LocalMate China records no star ratings and publishes no fabricated testimonials.",
+      "coverImageUrl": "/images/cover-tea-food-neighborhoods.jpg",
+      "category": "Guide matching",
+      "seoTitle": "Tea, Food, and Neighborhoods: Choosing a Chengdu Guide by Interest",
+      "seoDescription": "Use interests—not generic popularity—to find a guide whose public work matches the kind of Chengdu day you actually want.",
+      "status": "published",
+      "isFeatured": 0,
+      "readingMinutes": 5,
+      "sortOrder": 0,
+      "publishedAt": "2026-07-13T17:00:00.000Z",
+      "guides": [
+        "april",
+        "xu-yao",
+        "yanny"
+      ]
+    },
+    {
+      "slug": "after-sunset-fun-in-chengdu",
+      "title": "After sunset fun in Chengdu",
+      "excerpt": "An external interactive 3D map for exploring Chengdu after dark—bar-crawl, KTV, and dance routes through Jinjiang District.",
+      "bodyMarkdown": "## An interactive map for Chengdu nights\n\n[After Sunset in Chengdu](https://after-sunset.netlify.app) is an external interactive resource for planning an evening in the city. It presents Chengdu's night scene on a 3D map you can rotate, zoom, and explore venue by venue.\n\n## What you'll find there\n\n- **Bar crawl** — a curated six-stop classic cocktail route through Jinjiang District\n- **KTV** — karaoke venues for a group night out\n- **Dance** — clubs for later in the evening\n\nThe map includes practical touches such as ride suggestions between stops and a \"must try\" shortlist.\n\n## Before you go\n\nThis is an independent external resource; LocalMate China does not operate the venues or the map. As with any night out in an unfamiliar city, confirm opening hours and prices directly, keep venue addresses in Chinese for taxi rides, and arrange your return trip in advance.\n\n> Explore the map at [after-sunset.netlify.app](https://after-sunset.netlify.app).",
+      "coverImageUrl": "/images/cover-after-sunset-night.jpg",
+      "category": "Nightlife",
+      "seoTitle": "After sunset fun in Chengdu",
+      "seoDescription": "An external interactive 3D map for exploring Chengdu after dark—bar-crawl, KTV, and dance routes through Jinjiang District.",
+      "status": "published",
+      "isFeatured": 0,
+      "readingMinutes": 2,
+      "sortOrder": 100,
+      "publishedAt": "2026-07-18T05:08:57.000Z",
+      "guides": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-07-18. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-07-20. This file records the project state, decisions, and next steps so work can resume at any time._
 
 ## What this project is
 
@@ -9,6 +9,10 @@ _Last updated: 2026-07-18. This file records the project state, decisions, and n
 **Stack**: React 19 + Vite + Tailwind + shadcn (client) · Express + tRPC (server) · MySQL via Drizzle ORM · pnpm.
 
 ## Current state (all pushed to GitHub main)
+
+- 2026-07-20 repo cleanup: removed all Manus-era leftovers (planning docs, todo.md, template.json, unused server modules like llm/imageGeneration/storageProxy/notification, unused client components, __manus__ debug collector, manus vite plugins). Kept: docs/product-scope-and-editorial-standards.md (editorial governance), OAuth plumbing in sdk/oauth/main.tsx (inert but load-bearing for sessions).
+- Content is now snapshot-driven: `scripts/export-content.mjs` dumps the live DB into `scripts/seed-data.json` (committed), and `scripts/seed-content.mjs` seeds any DB from that JSON (idempotent, verified lossless round-trip). **After editing content in admin, run the export and commit seed-data.json** so deployments match.
+- Owner rebuilt content via admin: guides are now huage-harry (Harry), april, yanny, penny, susan (Chinese display names, photos in client/public/guide_profile/), old seed guides removed. 4 articles.
 
 - `fe83fb1` — Reconstructed the final content into `scripts/seed-content.mjs`. The original production content lived only in the Manus database (now inaccessible), so it was rebuilt from facts recorded in the repo's tests and todo.md:
   - "After sunset fun in Chengdu" journal post — external-resource article linking to https://after-sunset.netlify.app, sorted last (`sortOrder: 100`), original publish date 2026-07-18.
