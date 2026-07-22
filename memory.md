@@ -1,10 +1,10 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-07-20. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-07-22. This file records the project state, decisions, and next steps so work can resume at any time._
 
 ## 🌐 LIVE IN PRODUCTION (since 2026-07-21)
 
-- **Live URL:** https://localmate-j1yk.onrender.com  (Render free web service; the `-j1yk` suffix is just Render making the subdomain globally unique)
+- **Live URL:** https://localmate-chengdu.onrender.com  (Render free web service. Render fixes the onrender.com subdomain at creation — it can't be renamed; to change it you create a new service and delete the old one. An earlier `localmate-j1yk` service was replaced this way and should be deleted.)
 - **Host:** Render (app, auto-deploys on every push to GitHub `main`) + **TiDB Cloud Serverless** (MySQL-compatible database, free tier, always-on).
 - **Render env vars** (set in Render dashboard → Environment): `DATABASE_URL` (TiDB localmate DB), `DATABASE_SSL=true`, `JWT_SECRET`, `ADMIN_PASSWORD` (the owner changed it from the suggested value — the value lives only in Render), `VITE_APP_ID=localmate`, `OWNER_OPEN_ID=admin`. Build command: `pnpm install --prod=false && pnpm build`; start: `pnpm start`.
 - **TiDB connection** for local admin tasks (migrate/seed/export against production) is in the git-ignored `.env.production`. DB name is `localmate` (not the default `sys`).
@@ -50,10 +50,7 @@ GitHub pushes from this machine use the `dark-wdjd` account via the `gh` CLI (`g
 
 ## Remaining work (in priority order)
 
-1. **Publish publicly** — the original goal. Recommended: Railway (~$5/mo, Node app + MySQL together, deploys from GitHub). Required alongside hosting:
-   - ~~Replace the Manus OAuth admin login~~ **Done** — `/admin` now shows a password form; POST `/api/auth/admin-login` checks `ADMIN_PASSWORD` and issues the standard session cookie (`server/_core/oauth.ts`). Local password is in `.env`; set a strong `ADMIN_PASSWORD` in production.
-   - Set production env vars: `DATABASE_URL`, `JWT_SECRET` (strong random), `ADMIN_PASSWORD` (strong random), `VITE_APP_ID` (any string), `OWNER_OPEN_ID`, `NODE_ENV=production`. Build with `pnpm build`, run with `pnpm start`.
-   - Run migrations + seed against the production database.
+1. ~~**Publish publicly**~~ **DONE 2026-07-21** — live on Render + TiDB (see the LIVE IN PRODUCTION section at the top). Delete the old `localmate-j1yk` Render service if not already done.
 2. **Penny's Xiaohongshu profile URL** — never recorded in the repo; the owner must supply it, then add as her source (admin panel or seed).
 3. **Susan's avatar** — original lived on Manus storage; she currently shows initials. Optionally add a new image.
 4. Optional cleanup: `server/_core/storageProxy.ts` (Manus storage proxy) and related forge/LLM helpers are unused once fully off Manus.
