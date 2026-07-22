@@ -2,6 +2,15 @@
 
 _Last updated: 2026-07-20. This file records the project state, decisions, and next steps so work can resume at any time._
 
+## 🌐 LIVE IN PRODUCTION (since 2026-07-21)
+
+- **Live URL:** https://localmate-j1yk.onrender.com  (Render free web service; the `-j1yk` suffix is just Render making the subdomain globally unique)
+- **Host:** Render (app, auto-deploys on every push to GitHub `main`) + **TiDB Cloud Serverless** (MySQL-compatible database, free tier, always-on).
+- **Render env vars** (set in Render dashboard → Environment): `DATABASE_URL` (TiDB localmate DB), `DATABASE_SSL=true`, `JWT_SECRET`, `ADMIN_PASSWORD` (the owner changed it from the suggested value — the value lives only in Render), `VITE_APP_ID=localmate`, `OWNER_OPEN_ID=admin`. Build command: `pnpm install --prod=false && pnpm build`; start: `pnpm start`.
+- **TiDB connection** for local admin tasks (migrate/seed/export against production) is in the git-ignored `.env.production`. DB name is `localmate` (not the default `sys`).
+- **Free-tier note:** Render sleeps the app after ~15 min idle; first visit then takes ~40s to wake. Upgrade path (no rework): Render paid instance or move to Railway.
+- **Updating the live site:** code changes → push to `main`, Render redeploys automatically. Content changes → edit on the live `/admin` (writes straight to TiDB, persists immediately); no git needed. To refresh the repo's `scripts/seed-data.json` backup from production, run `export-content.mjs` with `.env.production`.
+
 ## What this project is
 
 **LocalMate China** — an English-language Chengdu travel content site plus a curated directory of English-speaking local guides compiled from public Xiaohongshu/Douyin evidence. No in-site payments; visitors are directed to the guide's own public channels. Originally built with Manus; repo: https://github.com/dark-wdjd/Locale_Mate
