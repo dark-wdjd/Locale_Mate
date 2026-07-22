@@ -4,8 +4,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import mysql from "mysql2/promise";
+import { dbConnectionConfig } from "./db-config.mjs";
 
-const connection = await mysql.createConnection(process.env.DATABASE_URL);
+const connection = await mysql.createConnection(dbConnectionConfig());
 
 const [tags] = await connection.execute("SELECT slug, name, category, description FROM tags ORDER BY id");
 

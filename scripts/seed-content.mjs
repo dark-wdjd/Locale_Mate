@@ -4,12 +4,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import mysql from "mysql2/promise";
+import { dbConnectionConfig } from "./db-config.mjs";
 
 const { tags, guides, articles } = JSON.parse(
   fs.readFileSync(path.join(import.meta.dirname, "seed-data.json"), "utf-8"),
 );
 
-const connection = await mysql.createConnection(process.env.DATABASE_URL);
+const connection = await mysql.createConnection(dbConnectionConfig());
 const toDate = value => (value ? new Date(value) : null);
 
 for (const tag of tags) {
