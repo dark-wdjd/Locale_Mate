@@ -10,6 +10,7 @@ import {
   or,
 } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
+import mysql from "mysql2";
 import {
   blogGuideLinks,
   blogPosts,
@@ -32,10 +33,30 @@ import { ENV } from "./_core/env";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 
+// Managed MySQL hosts (e.g. TiDB Cloud) require TLS; local dev does not.
+// Enable TLS for any non-local host, overridable with DATABASE_SSL=true|false.
+function shouldUseSsl(url: string): boolean {
+  if (process.env.DATABASE_SSL === "true") return true;
+  if (process.env.DATABASE_SSL === "false") return false;
+  let hostname = "";
+  try {
+    hostname = new URL(url).hostname;
+  } catch {
+    hostname = "";
+  }
+  return !["localhost", "127.0.0.1", "::1", ""].includes(hostname);
+}
+
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      _db = drizzle(process.env.DATABASE_URL);
+      const pool = mysql.createPool({
+        uri: process.env.DATABASE_URL,
+        ssl: shouldUseSsl(process.env.DATABASE_URL)
+          ? { minVersion: "TLSv1.2", rejectUnauthorized: true }
+          : undefined,
+      });
+      _db = drizzle(pool);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
