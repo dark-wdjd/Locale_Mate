@@ -290,6 +290,65 @@
           "verifiedAt": "2026-07-19T23:29:55.000Z"
         }
       ]
+    },
+    {
+      "slug": "maya",
+      "displayName": "Maya Chengdu Tourguide",
+      "shortBio": "A Chengdu-based English guide with an overseas study background, offering private and small-group tours across Chengdu and western Sichuan.",
+      "longBio": "Maya's public Xiaohongshu presence describes her as a Chengdu-based English tour guide with an overseas study background, covering the city's core sights (Panda Base, Kuanzhai Alley, Qingcheng Mountain, Dujiangyan) as well as Leshan, Mount Emei, and trips to Chongqing and Xi'an. Recent tour diaries document guiding a Swiss family of four to Taoping Qiang Village and Ganzang Tibetan Village in western Sichuan, and a private cultural day tour for a German client through Qingyang Palace, Wenshu Monastery, and a seal-carving craft workshop. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Maya.png",
+      "lastVerifiedAt": "2026-08-23T12:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/6150022f000000000201cdae?xsec_token=ABml5Em5TJS6Q0m9RI9HkZZQu9ZWWJ_97P58zfbNf2KSA=&xsec_source=pc_search",
+          "publicTitle": "Maya Chengdu Tourguide — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: 'English tour guide🌍 / 成都英文导游 / accepts tours nationwide, personally leads tours in Chengdu, Xi'an, and Chongqing.' 252 followers; posts active within the last week.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T12:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a4e1c82000000001c026d72?xsec_token=ABQCkvW63pUe52EkYx8DDRWu_cdEmVIlLR6-Yh0Cj4-ZE=&xsec_source=pc_search",
+          "publicTitle": "🇨🇳 关于我｜About Me",
+          "evidenceSummary": "Self-authored bilingual introduction: Chengdu-based English tour guide with overseas study background, fluent English; covers Panda Base, Kuanzhai Alley, Qingcheng Mountain, Dujiangyan, Leshan, and Mount Emei, plus trips to Chongqing and Xi'an; handles both large (20+) groups and private small-group tours. A public comment beneath the post from a past traveler describes a positive guiding experience with Maya.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T12:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a831d35000000000503174c?xsec_token=ABW7g2sQAwp1skatDPSqrKUQpGljoy5AVJ1n8-pgegTJQ=&xsec_source=pc_search",
+          "publicTitle": "今日带团·瑞士一家四口的藏羌秘境一日",
+          "evidenceSummary": "Bilingual (Chinese and English) tour diary describing a full day guiding a Swiss family of four from Chengdu to Taoping Qiang Village and Ganzang Tibetan Village in western Sichuan. Tagged #chengdutour #tourguide #daytour.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T12:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a8021c800000000050315b4?xsec_token=AB4gmxbT18-TkMRyZBz7ObSHT68EFzo_hIiG_MpKT35zY=&xsec_source=pc_search",
+          "publicTitle": "带团日记｜德国客人文化一日游 Tour diary",
+          "evidenceSummary": "Tour diary describing a private cultural day tour for a German business client: Qingyang Palace, Wenshu Monastery, old-street food culture, and a seal-carving craft experience. Tagged #英语导游 #privatetrip.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T12:00:00.000Z"
+        }
+      ]
     }
   ],
   "articles": [
