@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-# Submit the published-domain sitemap here when a stable custom domain is connected.
+Sitemap: https://localmate-chengdu.onrender.com/sitemap.xml
+# Update the line above if a stable custom domain is connected.

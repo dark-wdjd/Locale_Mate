@@ -112,6 +112,21 @@ function usePageMeta(title: string, description: string, image = HERO_IMAGE, typ
   }, [description, image, title, type]);
 }
 
+function useStructuredData(data: object | null) {
+  useEffect(() => {
+    const existing = document.getElementById("ld-json");
+    if (!data) {
+      existing?.remove();
+      return;
+    }
+    const script = existing instanceof HTMLScriptElement ? existing : document.createElement("script");
+    script.id = "ld-json";
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(data);
+    if (!existing) document.head.appendChild(script);
+  }, [data]);
+}
+
 function SectionLabel({ children }: { children: ReactNode }) {
   return <p className="section-label">{children}</p>;
 }
@@ -239,6 +254,7 @@ function ContentFallbackNote({ className }: { className?: string }) {
 export function HomePage() {
   const { t } = useLanguage();
   usePageMeta(t("home.metaTitle"), t("home.metaDescription"));
+  useStructuredData({ "@context": "https://schema.org", "@type": "Organization", name: "LocalMate China", url: window.location.origin });
   const featured = trpc.guides.list.useQuery({ featuredOnly: true, limit: 4, offset: 0 });
   const articles = trpc.blog.list.useQuery({ featuredOnly: true });
 
@@ -328,6 +344,7 @@ export function HomePage() {
 export function GuidesDirectoryPage() {
   const { language, t } = useLanguage();
   usePageMeta(t("directory.metaTitle"), t("directory.metaDescription"));
+  useStructuredData(null);
   const params = new URLSearchParams(window.location.search);
   const [search, setSearch] = useState("");
   const [tag, setTag] = useState(params.get("tag") ?? "");
@@ -404,6 +421,21 @@ export function GuideDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const guide = trpc.guides.getBySlug.useQuery({ slug: slug ?? "" }, { enabled: Boolean(slug) });
   usePageMeta(guide.data?.displayName ?? t("guide.metaFallbackTitle"), guide.data?.shortBio ?? t("guide.metaFallbackDescription"));
+  useStructuredData(
+    guide.data
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: guide.data.displayName,
+          description: guide.data.shortBio,
+          ...(guide.data.avatarUrl ? { image: new URL(guide.data.avatarUrl, window.location.origin).href } : {}),
+          url: new URL(`/guides/${guide.data.slug}`, window.location.origin).href,
+          jobTitle: "Tour Guide",
+          address: { "@type": "PostalAddress", addressLocality: guide.data.city },
+          knowsLanguage: guide.data.languages.split(",").map(part => part.trim()),
+        }
+      : null,
+  );
 
   if (guide.isLoading) return <PublicShell><div className="container py-20"><Skeleton className="h-[35rem] rounded-[2rem]" /></div></PublicShell>;
   if (guide.error || !guide.data) return <PublicShell><div className="container py-20"><ErrorPanel message={guide.error?.message ?? t("guide.notFound")} /></div></PublicShell>;
@@ -437,6 +469,7 @@ export function GuideDetailPage() {
 export function BlogIndexPage() {
   const { t } = useLanguage();
   usePageMeta(t("blog.metaTitle"), t("blog.metaDescription"));
+  useStructuredData(null);
   const posts = trpc.blog.list.useQuery({});
   return <PublicShell><section className="border-b border-border bg-[#f5eddf] py-14 sm:py-20"><div className="container"><SectionLabel>{t("blog.label")}</SectionLabel><h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{t("blog.title")}</h1><p className="mt-6 max-w-2xl text-base leading-8 text-[#4f5b53]">{t("blog.intro")}</p></div></section><section className="container py-12 sm:py-16"><ContentFallbackNote className="mb-6" />{posts.isLoading ? <div className="grid gap-6"><Skeleton className="h-96 rounded-[2rem]" /><Skeleton className="h-72 rounded-[2rem]" /></div> : posts.error ? <ErrorPanel message={posts.error.message} /> : <div className="grid gap-6">{posts.data?.map((article, index) => <ArticleCard key={article.id} article={article as ArticleSummary} featured={index === 0} />)}</div>}</section></PublicShell>;
 }
@@ -448,6 +481,20 @@ export function BlogArticlePage() {
   const recordEvent = trpc.operations.recordContentEvent.useMutation();
   const recordedPostId = useRef<number | null>(null);
   usePageMeta(post.data?.seoTitle ?? post.data?.title ?? t("blog.articleFallback"), post.data?.seoDescription ?? post.data?.excerpt ?? t("blog.articleDescriptionFallback"), post.data?.coverImageUrl ?? HERO_IMAGE, "article");
+  useStructuredData(
+    post.data
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.data.title,
+          description: post.data.excerpt,
+          ...(post.data.coverImageUrl ? { image: new URL(post.data.coverImageUrl, window.location.origin).href } : {}),
+          ...(post.data.publishedAt ? { datePublished: new Date(post.data.publishedAt).toISOString() } : {}),
+          dateModified: new Date(post.data.updatedAt).toISOString(),
+          author: { "@type": "Organization", name: "LocalMate China" },
+        }
+      : null,
+  );
 
   useEffect(() => {
     if (!post.data || recordedPostId.current === post.data.id) return;
@@ -467,6 +514,7 @@ export function BlogArticlePage() {
 export function AboutPage() {
   const { t } = useLanguage();
   usePageMeta(t("about.metaTitle"), t("about.metaDescription"));
+  useStructuredData(null);
   const steps = [["01", t("about.step1.title"), t("about.step1.copy")], ["02", t("about.step2.title"), t("about.step2.copy")], ["03", t("about.step3.title"), t("about.step3.copy")], ["04", t("about.step4.title"), t("about.step4.copy")]];
   return <PublicShell><section className="border-b border-border bg-[#f5eddf] py-14 sm:py-20"><div className="container grid gap-10 lg:grid-cols-[1fr_.7fr] lg:items-end"><div><SectionLabel>{t("about.label")}</SectionLabel><h1 className="mt-5 max-w-4xl font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-7xl">{t("about.title")}</h1></div><p className="text-base leading-8 text-[#4f5b53]">{t("about.intro")}</p></div></section><section className="container py-14 sm:py-20"><div className="grid gap-5 md:grid-cols-2">{steps.map(([number, title, copy]) => <article key={number} className="rounded-[1.75rem] border border-border bg-card p-6 sm:p-8"><span className="font-serif text-4xl font-semibold text-primary/35">{number}</span><h2 className="mt-8 font-serif text-2xl font-semibold">{title}</h2><p className="mt-3 text-sm leading-7 text-muted-foreground">{copy}</p></article>)}</div><div className="mt-16 grid gap-10 lg:grid-cols-[.7fr_1.3fr]"><div><SectionLabel>{t("about.rulesLabel")}</SectionLabel><h2 className="mt-4 font-serif text-4xl font-semibold tracking-[-0.04em]">{t("about.rulesTitle")}</h2></div><div className="grid gap-4">{[[t("about.publish.title"), t("about.publish.copy")], [t("about.notPublish.title"), t("about.notPublish.copy")], [t("about.verify.title"), t("about.verify.copy")], [t("about.optOut.title"), t("about.optOut.copy")]].map(([title, copy]) => <div key={title} className="flex gap-4 rounded-[1.25rem] bg-muted/60 p-5"><ShieldCheck className="mt-0.5 size-5 shrink-0 text-primary" /><div><h3 className="font-semibold">{title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{copy}</p></div></div>)}</div></div><div className="mt-16 rounded-[2rem] bg-[#17382f] p-7 text-[#f7f0df] sm:p-10"><div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#efb055]">{t("about.accuracyLabel")}</p><h2 className="mt-3 font-serif text-3xl font-semibold">{t("about.correctionTitle")}</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">{t("about.correctionCopy")}</p></div><Button asChild className="rounded-full bg-[#f7f0df] text-[#17382f] hover:bg-white"><Link href="/claim">{t("about.openForm")} <ArrowRight className="size-4" /></Link></Button></div></div><p className="mt-10 text-xs leading-6 text-muted-foreground">Photography via Wikimedia Commons: <a className="underline" href="https://commons.wikimedia.org/wiki/File:Anshun_Bridge_Jin_River_Chengdu_night_2026_dllu.jpg" target="_blank" rel="noreferrer">Anshun Bridge dusk panorama</a> by Daniel Lu (CC BY-SA 4.0) · <a className="underline" href="https://commons.wikimedia.org/wiki/File:Panda_eating_bamboo_in_Panda_Base.jpg" target="_blank" rel="noreferrer">Giant panda at the Chengdu Panda Base</a> by MspreilsCN (CC BY 4.0) · <a className="underline" href="https://commons.wikimedia.org/wiki/File:China_-_Chengdu_4_-_green_tea_in_the_park_(135953545).jpg" target="_blank" rel="noreferrer">Green tea in a Chengdu park</a> by McKay Savage (CC BY 2.0) · <a className="underline" href="https://commons.wikimedia.org/wiki/File:%E5%AE%89%E9%A1%BA%E5%BB%8A%E6%A1%A5%E5%A4%9C%E6%99%AF.jpg" target="_blank" rel="noreferrer">Anshun Bridge night view</a> by Prcmise (CC BY-SA 4.0).</p></section></PublicShell>;
 }
@@ -474,6 +522,7 @@ export function AboutPage() {
 export function ClaimPage() {
   const { t } = useLanguage();
   usePageMeta(t("claim.metaTitle"), t("claim.metaDescription"));
+  useStructuredData(null);
   const searchParams = new URLSearchParams(window.location.search);
   const guides = trpc.guides.list.useQuery({ limit: 100, offset: 0 });
   const submit = trpc.operations.submit.useMutation();
