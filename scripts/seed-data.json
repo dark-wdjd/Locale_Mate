@@ -572,6 +572,250 @@
           "verifiedAt": "2026-08-23T18:00:00.000Z"
         }
       ]
+    },
+    {
+      "slug": "nick",
+      "displayName": "都江堰导游尼克Nick",
+      "shortBio": "A bilingual guide based in Dujiangyan, focused entirely on English-language tours of the UNESCO water-engineering site.",
+      "longBio": "Nick's public Xiaohongshu profile describes him as a bilingual guide based in Dujiangyan (都江堰双语讲解). His posts document English-narrated tours of the site's key structures — Baopingkou, Feishayan, and Yuzui — for visitors from Spain and Canada, alongside practical updates on park closures, ticket promotions, and seasonal conditions. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": "/guide_profile/Nick.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/67c5a867000000000a03d007?xsec_token=ABGLGo671z5fIfi606W92mQK6WEiS8306_AK8luwROIYs=&xsec_source=pc_search",
+          "publicTitle": "都江堰导游尼克Nick — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: 'Bilingual guide based in Dujiangyan' (都江堰双语讲解). 61 followers; posts document English-narrated tours of Dujiangyan's key structures for Spanish and Canadian visitors, plus practical park updates.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a64933900000000050397c8?xsec_token=ABb3ebKK7k2apGSyEkOgsw-9HCHrWzK068lo1d_QtyxQY=&xsec_source=pc_search",
+          "publicTitle": "都江堰｜和外国友人读懂千年治水智慧",
+          "evidenceSummary": "Guided walk with a Spanish friend and companions through Lidui Park, covering Baopingkou, Feishayan, and Yuzui — the three core structures of the 2,000-year-old irrigation system. Posted 07-25.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "lin",
+      "displayName": "英语导游🐼Lin",
+      "shortBio": "A prolific English tour guide covering Chengdu, western Sichuan, Jiuzhaigou, and beyond, with hundreds of documented tour days.",
+      "longBio": "Lin's public Xiaohongshu presence (385 notes) documents an extremely active English-guiding practice, with day-by-day tour diaries covering Chengdu (Panda Base, Dujiangyan, Qingcheng Mountain, Sanxingdui), multi-day western-Sichuan routes through Ganzi and Aba, Jiuzhaigou and Huanglong, Emei Mountain, and Chongqing, for visitors including Russian, Mexican, British, Indian, and Romanian groups. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Lin.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5abfa38ee8ac2b2fb974f774?xsec_token=ABCT0l4ELS28mFI8qZgJyQ0Un8jA4J6bzK_fq0fX1BVrE=&xsec_source=pc_search",
+          "publicTitle": "英语导游🐼Lin — Xiaohongshu profile",
+          "evidenceSummary": "701 followers, 385 notes, almost entirely day-by-day English-guiding tour diaries ('英语导游之...') covering Chengdu, Dujiangyan, Qingcheng Mountain, Sanxingdui, Jiuzhaigou, Huanglong, Emei Mountain, and multi-day western-Sichuan routes, for groups from Russia, Mexico, the UK, India, and Romania.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a883d750000000038003bc5?xsec_token=ABjF_ICJanrGRLEaGfOe6ZZbKYTK1XkmQV9RYWq9Uuohc=&xsec_source=pc_search",
+          "publicTitle": "英语导游之浪川西-D5",
+          "evidenceSummary": "Day-5 diary of a multi-day western-Sichuan tour: from Rangbala to Ganzi County via Luhuo, visiting a major Tibetan monastery complex and Gesar King City. Posted 2 days before review.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "lynne",
+      "displayName": "WonderfulLynne",
+      "shortBio": "A private English-speaking tour guide in Chengdu whose entirely English-language profile promotes custom itineraries, transfers, and local experiences.",
+      "longBio": "WonderfulLynne's Xiaohongshu profile is written entirely in English: 'Your local friend in Chengdu. Let me be your private guide, show you the real Chengdu.' Posts advertise custom private tour itineraries, airport/hotel transfers, and local experiences including Sichuan opera costume try-on, panda visits, mahjong, and Chengdu nightlife, documenting groups from the US, Spain, and Slovenia. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Lynne.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "sichuan-opera"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/641d484c00000000110206f0?xsec_token=ABaaz0f8KZRio3XSVIAiWd9nDVIcXxA4TO4hiJXWwohJw=&xsec_source=pc_search",
+          "publicTitle": "WonderfulLynne — Xiaohongshu profile",
+          "evidenceSummary": "Entirely English-language bio: 'Your local friend in Chengdu... private guide... real Chengdu.' 64 followers; posts advertise custom private tours, transfers, Sichuan opera costume try-on, panda visits, and mahjong, documenting US, Spanish, and Slovenian visitors.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a65de37000000000100cd7f?xsec_token=ABmbqA3lI2soxWC3KUbn71xMCNEDxLrZOFI0mUhMOGD5E=&xsec_source=pc_search",
+          "publicTitle": "US 🇺🇸friends love Chengdu",
+          "evidenceSummary": "English-language post introducing herself as 'your local private tour guide based in Chengdu,' listing custom itineraries, airport/hotel transfers, and transparent pricing, tagged #Chengdu #TourGuide #成都英语地接. Posted 07-26.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "holly",
+      "displayName": "Holly the guide",
+      "shortBio": "An English tour guide based in Chengdu and former seafarer, running a dedicated 'Explore China with Holly' series covering Chengdu, Leshan, Zigong, and western Sichuan.",
+      "longBio": "Holly's public Xiaohongshu profile describes her as an English tour guide based in Chengdu and a former seafarer/working-holiday traveler. A dedicated 'Explore China with Holly' post series and recurring 'English tour guide daily report' posts document guided days in Chengdu, Leshan, and Zigong, plus a 3-day Jiuzhaigou–Huanglong itinerary starting from the Chengdu Panda Base. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Holly.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5936b73182ec395031c90f96?xsec_token=ABB72OabHGDOI_1SPv8Z6zIpLfQO04s2TCkW-0XCw5Xic=&xsec_source=pc_search",
+          "publicTitle": "Holly the guide — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: 'English tour guide! Former seafarer and WHVer.' 920 followers; a dedicated 'Explore China with Holly' series and recurring 'English tour guide daily report' posts cover Chengdu, Leshan, and Zigong.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a896583000000002a02cb81?xsec_token=ABUO5LONwUTg_cUvkLggzdN0ajQTLNzYVKcrtQa2EDfy4=&xsec_source=pc_search",
+          "publicTitle": "3-Day Sichuan Excursion九寨黄龙3日游",
+          "evidenceSummary": "English-language 3-day private-tour itinerary: Day 1 Chengdu Panda Base, Day 2 Jiuzhai Valley, Day 3 Huanglong, noting bullet-train or private-vehicle options, tagged #chinatravel #英文导游. Posted the day before review.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "tangchaoer",
+      "displayName": "唐朝儿in Chengdu",
+      "shortBio": "A highly active Chengdu English tour guide and travel blogger, documenting guided days for visitors from over a dozen countries.",
+      "longBio": "唐朝儿's public Xiaohongshu profile self-describes as '成都英语导游' (Chengdu English tour guide). Her extensive post history documents guided days for visitors from Canada, the US, Italy, Israel, the Philippines, Australia, Singapore, Vietnam, and Sri Lanka, covering the Panda Base, Qingcheng Mountain, Leshan Giant Buddha, Du Fu Thatched Cottage, and Sichuan opera costume try-on. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Tangchaoer.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "sichuan-opera",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5e4d2d810000000001004d0c?xsec_token=ABR2xZC-rd00WkIUNwVBgfBj3ZnrMnOTnfleulrQa7m1o=&xsec_source=pc_search",
+          "publicTitle": "唐朝儿in Chengdu — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '成都英语导游' (Chengdu English tour guide). 823 followers, 26,000+ likes/favorites; extensive post history documents guided days for Canadian, US, Italian, Israeli, Filipino, Australian, Singaporean, Vietnamese, and Sri Lankan visitors, plus Panda Base, Qingcheng Mountain, Leshan Buddha, and Sichuan opera costume content.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/66d46d7c000000001d015b8a?xsec_token=ABaeUFZOi5q1IpFt634zecIf2-qwXeoeb2M2vH5zIZwUE=&xsec_source=pc_search",
+          "publicTitle": "成都英文导游，这里可～",
+          "evidenceSummary": "Pinned English-language self-introduction video: 'What makes a good tour guide? I think is passion!... If you are looking for a tour guide in Chengdu, don't look any further, find me!' 118 likes, 70 comments including genuine visitor inquiries. Originally posted 2024-09-01; the account has remained continuously active since.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "chengdu-susan",
+      "displayName": "成都英文导游Susan",
+      "shortBio": "A Chengdu-based English tour guide citing 10 years of experience guiding foreign groups, with a UN/diplomatic-badge photo among her public content.",
+      "longBio": "This Susan's public Xiaohongshu profile states '10 year experience guiding the foreign groups in Chengdu' and '致力于向国际游客介绍中国文化' (dedicated to introducing Chinese culture to international visitors). Posts document a teahouse concert, Du Fu Thatched Cottage, the Leshan Giant Buddha, a Portuguese couple's high-speed rail experience, and zongzi-making for Dragon Boat Festival, alongside a note about approval from clients and partner agencies after a busy business-travel season. Note: this is a distinct Xiaohongshu account from the 'Susan' profile already listed on this site — the account IDs and photos differ despite similar bios. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": "/guide_profile/SusanV.png",
+      "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "private-tour",
+        "tea-culture"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/63bec20b00000000260079a7?xsec_token=ABzJirTFpczAptnJlvzsrtXFqt3JavmNuUNFtme2cpmn4=&xsec_source=pc_search",
+          "publicTitle": "成都英文导游Susan — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '10 year experience guiding the foreign groups in Chengdu' / '10年资深英文导游'. 148 followers; posts cover a teahouse concert, Du Fu Thatched Cottage, the Leshan Giant Buddha, and a Portuguese couple's high-speed rail experience.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a7c21620000000022030c90?xsec_token=ABf842JSEIVal_nv6yLh4QtI0RjbvCjrGsFB6bqfFjssk=&xsec_source=pc_search",
+          "publicTitle": "成都英语导游：来自客人的认可与肯定",
+          "evidenceSummary": "Post describing a busy August of business-travel guiding, with a screenshotted client message thanking her for professional service and hoping to work together again. Posted 08-12, tagged #成都英语导游 #接待外国客户.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T20:00:00.000Z"
+        }
+      ]
     }
   ],
   "articles": [
