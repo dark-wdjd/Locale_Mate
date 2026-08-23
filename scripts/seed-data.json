@@ -331,6 +331,247 @@
           "verifiedAt": "2026-08-23T12:00:00.000Z"
         }
       ]
+    },
+    {
+      "slug": "betty",
+      "displayName": "Betty",
+      "shortBio": "A TESOL-certified English guide and licensed bilingual docent at the Chengdu Panda Base, also working as an accompanying interpreter.",
+      "longBio": "Betty's public Xiaohongshu profile lists TESOL certification, an English teaching qualification, an English tour guide license, and certification as a bilingual docent at the Chengdu Giant Panda Breeding Base, plus experience as an accompanying interpreter and exam proctor. Her posts include an English-guiding day at Panda Valley and Dujiangyan. A self-authored video shares career advice for university students entering English guiding, citing certification, fluent spoken English, and building an online presence as the keys to breaking in. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Betty.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/671ba6ba000000001d0203a9?xsec_token=ABk-F7s1xp5-fBEaiQKs4nVG4L4klz4SwLWnteX5-xfuU=&xsec_source=pc_search",
+          "publicTitle": "Betty — Xiaohongshu profile",
+          "evidenceSummary": "Public bio lists TESOL certification, an English teaching qualification (英语教资), an English tour guide license (英语导游证), certification as a bilingual docent at the Chengdu Giant Panda Breeding Base, and experience as an accompanying interpreter and exam proctor. 184 followers. Posts include an English-guiding day combining Panda Valley and Dujiangyan (western Sichuan).",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a88ff990000000028000c37?xsec_token=ABjF_ICJanrGRLEaGfOe6ZZSmREQibBUemqDq617WT9gI=&xsec_source=pc_search",
+          "publicTitle": "英语老师&涉外导游 给大学生们的小分享",
+          "evidenceSummary": "Self-authored video sharing career advice for university students entering English guiding: get certified, build fluent spoken English, and use the internet to find opportunities. Posted one day before review.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "xiao-o",
+      "displayName": "熊猫基地双语讲解小O",
+      "shortBio": "A licensed English tour guide specializing in bilingual commentary at the Chengdu Panda Base.",
+      "longBio": "Xiao O's public Xiaohongshu presence describes her as a licensed English tour guide who leads bilingual (Chinese/English) commentary tours at the Chengdu Panda Base, with near-daily posts documenting groups from Spain, Germany, France, the UK, the US, Canada, Australia, and Singapore, as well as VIP small-group entry. A demo video shows her narrating in English during a conversation with a Spanish visitor. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/XiaoO.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "english",
+        "pandas",
+        "private-tour"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/64b2834d000000001403b6d2?xsec_token=ABFP-fPVnArV1CHMWjTErcurIoBIhhj2Yx39oBI_sEzpY=&xsec_source=pc_search",
+          "publicTitle": "熊猫基地双语讲解小O — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: licensed English tour guide (持证英语导游) leading Chinese-English commentary tours at the Chengdu Panda Base, including VIP small-group entry. 1,218 followers; frequent posts document tours for visitors from Spain, Germany, France, the UK, the US, Canada, Australia, and Singapore.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/69394f73000000000d03b6a6?xsec_token=ABradhaO7LJfvJBLDH10V491KAkZQhR7Zag5IEiOVN6e4=&xsec_source=pc_search",
+          "publicTitle": "熊猫基地英文讲解试听",
+          "evidenceSummary": "Pinned demo video narrating in English during a conversation with a Spanish ('西班牙') visitor at the Panda Base, tagged #chinatravel #大熊猫 #成都大熊猫繁育研究基地 #英语 #讲解.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "xiaoyu",
+      "displayName": "小鱼🐟带外国人看中国的日常",
+      "shortBio": "A post-90s inbound-tourism agency owner and licensed English tour guide, running the CanvasTrip 春秋之旅 brand.",
+      "longBio": "Xiaoyu's public Xiaohongshu profile describes her as a post-90s inbound-tourism agency owner and licensed English tour guide (持证英语导游), running the CanvasTrip 春秋之旅 brand, with a University of New South Wales background. Her posts document guided days for visitors from Austria, Switzerland, Italy, the UK, the Netherlands, and the US, including a pinned narration explaining Dujiangyan's engineering and Chengdu's Silk Road/Tea-Horse Road commercial history — including the origin of jiaozi, the world's first paper currency — to a foreign family. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/Xiaoyu.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/63903cc1000000001f018eeb?xsec_token=ABmCdIHvd6ow9Ohi7NBDhicKQB9kY0_0iPds9Ap2eittQ=&xsec_source=pc_search",
+          "publicTitle": "小鱼🐟带外国人看中国的日常 — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: post-90s inbound-tourism agency owner and licensed English tour guide (持证英语导游), runs the CanvasTrip 春秋之旅 brand; University of New South Wales background. 776 followers; posts document guided days for visitors from Austria, Switzerland, Italy, the UK, the Netherlands, and the US, including western-Sichuan village trips.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a1aa59a00000000370376f4?xsec_token=ABbuEKc6OVco7rDGYvgsIbytlZWkv0LL9kqvBXTCmGwmo=&xsec_source=pc_search",
+          "publicTitle": "在都江堰给老外解说成都的千年商业崛起",
+          "evidenceSummary": "Pinned English/Chinese narration explaining Dujiangyan's irrigation engineering and Chengdu's Silk Road/Tea-Horse Road commercial rise — including the origin of jiaozi, the world's first paper currency — to a foreign family. 84 likes.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "mala-big-bro",
+      "displayName": "麻辣大师兄",
+      "shortBio": "A Sichuan University graduate running an experiential inbound-tourism business for foreign visitors in Chengdu, ranked #1 of 359 Chengdu tours on TripAdvisor.",
+      "longBio": "Mala Big Bro's public Xiaohongshu profile describes a post-90s experiential inbound-tourism business (Chilli Cool, founded 2017) offering cooking classes, hotpot, dumpling-making, mahjong, and Tai Chi experiences for foreign visitors, with a Sichuan University master's background in International Chinese Education. A pinned post documents the business reaching #1 of 359 Tours in Chengdu on TripAdvisor with 861 reviews, after earlier ranking #1 in Chengdu's food-experience category. Other posts include English-language commentary content such as an English-narrated Tai Chi class script. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": "/guide_profile/MalaBro.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "private-tour"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5ce569450000000005019d1d?xsec_token=AB_rUNm77ZCxOcNt5f3bKrqykL1xa7ysP5LJ_ilyG_BgQ=&xsec_source=pc_search",
+          "publicTitle": "麻辣大师兄 — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: post-90s founder of an experiential inbound-tourism business, Sichuan University master's in International Chinese Education. 8,507 followers; posts document cooking classes, hotpot, dumpling-making, mahjong, and Tai Chi experiences for foreign visitors, including English-language commentary content.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a1640f40000000007023561?xsec_token=ABRKEja7edFnw8aVZYNBO5dLDlIDcpdefu9T2oiowjPYU=&xsec_source=pc_search",
+          "publicTitle": "我的入境游产品排名第一了❗️",
+          "evidenceSummary": "Pinned post documenting the guide's tour business (Chilli Cool, est. 2017) reaching #1 of 359 Tours in Chengdu on TripAdvisor with 861 reviews, after earlier ranking #1 in Chengdu's food-experience category with 400+ reviews; now also operating in Xi'an, Chongqing, Guangzhou, and Shanghai.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "kacha-kacha",
+      "displayName": "咔嚓咔嚓",
+      "shortBio": "An English tour guide based in Chengdu, also a contracted photographer for Visual China Group (VCG).",
+      "longBio": "Kacha Kacha's public Xiaohongshu profile describes her as an English tour guide based in Chengdu (英语导游 base成都) and a contracted photographer for Visual China Group / Tuchong. Posts document guided days for foreign visitors covering food tours, the Panda Valley and Dujiangyan, and a Mengding Mountain tea-picking experience, alongside an English-narrated video on Sichuan dining etiquette filmed with a foreign visitor. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 1,
+      "avatarUrl": "/guide_profile/KachaKacha.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "tea-culture",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/58b287455e87e74fab57fb61?xsec_token=ABOlK_UgBOewDnEOVCRFkImznL3ZJd7UjO7Fj_Qy2UisM=&xsec_source=pc_search",
+          "publicTitle": "咔嚓咔嚓 — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: English tour guide based in Chengdu (英语导游 base成都), also a contracted Visual China Group/Tuchong photographer. 218 followers; posts include 'The day in Panda Valley and Dujiangyan' and a Mengding Mountain tea-picking experience.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a8afb8f0000000018019e88?xsec_token=AB7hz3-8V4ObVahN2PmHjINVSndjnseAkcfQkkV3Jfvak=&xsec_source=pc_search",
+          "publicTitle": "成都英语导游 教老外怎么吃蛋炒饭 / How to properly eat Sichuan fried rice",
+          "evidenceSummary": "English-narrated video filmed with a foreign visitor demonstrating Sichuan dining etiquette, tagged #chinatravel #food #成都英语导游. Posted same day as review.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "slug": "tina",
+      "displayName": "跟Tina一起快乐出发",
+      "shortBio": "A Chengdu-based English tour guide whose posts document guided days for international visitors and detailed western-Sichuan trip planning.",
+      "longBio": "Tina's public Xiaohongshu profile self-describes as a 'Chengdu English tour guide.' Posts document guided days for visitors from Mexico, Spain, Italy, and the Netherlands, a Panda Base volunteering day, and detailed western-Sichuan planning guides covering Daocheng Yading and the wider Ganzi/Aba region. One post recounts hosting a Mexican mother and two daughters, including a birthday cake surprise and a visit to the Leshan Giant Buddha. This profile is editorially compiled from public sources and has not been claimed. Ask the guide directly about current availability, credentials, pricing, insurance, and exact service scope before making plans.",
+      "city": "Chengdu",
+      "languages": "English, Mandarin",
+      "status": "unclaimed",
+      "isClaimed": 0,
+      "isFeatured": 0,
+      "isEditorsPick": 0,
+      "avatarUrl": "/guide_profile/Tina.png",
+      "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
+      "tags": [
+        "city-classics",
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
+      ],
+      "sources": [
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "profile",
+          "url": "https://www.xiaohongshu.com/user/profile/5c1b578100000000060395ed?xsec_token=ABDgnBGtO8FUOIcIqPitxWttjGLlJY9rn1WVMX4b2icLk=&xsec_source=pc_search",
+          "publicTitle": "跟Tina一起快乐出发 — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: 'Chengdu English tour guide.' 96 followers; posts document guided days for visitors from Mexico, Spain, Italy, and the Netherlands, a Panda Base volunteering day, and detailed western-Sichuan (Daocheng Yading) trip-planning guides.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        },
+        {
+          "platform": "xiaohongshu",
+          "sourceType": "post",
+          "url": "https://www.xiaohongshu.com/explore/6a8129ce000000002c007330?xsec_token=ABt3vqb6O4zb5u7YXa-35O8d9NmMtKqYp3hhLR4BSBJiM=&xsec_source=pc_search",
+          "publicTitle": "成都英语导游带团之墨西哥大美女！！",
+          "evidenceSummary": "Tour diary recounting a multi-day guided visit for a Mexican mother and two daughters, including a birthday cake surprise and a visit to the Leshan Giant Buddha.",
+          "isPrimary": 0,
+          "verifiedAt": "2026-08-23T18:00:00.000Z"
+        }
+      ]
     }
   ],
   "articles": [
