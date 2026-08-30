@@ -1,6 +1,10 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-08-23. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-08-30. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## ⏸️ Project paused here (2026-08-30)
+
+Owner is stepping away from this project for a while and will pick it back up later. Everything below is committed and pushed — nothing is sitting uncommitted. **First thing to do when resuming:** check the Google Search Console "Pages" report (see Remaining work #1) — as of this pause, Google had indexed **zero** pages (`site:localmate-chengdu.onrender.com` returned nothing), which is expected for a days-old site but worth checking whether that's changed.
 
 ## 🌐 LIVE IN PRODUCTION (since 2026-07-21)
 
@@ -24,6 +28,22 @@ export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &
 (Node 22, which `.node-version` asks for, isn't installed — only 20 and 24 are. 20 works fine.)
 
 ## Current state (all pushed to GitHub main)
+
+### 2026-08-26–30 session — Google Search Console live, alt-text fix, growth-hack ideas (not yet built)
+- **Google Search Console set up and verified** for `https://localmate-chengdu.onrender.com` (URL-prefix property), using **both** verification methods for redundancy:
+  - Meta tag `google-site-verification` in `client/index.html` (commit `637d926`)
+  - HTML file `client/public/googleb73a0050d089f52c.html`, served at the site root like `robots.txt` (same commit)
+  - Sitemap (`sitemap.xml`) was submitted in Search Console by the owner.
+  - **Status as of pause: 0 pages indexed by Google yet** (`site:localmate-chengdu.onrender.com` search returns nothing). This is normal for a brand-new site — indexing typically takes days to a few weeks — not a bug or misconfiguration. Next session should check the Search Console **Pages** report for real status, and consider using **URL Inspection → Request Indexing** on the homepage to nudge it (this was explained to the owner but not yet done).
+  - Also discussed: "成都 Local Guide" / "Chengdu local guide" is a competitive commercial term already dominated by long-established sites (ToursByLocals, China Highlights, TripAdvisor, TravelChinaGuide) — realistic expectation is that ranking for broad terms will take a long time regardless of indexing; the long-tail keyword strategy (see growth-strategy artifact) is the more winnable path short-term.
+- **Fixed empty `alt=""` on blog cover images** (commit `f3a58cb`) — both the article-card thumbnail and the full article-page hero image now use the post's title as alt text, in `client/src/pages/PublicPages.tsx`.
+- **Growth-hack ideas discussed with the owner, none implemented yet** — worth revisiting first when resuming, since they're cheap/fast:
+  1. Turn "you're featured" guide outreach into a **shareable graphic/screenshot** of their profile (not just a text message) — more likely to get reposted to their own Xiaohongshu/朋友圈.
+  2. Write content riding the **already-viral "熊猫基地不排队" (skip the Panda Base queue) topic** instead of inventing a new one — several featured guides' own posts on this theme got hundreds of likes.
+  3. **Real-time "comment-jacking"**: monitor Xiaohongshu posts tagged #成都英语导游 / #chengdutravel for people actively asking for a guide recommendation, and reply directly with a link — higher intent than passive content marketing.
+  4. **Physical QR stickers at the Panda Base exit** (and Chunxi Road tourist info booth, foreign-friendly cafes) — highest foreigner-density real-world touchpoint, near-zero cost.
+  5. Turn the **duplicate-"Susan" discovery itself into a transparency case-study blog post** ("how we verify every guide") — demonstrates the site's actual differentiator instead of just claiming it.
+- Still open from before: the "is it safe to hire a private guide in China" trust-keyword field note (discussed, not written) and the guide-outreach message itself (discussed, not drafted/sent).
 
 ### 2026-08-23 session — guide directory grew from 5 to 18, plus SEO plumbing
 - **13 new guide profiles** added, editorially compiled from Xiaohongshu profile links the owner supplied, each with exactly 2 sources (profile + at most 1 supporting post) — this 2-source cap is a standing instruction from the owner for all future guides, tighter than the earlier reconstructed profiles. New slugs: `maya`, `betty`, `xiao-o`, `xiaoyu`, `mala-big-bro`, `kacha-kacha`, `tina`, `nick`, `lin`, `lynne`, `holly`, `tangchaoer`, `chengdu-susan`. Avatars are cropped screenshots taken directly from each guide's Xiaohongshu profile page (saved to `client/public/guide_profile/`), inscribed-square-cropped from the circular profile photo via a small PIL script.
@@ -68,12 +88,14 @@ GitHub pushes from this machine use the `dark-wdjd` account via the `gh` CLI (`g
 
 ## Remaining work (in priority order)
 
-1. **Resolve the two-"Susan" situation** (see 2026-08-23 note above) — confirm with owner whether both are wanted, and if so consider a small copy tweak so visitors can tell them apart.
-2. **Submit the sitemap to Google Search Console** — first real distribution step now that `/sitemap.xml` exists.
-3. **Guide outreach** — tell the newly-added guides (and the original 5) they're featured, via a short Xiaohongshu comment/DM in Chinese, inviting them to claim their profile. Drafted as an idea in the growth-strategy artifact but no message has been sent yet.
-4. **Penny's Xiaohongshu profile URL** — still never recorded in the repo as far as this session found; the owner would need to supply it to add as her source.
-5. Optional cleanup: `server/_core/storageProxy.ts` (Manus storage proxy) and related forge/LLM helpers are unused once fully off Manus.
-6. Consider whether a new tag (e.g. "food-culture") is warranted for guides like Mala Big Bro whose focus is cooking/food experiences rather than sightseeing — currently shoehorned into `city-classics` + `private-tour`.
+1. **Check Google Search Console indexing status** — was 0 pages indexed as of the 2026-08-30 pause; check the **Pages** report, and use **URL Inspection → Request Indexing** on the homepage if it's still empty. (Sitemap already submitted; verification already done — see 2026-08-26–30 session above.)
+2. **Resolve the two-"Susan" situation** (see 2026-08-23 note above) — confirm with owner whether both are wanted, and if so consider a small copy tweak so visitors can tell them apart.
+3. **Guide outreach** — tell all 18 featured guides they're listed, via a short Xiaohongshu comment/DM in Chinese, inviting them to claim their profile. Consider pairing it with a shareable screenshot/graphic of their profile (growth-hack idea #1 above) rather than plain text — not yet drafted or sent.
+4. **Write the trust-keyword field note** — "is it safe to hire a private guide in China" — discussed as the highest-value next content piece, not yet written.
+5. **Try one of the growth-hack ideas** above (queue-skip content, comment-jacking, QR stickers, or the transparency case-study post) — pick whichever is cheapest to test first.
+6. **Penny's Xiaohongshu profile URL** — still never recorded in the repo as far as this session found; the owner would need to supply it to add as her source.
+7. Optional cleanup: `server/_core/storageProxy.ts` (Manus storage proxy) and related forge/LLM helpers are unused once fully off Manus.
+8. Consider whether a new tag (e.g. "food-culture") is warranted for guides like Mala Big Bro whose focus is cooking/food experiences rather than sightseeing — currently shoehorned into `city-classics` + `private-tour`.
 
 ## Key architecture facts
 
