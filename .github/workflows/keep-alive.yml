@@ -1,0 +1,22 @@
+name: Keep Render app awake
+
+on:
+  schedule:
+    # Every 10 minutes — Render's free tier sleeps after ~15 min idle, so this
+    # leaves margin for GitHub's own scheduling delays (which can be several
+    # minutes, especially near the top of the hour).
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the live site
+        run: |
+          status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 https://localmate-chengdu.onrender.com/robots.txt)
+          echo "Response status: $status"
+          if [ "$status" -ge 500 ]; then
+            echo "::error::Site returned server error status $status"
+            exit 1
+          fi
