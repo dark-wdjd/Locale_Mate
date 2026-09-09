@@ -1,10 +1,18 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-08-30. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-09-09. This file records the project state, decisions, and next steps so work can resume at any time._
 
-## ⏸️ Project paused here (2026-08-30)
+## ✅ Sitemap indexing blocker resolved (2026-09-09)
 
-Owner is stepping away from this project for a while and will pick it back up later. Everything below is committed and pushed — nothing is sitting uncommitted. **First thing to do when resuming:** check the Google Search Console "Pages" report (see Remaining work #1) — as of this pause, Google had indexed **zero** pages (`site:localmate-chengdu.onrender.com` returned nothing), which is expected for a days-old site but worth checking whether that's changed.
+The "Could not fetch" sitemap error in Search Console (first spotted 2026-09-02) turned out to be caused by Render's free tier sleeping the app after ~15 min idle (~34s cold-start, way past Google's fetch timeout). The fix took two tries:
+1. **First attempt (failed): GitHub Actions scheduled workflow** pinging every 10 min. Looked reasonable but GitHub actually only ran it every 100–340 minutes in practice — it deprioritizes frequent cron schedules under platform load. Removed after confirming via `gh run list` timestamps that it wasn't working.
+2. **Working fix: UptimeRobot** (free tier, external account, pings `/robots.txt` every 5 min on a guaranteed interval). Verified via a 30-min cold-test with zero pings from this session that the site stayed warm.
+
+After that, the owner resubmitted the sitemap in Search Console and it now shows **"Success."** Lesson for future "keep something warm/alive" needs on this project: don't rely on GitHub Actions `schedule:` cron for sub-hourly precision — use a purpose-built external pinger instead.
+
+## ⏸️ Project paused 2026-08-30, resumed 2026-09-02 for the indexing issue above
+
+Owner had stepped away, came back specifically to chase down the Search Console error, which is now resolved. Everything is committed and pushed.
 
 ## 🌐 LIVE IN PRODUCTION (since 2026-07-21)
 
