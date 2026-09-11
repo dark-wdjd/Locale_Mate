@@ -7,6 +7,7 @@ import {
   gte,
   inArray,
   like,
+  ne,
   or,
 } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
@@ -174,13 +175,49 @@ export async function listGuides(input: {
   return hydrateGuides(rows);
 }
 
+async function getSimilarGuides(guideId: number, tagIds: number[], limit = 3) {
+  if (!tagIds.length) return [];
+  const db = await requireDb();
+  const rows = await db
+    .selectDistinct({
+      id: guides.id,
+      slug: guides.slug,
+      displayName: guides.displayName,
+      shortBio: guides.shortBio,
+      avatarUrl: guides.avatarUrl,
+      isEditorsPick: guides.isEditorsPick,
+    })
+    .from(guides)
+    .innerJoin(guideTagLinks, eq(guideTagLinks.guideId, guides.id))
+    .where(and(inArray(guideTagLinks.tagId, tagIds), ne(guides.id, guideId), or(eq(guides.status, "active"), eq(guides.status, "unclaimed"))))
+    .orderBy(desc(guides.isEditorsPick), asc(guides.displayName))
+    .limit(limit);
+  return rows;
+}
+
+async function getRelatedArticlesForGuide(guideId: number) {
+  const db = await requireDb();
+  return db
+    .select({ id: blogPosts.id, slug: blogPosts.slug, title: blogPosts.title, excerpt: blogPosts.excerpt, coverImageUrl: blogPosts.coverImageUrl })
+    .from(blogGuideLinks)
+    .innerJoin(blogPosts, eq(blogPosts.id, blogGuideLinks.blogPostId))
+    .where(and(eq(blogGuideLinks.guideId, guideId), eq(blogPosts.status, "published")))
+    .orderBy(asc(blogGuideLinks.sortOrder));
+}
+
 export async function getGuideBySlug(slug: string, includeRemoved = false) {
   const db = await requireDb();
   const filters = [eq(guides.slug, slug)];
   if (!includeRemoved) filters.push(or(eq(guides.status, "active"), eq(guides.status, "unclaimed"))!);
   const rows = await db.select().from(guides).where(and(...filters)).limit(1);
   const hydrated = await hydrateGuides(rows);
-  return hydrated[0];
+  const guide = hydrated[0];
+  if (!guide) return guide;
+  const [similarGuides, relatedArticles] = await Promise.all([
+    getSimilarGuides(guide.id, guide.tags.map(tag => tag.id)),
+    getRelatedArticlesForGuide(guide.id),
+  ]);
+  return { ...guide, similarGuides, relatedArticles };
 }
 
 export async function getGuideById(id: number) {

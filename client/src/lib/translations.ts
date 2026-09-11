@@ -136,6 +136,8 @@ export const translations: Record<string, Record<Language, string>> = {
   "guide.incorrectQuestion": { en: "Is this you, or is something incorrect?", zh: "这是你的资料，或其中有信息不准确吗？" },
   "guide.incorrectCopy": { en: "Claim this profile, send a correction, opt out, or request removal.", zh: "你可以认领资料、提交纠错、选择退出或申请移除。" },
   "guide.startRequest": { en: "Start a request", zh: "发起申请" },
+  "guide.similarGuides": { en: "Similar Chengdu guides", zh: "相似的成都向导" },
+  "guide.mentionedIn": { en: "Mentioned in the journal", zh: "在期刊中被提及" },
 
   "blog.metaTitle": { en: "Chengdu journal", zh: "成都旅行笔记" },
   "blog.metaDescription": { en: "English trip-planning field notes for choosing a local guide and understanding Chengdu at a more thoughtful pace.", zh: "帮助你选择本地向导并以更从容节奏理解成都的旅行规划笔记。" },
