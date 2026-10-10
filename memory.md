@@ -1,6 +1,16 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-03 (last code change 2026-09-10). This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-10. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 👥 2026-10-10 session: 13 new guides (18 → 31 public) + liability disclaimer
+
+- **Browser-assisted discovery** (new editorial decision recorded in `docs/product-scope-and-editorial-standards.md`): Claude used Claude in Chrome in the owner's logged-in browser to search Xiaohongshu for 成都英语导游 / 成都英文导游 at a human pace, opened each candidate's profile, and checked them against the four inclusion criteria. Bulk or scheduled scraping is still prohibited, and Claude stops if a captcha or risk-control prompt appears. Tip: reading `xsec_token` from the DOM via JS is blocked by the extension, so click into profiles from search results instead (each opens in a new tab whose URL carries the token).
+- **Added (commit `72f20eb`, seeded to TiDB):** `tommy`, `fiona`, `charles`, `hanfu-english-guide`, `lucky`, `libby`, `melody`, `shanyu`, `shirley` (Shirley英语), `chengdu-shirley` (成都英语导游Shirley), `laura`, `jenny`, `rebirth-chengdu-guide`. Each has 1 profile source (within the 2-source cap). Avatars were cropped from a zoom screenshot of the profile circle to 300×300.
+- **Rejected:** Duncan (that post was looking *for* a guide, not offering guiding).
+- ⚠️ **Weaker evidence, worth a second look:** `chengdu-shirley` (one post seeks a license-exam study partner, so licensing is unconfirmed), `melody` (bio doesn't mention guiding), and `shanyu` / `lucky` / `jenny` (very small accounts).
+- ⚠️ **Two Shirleys now**, the same issue as the two Susans. Both bios say they're different accounts; the owner hasn't decided whether to keep both.
+- **Liability disclaimer (commit `2ff50f1`):** new "Independent listings, not endorsements" section on the About page (EN/ZH, keys `about.disclaimer*`), a one-line `guide.disclaimer` in the guide-page sidebar, an extra sentence in the offsite dialog, and a matching FAQ JSON-LD entry. Caveat discussed with the owner: a disclaimer can't exclude liability for personal injury or for the owner's own gross negligence (PRC Civil Code art. 506), and wrong information that the site itself publishes is still the site's responsibility. Not legal advice.
+- Note: Claude Code's auto-mode classifier blocked the first push of these profiles as personal-data handling; it went through after the owner explicitly approved in chat.
 
 ## 🚀 2026-09-10 session — SEO round 2 (commit `7945675`, pushed)
 
@@ -105,7 +115,7 @@ GitHub pushes from this machine use the `dark-wdjd` account via the `gh` CLI (`g
 
 1. **Check Google Search Console indexing status.** The sitemap has shown "Success" since 2026-09-09, but nobody has checked indexed-page counts since. Also confirm that UptimeRobot is still pinging and that the new FAQ / internal-link changes look right in URL Inspection. Original note: 0 pages were indexed as of the 2026-08-30 pause; check the **Pages** report, and use **URL Inspection → Request Indexing** on the homepage if it's still empty. (Sitemap already submitted; verification already done — see 2026-08-26–30 session above.)
 2. **Resolve the two-"Susan" situation** (see 2026-08-23 note above) — confirm with owner whether both are wanted, and if so consider a small copy tweak so visitors can tell them apart.
-3. **Guide outreach** — tell all 18 featured guides they're listed, via a short Xiaohongshu comment/DM in Chinese, inviting them to claim their profile. Consider pairing it with a shareable screenshot/graphic of their profile (growth-hack idea #1 above) rather than plain text — not yet drafted or sent.
+3. **Guide outreach** — tell all 31 featured guides (including the 13 added 2026-10-10) they're listed, via a short Xiaohongshu comment/DM in Chinese, inviting them to claim their profile. Consider pairing it with a shareable screenshot/graphic of their profile (growth-hack idea #1 above) rather than plain text — not yet drafted or sent.
 4. **Write the trust-keyword field note** — "is it safe to hire a private guide in China" — discussed as the highest-value next content piece, not yet written.
 5. **Try one of the growth-hack ideas** above (queue-skip content, comment-jacking, QR stickers, or the transparency case-study post) — pick whichever is cheapest to test first.
 6. **Penny's Xiaohongshu profile URL** — still never recorded in the repo as far as this session found; the owner would need to supply it to add as her source.
