@@ -1,6 +1,13 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-09-09. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-03 (last code change 2026-09-10). This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🚀 2026-09-10 session — SEO round 2 (commit `7945675`, pushed)
+
+- **Image performance:** Yanny's oversized avatar fixed (561×589 → 300×300, 560KB → 148KB, matching the other avatars' crop standard). The 4 hero/cover JPGs in `client/public/images/` were resized to a 1600px max dimension at q82 (35–45% smaller each).
+- **FAQPage JSON-LD on the About page** (`AboutPage` in `client/src/pages/PublicPages.tsx`), built from the page's existing publish / don't-publish / verify / opt-out copy. No new claims; the copy is only reformatted as Q&A in case it becomes eligible for rich results. The question strings are hard-coded English; the answers come from `t(...)`.
+- **Internal linking on guide detail pages:** a "Similar Chengdu guides" section (guides sharing a tag) and a "Mentioned in the journal" sidebar card (published articles linked through the existing `blogGuideLinks` table). The new queries `getSimilarGuides` and `getRelatedArticlesForGuide` in `server/db.ts` are wired into `getGuideBySlug`. New i18n keys `guide.similarGuides` and `guide.mentionedIn` are in `client/src/lib/translations.ts`.
+- No activity since then: the working tree is clean and `main` matches `origin/main` (checked 2026-10-03).
 
 ## ✅ Sitemap indexing blocker resolved (2026-09-09)
 
@@ -96,7 +103,7 @@ GitHub pushes from this machine use the `dark-wdjd` account via the `gh` CLI (`g
 
 ## Remaining work (in priority order)
 
-1. **Check Google Search Console indexing status** — was 0 pages indexed as of the 2026-08-30 pause; check the **Pages** report, and use **URL Inspection → Request Indexing** on the homepage if it's still empty. (Sitemap already submitted; verification already done — see 2026-08-26–30 session above.)
+1. **Check Google Search Console indexing status.** The sitemap has shown "Success" since 2026-09-09, but nobody has checked indexed-page counts since. Also confirm that UptimeRobot is still pinging and that the new FAQ / internal-link changes look right in URL Inspection. Original note: 0 pages were indexed as of the 2026-08-30 pause; check the **Pages** report, and use **URL Inspection → Request Indexing** on the homepage if it's still empty. (Sitemap already submitted; verification already done — see 2026-08-26–30 session above.)
 2. **Resolve the two-"Susan" situation** (see 2026-08-23 note above) — confirm with owner whether both are wanted, and if so consider a small copy tweak so visitors can tell them apart.
 3. **Guide outreach** — tell all 18 featured guides they're listed, via a short Xiaohongshu comment/DM in Chinese, inviting them to claim their profile. Consider pairing it with a shareable screenshot/graphic of their profile (growth-hack idea #1 above) rather than plain text — not yet drafted or sent.
 4. **Write the trust-keyword field note** — "is it safe to hire a private guide in China" — discussed as the highest-value next content piece, not yet written.
