@@ -1,6 +1,15 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-10. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-14. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🌐 2026-10-14: custom domain www.meetchengdu.com + server-rendered SEO
+
+- **Canonical site URL is now https://www.meetchengdu.com** (domain bought at Porkbun). Porkbun DNS: `ALIAS @ → localmate-chengdu.onrender.com` and `CNAME www → localmate-chengdu.onrender.com`. Both are verified in Render → Custom Domains. Render itself 301s the bare domain to `www` (Render picked www as primary), so **www is canonical**. Don't set CANONICAL_HOST to the bare domain, or the two redirects will loop.
+- **Render env vars added:** `SITE_URL=https://www.meetchengdu.com`, `CANONICAL_HOST=www.meetchengdu.com`. The app 301s any other host (the old onrender URL) to www.
+- **Why there were zero impressions (diagnosed 2026-10-11):** every URL served the identical empty SPA shell (same title/description, empty body) on a zero-authority onrender.com subdomain with no backlinks. **Fix (commit `0553a75`):** new `server/_core/seo.ts` injects each route's own title, description, canonical, og tags and a plain-HTML summary into index.html (React replaces it on mount). robots.txt is now generated from SITE_URL (the static file was removed), sitemap uses the same SITE_URL, and the broken umami placeholder script was removed.
+- **Owner's TODO:** add www.meetchengdu.com (or a Domain property via a Porkbun TXT record) to Search Console and submit the sitemap; run "Change of address" from the old onrender property; point UptimeRobot at https://www.meetchengdu.com/robots.txt; delete the leftover Porkbun URL-forwarding rule.
+- Note: the Chrome profile that Claude in Chrome uses is signed into a different Google account, which has no access to the Search Console property.
+- Next SEO steps: backlinks (Reddit r/chengdu and r/chinatravel, TripAdvisor forum answers, guides linking to their profile) and guide outreach.
 
 ## 👥 2026-10-10 session: 13 new guides (18 → 31 public) + liability disclaimer
 
@@ -33,7 +42,7 @@ Owner had stepped away, came back specifically to chase down the Search Console 
 
 ## 🌐 LIVE IN PRODUCTION (since 2026-07-21)
 
-- **Live URL:** https://localmate-chengdu.onrender.com  (Render free web service. Render fixes the onrender.com subdomain at creation — it can't be renamed; to change it you create a new service and delete the old one. An earlier `localmate-j1yk` service was replaced this way and should be deleted.)
+- **Live URL:** https://www.meetchengdu.com (since 2026-10-14; the old https://localmate-chengdu.onrender.com 301-redirects there)  (Render free web service. Render fixes the onrender.com subdomain at creation — it can't be renamed; to change it you create a new service and delete the old one. An earlier `localmate-j1yk` service was replaced this way and should be deleted.)
 - **Host:** Render (app, auto-deploys on every push to GitHub `main`) + **TiDB Cloud Serverless** (MySQL-compatible database, free tier, always-on).
 - **Render env vars** (set in Render dashboard → Environment): `DATABASE_URL` (TiDB localmate DB), `DATABASE_SSL=true`, `JWT_SECRET`, `ADMIN_PASSWORD` (the owner changed it from the suggested value — the value lives only in Render), `VITE_APP_ID=localmate`, `OWNER_OPEN_ID=admin`. Build command: `pnpm install --prod=false && pnpm build`; start: `pnpm start`.
 - **TiDB connection** for local admin tasks (migrate/seed/export against production) is in the git-ignored `.env.production`. DB name is `localmate` (not the default `sys`).
