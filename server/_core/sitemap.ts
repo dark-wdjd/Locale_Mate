@@ -1,7 +1,6 @@
 import type { Express } from "express";
 import { listBlogPosts, listGuides } from "../db";
-
-const SITE_URL = process.env.SITE_URL ?? "https://localmate-chengdu.onrender.com";
+import { SITE_URL } from "./seo";
 
 const STATIC_PATHS = ["/", "/guides", "/blog", "/about"];
 
