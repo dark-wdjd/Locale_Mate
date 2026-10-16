@@ -37,11 +37,11 @@ export function BrandMark({ compact = false, inverse = false }: { compact?: bool
   return (
     <Link href="/" className="group inline-flex items-center gap-3" aria-label={t("brand.home")}>
       <span className="grid size-10 place-items-center rounded-full bg-primary text-primary-foreground shadow-[0_8px_24px_rgba(175,57,38,.24)] transition-transform group-hover:-rotate-3">
-        <span className="font-serif text-lg font-semibold">LM</span>
+        <span className="font-serif text-lg font-semibold">MC</span>
       </span>
       {!compact && (
         <span className="leading-none">
-          <span className={cn("block font-serif text-[1.18rem] font-semibold tracking-[-0.02em]", inverse ? "text-[#f7f0df]" : "text-foreground")}>LocalMate</span>
+          <span className={cn("block font-serif text-[1.18rem] font-semibold tracking-[-0.02em]", inverse ? "text-[#f7f0df]" : "text-foreground")}>MeetChengdu</span>
           <span className={cn("mt-1 block text-[0.62rem] font-bold uppercase tracking-[0.25em]", inverse ? "text-[#f7f0df]/62" : "text-muted-foreground")}>{t("brand.location")}</span>
         </span>
       )}

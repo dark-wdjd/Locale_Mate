@@ -90,7 +90,7 @@ export function AdminOverviewPage() {
     { href: "/admin/articles", icon: BookOpenText, label: "编辑文章", sub: "Articles & publishing" },
     { href: "/admin/requests", icon: FileCheck2, label: "处理申请", sub: "Claims & corrections" },
   ];
-  return <AdminPage><PageHeader eyebrow="运营概览 · Operations" title="LocalMate China 内容后台" description="管理公开来源导游资料、成都英文文章、纠错申请与匿名离站点击。所有公开内容均应保持可审计、可纠错。" action={<Button asChild variant="outline" className="rounded-full bg-card"><a href="/" target="_blank" rel="noreferrer">查看网站 <ExternalLink className="size-4" /></a></Button>} />
+  return <AdminPage><PageHeader eyebrow="运营概览 · Operations" title="MeetChengdu 内容后台" description="管理公开来源导游资料、成都英文文章、纠错申请与匿名离站点击。所有公开内容均应保持可审计、可纠错。" action={<Button asChild variant="outline" className="rounded-full bg-card"><a href="/" target="_blank" rel="noreferrer">查看网站 <ExternalLink className="size-4" /></a></Button>} />
     {analytics.isLoading ? <LoadingGrid /> : analytics.isError ? <AnalyticsError retry={() => void analytics.refetch()} /> : analytics.data ? <><div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
       <MetricCard label="公开导游 / Guides" value={analytics.data.totals.guides} note="Active or unclaimed" icon={UsersRound} />
       <MetricCard label="已发布 / Articles" value={analytics.data.totals.publishedPosts} note="Published field notes" icon={BookOpenText} />

@@ -181,7 +181,7 @@ function DashboardLayoutContent({ children, setSidebarWidth }: { children: React
           <SidebarHeader className="h-20 justify-center border-b border-sidebar-border">
             <div className="flex w-full items-center gap-3 px-2">
               <button onClick={toggleSidebar} className="grid size-9 shrink-0 place-items-center rounded-lg text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent focus-visible:ring-2 focus-visible:ring-sidebar-ring" aria-label="Toggle navigation"><PanelLeft className="size-4" /></button>
-              {!isCollapsed && <div className="min-w-0"><p className="truncate font-serif text-lg font-semibold text-sidebar-foreground">LocalMate China</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[.18em] text-sidebar-foreground/48">运营后台 · Admin</p></div>}
+              {!isCollapsed && <div className="min-w-0"><p className="truncate font-serif text-lg font-semibold text-sidebar-foreground">MeetChengdu</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[.18em] text-sidebar-foreground/48">运营后台 · Admin</p></div>}
             </div>
           </SidebarHeader>
           <SidebarContent className="gap-0 py-3">

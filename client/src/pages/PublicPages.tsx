@@ -77,7 +77,7 @@ type ArticleSummary = {
 
 function usePageMeta(title: string, description: string, image = HERO_IMAGE, type: "website" | "article" = "website") {
   useEffect(() => {
-    const fullTitle = `${title} | LocalMate China`;
+    const fullTitle = `${title} | MeetChengdu`;
     const canonicalUrl = new URL(window.location.pathname, window.location.origin).href;
     const absoluteImage = image.startsWith("http") ? image : new URL(image, window.location.origin).href;
     document.title = fullTitle;
@@ -260,7 +260,7 @@ function ContentFallbackNote({ className }: { className?: string }) {
 export function HomePage() {
   const { t } = useLanguage();
   usePageMeta(t("home.metaTitle"), t("home.metaDescription"));
-  useStructuredData({ "@context": "https://schema.org", "@type": "Organization", name: "LocalMate China", url: window.location.origin });
+  useStructuredData({ "@context": "https://schema.org", "@type": "Organization", name: "MeetChengdu", url: window.location.origin });
   const featured = trpc.guides.list.useQuery({ featuredOnly: true, limit: 4, offset: 0 });
   const articles = trpc.blog.list.useQuery({ featuredOnly: true });
 
@@ -498,7 +498,7 @@ export function BlogArticlePage() {
           ...(post.data.coverImageUrl ? { image: new URL(post.data.coverImageUrl, window.location.origin).href } : {}),
           ...(post.data.publishedAt ? { datePublished: new Date(post.data.publishedAt).toISOString() } : {}),
           dateModified: new Date(post.data.updatedAt).toISOString(),
-          author: { "@type": "Organization", name: "LocalMate China" },
+          author: { "@type": "Organization", name: "MeetChengdu" },
         }
       : null,
   );
@@ -525,11 +525,11 @@ export function AboutPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      { question: "What does LocalMate China publish about a guide?", answer: t("about.publish.copy") },
-      { question: "What does LocalMate China not publish?", answer: t("about.notPublish.copy") },
+      { question: "What does MeetChengdu publish about a guide?", answer: t("about.publish.copy") },
+      { question: "What does MeetChengdu not publish?", answer: t("about.notPublish.copy") },
       { question: "What should travelers still verify themselves before arranging a tour?", answer: t("about.verify.copy") },
       { question: "Can a guide profile be corrected or removed?", answer: t("about.optOut.copy") },
-      { question: "Is LocalMate China responsible for arrangements made with a listed guide?", answer: t("about.disclaimerCopy") },
+      { question: "Is MeetChengdu responsible for arrangements made with a listed guide?", answer: t("about.disclaimerCopy") },
     ].map(({ question, answer }) => ({
       "@type": "Question",
       name: question,

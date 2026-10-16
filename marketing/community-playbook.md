@@ -1,4 +1,4 @@
-# LocalMate China: Community Playbook
+# MeetChengdu: Community Playbook
 
 Researched 2026-10-15. **Everything here is for the owner to post by hand.** Nothing was posted, no account was used, and no messages were sent.
 

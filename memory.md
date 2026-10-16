@@ -1,6 +1,11 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-15. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-16. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🏷️ 2026-10-16: brand renamed LocalMate China → **MeetChengdu**
+
+- Owner's decision, to match the domain. Every user-facing string was changed: page titles (`… | MeetChengdu`), og:site_name, JSON-LD Organization/author, the logo (badge `MC`, wordmark "MeetChengdu", subline "English-speaking local guides" / "成都英语本地向导"), translations, admin header, article text in `scripts/seed-data.json` (re-seeded), and the marketing drafts.
+- **Left as-is on purpose:** internal identifiers such as the `localmate-language` localStorage key (renaming it would reset visitors' language choice), the `localmate-*` CSS keyframes and storage keys, the `"localmate"` salt fallback, test names, the repo name `Locale_Mate`, and the Render service name `localmate-chengdu`. Historical notes in this file still say "LocalMate"; that's fine.
 
 ## 📣 2026-10-15: marketing and SEO kickoff (research and drafts only; nothing published)
 

@@ -1,4 +1,4 @@
-# LocalMate China — SEO Content Plan (Journal)
+# MeetChengdu — SEO Content Plan (Journal)
 
 _Prepared 2026-10-15. Draft for owner review. Nothing here has been published._
 

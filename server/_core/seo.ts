@@ -47,11 +47,11 @@ const aboutFaq = () => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    ["What does LocalMate China publish about a guide?", en("about.publish.copy")],
-    ["What does LocalMate China not publish?", en("about.notPublish.copy")],
+    ["What does MeetChengdu publish about a guide?", en("about.publish.copy")],
+    ["What does MeetChengdu not publish?", en("about.notPublish.copy")],
     ["What should travelers still verify themselves before arranging a tour?", en("about.verify.copy")],
     ["Can a guide profile be corrected or removed?", en("about.optOut.copy")],
-    ["Is LocalMate China responsible for arrangements made with a listed guide?", en("about.disclaimerCopy")],
+    ["Is MeetChengdu responsible for arrangements made with a listed guide?", en("about.disclaimerCopy")],
   ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
 });
 
@@ -68,7 +68,7 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
       title: en("home.metaTitle"),
       description: en("home.metaDescription"),
       body: page(en("home.title"), en("home.metaDescription"), await guideListBody()),
-      jsonLd: { "@context": "https://schema.org", "@type": "Organization", name: "LocalMate China", url: SITE_URL },
+      jsonLd: { "@context": "https://schema.org", "@type": "Organization", name: "MeetChengdu", url: SITE_URL },
     });
   }
   if (pathname === "/guides") {
@@ -136,7 +136,7 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
         ...(post.coverImageUrl ? { image: absolute(post.coverImageUrl) } : {}),
         ...(post.publishedAt ? { datePublished: new Date(post.publishedAt).toISOString() } : {}),
         dateModified: new Date(post.updatedAt).toISOString(),
-        author: { "@type": "Organization", name: "LocalMate China" },
+        author: { "@type": "Organization", name: "MeetChengdu" },
       },
     });
   }
@@ -168,13 +168,13 @@ export async function renderPageHtml(template: string, pathname: string): Promis
   if (resolved.status === 301) return { status: 301, html: "", location: resolved.location };
   if (resolved.status !== 200) {
     const gone = resolved.status === 410;
-    let html = setTag(template, /<title>[\s\S]*?<\/title>/, `<title>${gone ? "Page removed" : "Page not found"} | LocalMate China</title>`);
+    let html = setTag(template, /<title>[\s\S]*?<\/title>/, `<title>${gone ? "Page removed" : "Page not found"} | MeetChengdu</title>`);
     html = setTag(html, /<meta name="robots"[^>]*>/, NOINDEX);
     return { status: resolved.status, html };
   }
 
   const meta = resolved.meta;
-  const fullTitle = escapeHtml(`${meta.title} | LocalMate China`);
+  const fullTitle = escapeHtml(`${meta.title} | MeetChengdu`);
   const description = escapeHtml(clip(meta.description));
   const canonical = escapeHtml(`${SITE_URL}${pathname === "/" ? "/" : pathname}`);
   const image = escapeHtml(absolute(meta.image ?? DEFAULT_IMAGE));

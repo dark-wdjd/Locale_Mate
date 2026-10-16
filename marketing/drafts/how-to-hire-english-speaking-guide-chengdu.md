@@ -34,7 +34,7 @@ A licence is not the only sign of a good guide. Some useful companions, such as 
 
 ## Read public evidence the way an editor would
 
-Many English-speaking guides in Chengdu market themselves on Xiaohongshu (RedNote), a Chinese platform most visitors never browse. That's why LocalMate China compiles public profiles in English. Each profile on this site links back to its original source, and none of them is a recommendation.
+Many English-speaking guides in Chengdu market themselves on Xiaohongshu (RedNote), a Chinese platform most visitors never browse. That's why MeetChengdu compiles public profiles in English. Each profile on this site links back to its original source, and none of them is a recommendation.
 
 When you look at any guide's public presence, these signals carry weight:
 
@@ -71,7 +71,7 @@ None of these proves bad intent, but each one is a good reason to slow down.
 
 Start from [the guide directory](/guides) and filter by the experience you wrote down at the beginning: pandas, tea culture, city classics or western Sichuan. Our earlier piece on [choosing a guide by interest](/blog/tea-food-and-neighborhoods-chengdu) explains why that works better than chasing the "best" guide. If this is your first visit, [Your First 48 Hours in Chengdu](/blog/first-48-hours-in-chengdu) shows where a guide adds the most.
 
-LocalMate China doesn't book, take payment or vouch for anyone. When you click through to a source, the conversation is yours.
+MeetChengdu doesn't book, take payment or vouch for anyone. When you click through to a source, the conversation is yours.
 
 ## Before you book
 
@@ -92,4 +92,4 @@ LocalMate China doesn't book, take payment or vouch for anyone. When you click t
 - Travel China With Me, "Is My Guide Certified? Decoding the China Tour Guide License" (agency registration, "black guide" terminology): https://travelchinawith.me/china-facts/china-tour-guide-license/
 - QuietRoutes, Chengdu private tour guide page (published range USD 75–450 / RMB 500–3,000 per day): https://quietroutes.com/travel-guide/chengdu-private-tour-guide/
 - HeroGuide, English tour guide in Chengdu (published US$90–220 half day, US$160–380 full day, excluding tickets): https://www.hero-guide.com/chengdu-guide/english
-- Guide descriptions: LocalMate China profiles (scripts/seed-data.json; source cards last reviewed October 2026) for fiona, laura, libby, betty, charles, jenny, tommy.
+- Guide descriptions: MeetChengdu profiles (scripts/seed-data.json; source cards last reviewed October 2026) for fiona, laura, libby, betty, charles, jenny, tommy.

@@ -88,7 +88,7 @@ Before you hire anyone, read [How to Hire an English-Speaking Guide in Chengdu](
 - [ ] If you're hiring a docent: identity, credential and price confirmed directly with them. Ask who books the tickets, whether the sightseeing bus is included, and what "fast entry" actually means.
 - [ ] Rules re-checked on the official WeChat account or booking platform the day before.
 
-> LocalMate China doesn't sell tickets, book guides or take payment. Guide profiles are compiled from public evidence and may be unclaimed. Verify identity, credentials and current prices directly before making arrangements.
+> MeetChengdu doesn't sell tickets, book guides or take payment. Guide profiles are compiled from public evidence and may be unclaimed. Verify identity, credentials and current prices directly before making arrangements.
 
 ## Sources
 
@@ -98,4 +98,4 @@ Before you hire anyone, read [How to Hire an English-Speaking Guide in Chengdu](
 - China Survival Kit, "Chengdu Panda Base 2026" (updated 8 Oct 2026; price, 14-day window, advance-booking advice, Golden Week): https://chinasurvivalkit.com/blog/chengdu-panda-base-guide
 - RealChinaTrip, "Chengdu Panda Base in 2026" (south vs west gate, original passport, early arrival): https://realchinatrip.com/blogs/city-guide/panda-base-tickets-guide-panda-base-guide-tickets-best-time-2026-updated-rct
 - ChinaTripedia, Panda Base ticket and opening hours (transport options; differing metro station naming): https://chinatripedia.com/chengdu-research-base-of-giant-panda-breeding-ticket-opening-hours-highlights-and-tips/
-- Guide descriptions: LocalMate China profiles (scripts/seed-data.json; source cards reviewed October 2026) for fiona, xiao-o, betty, libby, huage-harry.
+- Guide descriptions: MeetChengdu profiles (scripts/seed-data.json; source cards reviewed October 2026) for fiona, xiao-o, betty, libby, huage-harry.
