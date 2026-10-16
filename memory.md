@@ -1,6 +1,15 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-14. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-15. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 📣 2026-10-15: marketing and SEO kickoff (research and drafts only; nothing published)
+
+- **Owner decision:** *no guide outreach until the site has real traffic*. Focus on traveler-facing marketing and SEO. Agents only research and draft; the owner posts everything personally. The owner has 2–3 hours a week and no budget, and has accounts on Reddit, TripAdvisor, Facebook and Xiaohongshu.
+- Three research agents wrote into `marketing/`:
+  - `seo-audit.md`: 16 prioritized on-site fixes. The top ones: real 404/410 status codes (soft 404s confirmed live), English-first guide titles (23 of 31 are Chinese handles), server-rendered blog bodies (only about 30 words are in the server HTML today), thicker guide pages, and server-side JSON-LD.
+  - `content-plan.md` plus `drafts/how-to-hire-english-speaking-guide-chengdu.md` and `drafts/chengdu-panda-base-booking-gates-timing.md`: 8 long-tail topics; the Panda Base draft has a [VERIFY] note on on-site ticket sales.
+  - `community-playbook.md`: TripAdvisor is the most viable channel (no self-promotion; put the site link in the profile's "About me"; link only when someone asks how to find a guide, with a disclosure). Reddit could not be fetched by the agent (403), so its rules and thread URLs are unverified. Wikivoyage bans directory links.
+- Weekly routine: 1 hour of community replies, 1 hour reviewing and publishing an article every two weeks, and 30 minutes of Search Console.
 
 ## 🌐 2026-10-14: custom domain www.meetchengdu.com + server-rendered SEO
 
