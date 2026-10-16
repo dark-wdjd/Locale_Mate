@@ -2,6 +2,10 @@
 
 _Last updated: 2026-10-16. This file records the project state, decisions, and next steps so work can resume at any time._
 
+## 📁 2026-10-16: repo location
+
+- The repo now lives at **`/Users/rl/claude/local_mate`**. It was moved from `~/Documents/playground/Locale_Mate`, which was deleted after the move; git history, `.env` files and `node_modules` came along unchanged. Start Claude Code sessions from this folder.
+
 ## 🏷️ 2026-10-16: brand renamed LocalMate China → **MeetChengdu**
 
 - Owner's decision, to match the domain. Every user-facing string was changed: page titles (`… | MeetChengdu`), og:site_name, JSON-LD Organization/author, the logo (badge `MC`, wordmark "MeetChengdu", subline "English-speaking local guides" / "成都英语本地向导"), translations, admin header, article text in `scripts/seed-data.json` (re-seeded), and the marketing drafts.
