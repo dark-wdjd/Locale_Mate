@@ -66,7 +66,7 @@ export const translations: Record<string, Record<Language, string>> = {
   "home.statProfiles": { en: "Initial public-source profiles", zh: "首批公开来源资料" },
   "home.statRankings": { en: "Paid rankings or ratings", zh: "付费排名或评分" },
   "home.statSources": { en: "Source cards on every profile", zh: "每份资料均有来源卡片" },
-  "home.heroAlt": { en: "Illustrated Chengdu streetscape with teahouse details and city skyline", zh: "包含茶馆细节与城市天际线的成都街景插画" },
+  "home.heroAlt": { en: "Anshun Bridge over the Jin River in Chengdu at dusk", zh: "黄昏时分成都锦江上的安顺廊桥" },
   "home.pilot": { en: "Chengdu pilot directory", zh: "成都目录" },
   "home.pilotCopy": { en: "Pandas, tea culture, city classics, Sichuan opera, and western Sichuan leads.", zh: "覆盖大熊猫、茶文化、城市经典、川剧和川西路线线索。" },
   "home.evidenceLabel": { en: "Evidence before endorsement", zh: "选择你的最爱地陪" },

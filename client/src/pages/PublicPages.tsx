@@ -157,6 +157,10 @@ export function GuideAvatar({ name, avatarUrl, large = false }: { name: string; 
     <img
       src={avatarUrl}
       alt={`${name} profile`}
+      width={300}
+      height={300}
+      loading="lazy"
+      decoding="async"
       onError={() => setImageFailed(true)}
       className={cn(
         "shrink-0 rounded-[1.35rem] border border-[#17382f]/10 object-cover shadow-inner",
@@ -213,7 +217,7 @@ function ArticleCard({ article, featured = false }: { article: ArticleSummary; f
     <Link href={`/blog/${article.slug}`} className={cn("group block overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_16px_50px_rgba(44,43,36,.06)]", featured && "md:grid md:grid-cols-[1.1fr_.9fr]")}>
       {article.coverImageUrl ? (
         <div className={cn("overflow-hidden bg-muted", featured ? "min-h-72" : "aspect-[16/10]")}>
-          <img src={article.coverImageUrl} alt={article.title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]" />
+          <img src={article.coverImageUrl} alt={article.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]" />
         </div>
       ) : (
         <div className={cn("grid place-items-center bg-[#17382f] text-[#f7f0df]", featured ? "min-h-72" : "aspect-[16/10]")}>

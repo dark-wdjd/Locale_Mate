@@ -61,7 +61,7 @@
       "isClaimed": 0,
       "isFeatured": 1,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Harry.png",
+      "avatarUrl": "/guide_profile/Harry.webp",
       "lastVerifiedAt": "2026-07-19T23:21:52.000Z",
       "tags": [
         "city-classics",
@@ -93,7 +93,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/April.png",
+      "avatarUrl": "/guide_profile/April.webp",
       "lastVerifiedAt": "2026-07-19T23:32:05.000Z",
       "tags": [
         "city-classics",
@@ -166,7 +166,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Yanny.png",
+      "avatarUrl": "/guide_profile/Yanny.webp",
       "lastVerifiedAt": "2026-07-19T23:30:48.000Z",
       "tags": [
         "city-classics",
@@ -190,7 +190,7 @@
     {
       "slug": "penny",
       "displayName": "成都英语导游Penny",
-      "shortBio": "A Chengdu-linked English guide ",
+      "shortBio": "A Chengdu-based English tour guide whose public Xiaohongshu profile describes her as a senior Chinese–English guide.",
       "longBio": "高级中英文导游\n记录生活美好",
       "city": "Chengdu",
       "languages": "English, Mandarin",
@@ -198,7 +198,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Penny.png",
+      "avatarUrl": "/guide_profile/Penny.webp",
       "lastVerifiedAt": "2026-07-19T23:33:14.000Z",
       "tags": [
         "city-classics",
@@ -273,7 +273,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Susan.png",
+      "avatarUrl": "/guide_profile/Susan.webp",
       "lastVerifiedAt": "2026-07-19T23:29:28.000Z",
       "tags": [
         "english",
@@ -302,7 +302,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Maya.png",
+      "avatarUrl": "/guide_profile/Maya.webp",
       "lastVerifiedAt": "2026-08-23T12:00:00.000Z",
       "tags": [
         "city-classics",
@@ -343,7 +343,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Betty.png",
+      "avatarUrl": "/guide_profile/Betty.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "city-classics",
@@ -384,7 +384,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/XiaoO.png",
+      "avatarUrl": "/guide_profile/XiaoO.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "english",
@@ -423,7 +423,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Xiaoyu.png",
+      "avatarUrl": "/guide_profile/Xiaoyu.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "city-classics",
@@ -463,7 +463,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/MalaBro.png",
+      "avatarUrl": "/guide_profile/MalaBro.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "city-classics",
@@ -502,7 +502,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/KachaKacha.png",
+      "avatarUrl": "/guide_profile/KachaKacha.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "city-classics",
@@ -543,7 +543,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Tina.png",
+      "avatarUrl": "/guide_profile/Tina.webp",
       "lastVerifiedAt": "2026-08-23T18:00:00.000Z",
       "tags": [
         "city-classics",
@@ -584,7 +584,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Nick.png",
+      "avatarUrl": "/guide_profile/Nick.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -624,7 +624,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Lin.png",
+      "avatarUrl": "/guide_profile/Lin.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -665,7 +665,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Lynne.png",
+      "avatarUrl": "/guide_profile/Lynne.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -706,7 +706,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Holly.png",
+      "avatarUrl": "/guide_profile/Holly.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -747,7 +747,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 1,
-      "avatarUrl": "/guide_profile/Tangchaoer.png",
+      "avatarUrl": "/guide_profile/Tangchaoer.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -788,7 +788,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/SusanV.png",
+      "avatarUrl": "/guide_profile/SusanV.webp",
       "lastVerifiedAt": "2026-08-23T20:00:00.000Z",
       "tags": [
         "city-classics",
@@ -828,7 +828,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Tommy.png",
+      "avatarUrl": "/guide_profile/Tommy.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -860,7 +860,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Fiona.png",
+      "avatarUrl": "/guide_profile/Fiona.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -891,7 +891,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Charles.png",
+      "avatarUrl": "/guide_profile/Charles.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -923,7 +923,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Hanfu.png",
+      "avatarUrl": "/guide_profile/Hanfu.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -955,7 +955,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Lucky.png",
+      "avatarUrl": "/guide_profile/Lucky.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -985,7 +985,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Libby.png",
+      "avatarUrl": "/guide_profile/Libby.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1017,7 +1017,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Melody.png",
+      "avatarUrl": "/guide_profile/Melody.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1048,7 +1048,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Shanyu.png",
+      "avatarUrl": "/guide_profile/Shanyu.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1078,7 +1078,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/ShirleyF.png",
+      "avatarUrl": "/guide_profile/ShirleyF.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1109,7 +1109,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/ShirleyC.png",
+      "avatarUrl": "/guide_profile/ShirleyC.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1140,7 +1140,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Laura.png",
+      "avatarUrl": "/guide_profile/Laura.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1171,7 +1171,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Jenny.png",
+      "avatarUrl": "/guide_profile/Jenny.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",
@@ -1202,7 +1202,7 @@
       "isClaimed": 0,
       "isFeatured": 0,
       "isEditorsPick": 0,
-      "avatarUrl": "/guide_profile/Rebirth.png",
+      "avatarUrl": "/guide_profile/Rebirth.webp",
       "lastVerifiedAt": "2026-10-10T20:00:00.000Z",
       "tags": [
         "english",

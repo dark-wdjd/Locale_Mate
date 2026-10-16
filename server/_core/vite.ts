@@ -39,8 +39,9 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
-      const page = await renderPageHtml(await vite.transformIndexHtml(url, template), req.baseUrl.split("?")[0] || "/");
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const page = await renderPageHtml(await vite.transformIndexHtml(url, template), req.baseUrl || "/");
+      if (page.location) return res.redirect(301, page.location);
+      res.status(page.status).set({ "Content-Type": "text/html" }).end(page.html);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -69,8 +70,9 @@ export function serveStatic(app: Express) {
   app.use("*", async (req, res, next) => {
     try {
       template ??= await fs.promises.readFile(indexPath, "utf-8");
-      const html = await renderPageHtml(template, req.baseUrl || "/");
-      res.status(200).set({ "Content-Type": "text/html" }).end(html);
+      const page = await renderPageHtml(template, req.baseUrl || "/");
+      if (page.location) return res.redirect(301, page.location);
+      res.status(page.status).set({ "Content-Type": "text/html" }).end(page.html);
     } catch (error) {
       next(error);
     }
