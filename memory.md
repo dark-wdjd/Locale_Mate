@@ -1,6 +1,12 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-16. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-18. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🐼 2026-10-18: site name and first new article
+
+- **Site-name signals (commit `4100044`):** after searching "Meet Chengdu" put the site on page 11 (Google read it as "meet people in Chengdu"; dating sites rank first), the homepage got WebSite JSON-LD (name MeetChengdu, alternateName "Meet Chengdu" and meetchengdu.com) and a brand-first title, and the footer says "Meet Chengdu (MeetChengdu) is…" on every page. The owner should request indexing of the homepage.
+- **Published `/blog/chengdu-panda-base-guide`** ("Chengdu Panda Base: A Simple Visitor's Guide (2026)", about 1,100 words). Per the owner, it's a plain introduction with **no guide promotion**. Unverified facts (CNY 55 price, on-site ticket sales, winter session times, metro station) are worded as "check the official channel"; re-check them in November. It reuses the cover image `/images/cover-first-48-hours-panda.jpg`. Source of truth: `marketing/drafts/chengdu-panda-base-guide.md` plus the `articles` array in seed-data.
+- Competitor noted: **meetlocalchengdu.com** (Luna, a licensed guide; registered Jan 2026; 32 pages and about 40k words; ranks around #4 for "free walking tour Chengdu"). It covers walking, food and experiences in central Chengdu, and has almost no panda, Sanxingdui, Jiuzhaigou or Leshan guide content, which is our opening.
 
 ## 📁 2026-10-16: repo location
 

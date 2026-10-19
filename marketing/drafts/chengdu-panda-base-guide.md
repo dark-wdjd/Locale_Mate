@@ -7,7 +7,7 @@ excerpt: What the Chengdu Panda Base is, what you'll see there, and the few prac
 category: Trip planning
 targetQuery: chengdu panda base guide / chengdu panda base tickets foreigners / best time to visit chengdu panda base
 relatedArticles: [first-48-hours-in-chengdu]
-status: draft — not published
+status: published 2026-10-18
 lastChecked: 2026-10-18
 ---
 
@@ -42,17 +42,17 @@ The base now works on advance, real-name booking. In 2026:
 - **Book in advance.** Use the base's official WeChat mini program or official account (成都大熊猫繁育研究基地), or an authorised platform. Trip.com is the one most often recommended for visitors without a Chinese phone number. Bookings open up to 14 days ahead; one to three days is usually enough on weekdays, but book one to two weeks ahead for weekends and holidays.
 - **Choose "passport" as your ID type.** Your ticket is tied to your passport number.
 - **Bring the original passport.** It is checked at the entrance, and a photo or photocopy may not be accepted.
-- **Price.** Several 2026 sources list adult admission at **CNY 55**, with discounts for some students, children and seniors. [VERIFY on the official channel before publishing.]
-- **Don't count on buying at the gate.** Some sources say tickets are only sold online; others say a window sometimes sells leftover tickets. Booking ahead avoids the problem. [VERIFY]
+- **Price.** Several 2026 sources list adult admission at about **CNY 55**, with discounts for some students, children and seniors. Confirm the current price when you book.
+- **Don't count on buying at the gate.** Some sources say tickets are only sold online; others say a window sometimes sells leftover tickets. Booking ahead avoids the problem.
 
-Tickets are sold for **morning** or **afternoon** sessions, and you can't enter before your session starts. According to recent booking guides:
+Tickets are sold for **morning** or **afternoon** sessions, and you can't enter before your session starts. Recent booking guides list these times (they can change by season, so check the time on your booking):
 
 | Season | Morning entry | Afternoon entry | Closes |
 |---|---|---|---|
 | March–October | 7:30–12:00 | 12:00–17:00 | 18:00 |
 | November–February | 8:00–12:00 | 12:00–16:30 | 17:30 |
 
-Book the morning session and aim to arrive shortly before it opens. [VERIFY winter times before publishing in November.]
+Book the morning session and aim to arrive shortly before it opens.
 
 ## Getting there
 
@@ -62,7 +62,7 @@ The base is in Chenghua District, in the north of the city. Keep the address in 
 (Chengdu Research Base of Giant Panda Breeding, 1375 Panda Avenue, Chenghua District)
 
 - **Taxi or ride-hailing (DiDi):** the easiest option for an early start, usually 30–45 minutes from the city centre depending on traffic.
-- **Metro and shuttle:** Metro Line 3 serves the area, with a panda shuttle bus from the metro. Station names differ between sources, so check the current route in your map app. [VERIFY station name and shuttle route before publishing.]
+- **Metro and shuttle:** Metro Line 3 serves the area, with a panda shuttle bus from the metro. Station names differ between sources, so check the current route in your map app before you set off.
 
 There are two main visitor entrances, the **South Gate** and the **West Gate**. The South Gate is the usual choice for a first visit; the West Gate is often described as a quieter start. Either works, as long as your driver knows which one you want.
 
