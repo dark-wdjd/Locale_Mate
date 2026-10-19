@@ -17,7 +17,15 @@ The Chengdu Research Base of Giant Panda Breeding — almost everyone just calls
 
 It doesn't feel like a city zoo. The grounds are large, green and hilly, with bamboo groves, lakes and spacious outdoor enclosures, and you can easily spend a whole morning walking between them. For many visitors it is the highlight of a trip to Chengdu.
 
+![View across the green, hilly grounds of the Chengdu Panda Base](/images/panda-base-grounds.webp)
+
+*The base is large, green and hilly. Photo: [MspreilsCN](https://commons.wikimedia.org/wiki/File:A_distant_view_in_Panda_Base.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons.*
+
 ## What you'll see
+
+![Three giant pandas eating bamboo together at the Chengdu Panda Base](/images/panda-base-bamboo.webp)
+
+*Giant pandas spend much of the morning eating bamboo. Photo: [Enricoroberto5](https://commons.wikimedia.org/wiki/File:Panda_giganti_al_Giant_Panda_Breeding_Research_Base_Chengdu.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons.*
 
 - **Adult giant pandas** in outdoor enclosures and "villas", eating bamboo, climbing and — very often — sleeping.
 - **Subadult pandas**, the young pandas that are usually the most playful to watch.
@@ -25,11 +33,19 @@ It doesn't feel like a city zoo. The grounds are large, green and hilly, with ba
 - **Red pandas**, which are smaller, fox-like and far more active than giant pandas. Their area is a favourite with children.
 - **Panda Creek Valley** and other landscaped areas, plus exhibition spaces about panda biology and conservation.
 
+![Three red pandas play-fighting on the grass at the Chengdu Panda Base](/images/panda-base-red-pandas.webp)
+
+*Red pandas are much livelier than giant pandas. Photo: [MSK](https://commons.wikimedia.org/wiki/File:3_red_pandas_play-fighting.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons.*
+
 Signs along the main routes are in Chinese and English, and the paths are easy to follow.
 
 ## The best time to go
 
 Go in the **morning**, as early as you can. Pandas are most active around feeding time, roughly from opening until about 10:00. By late morning many have eaten and fallen asleep, often high up in a tree, and in summer the afternoon heat makes them even less active.
+
+![A giant panda asleep on a wooden platform at the Chengdu Panda Base](/images/panda-base-sleeping.webp)
+
+*By late morning, many pandas are asleep. Photo: [Colin W](https://commons.wikimedia.org/wiki/File:Panda_at_the_Chengdu_Research_Base_of_Giant_Panda_Breeding,_Chengdu_-_panoramio.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons.*
 
 Weekdays are noticeably calmer than weekends. Chinese public holidays — especially the October Golden Week and the Spring Festival — are the busiest days of the year.
 
@@ -66,6 +82,10 @@ The base is in Chenghua District, in the north of the city. Keep the address in 
 
 There are two main visitor entrances, the **South Gate** and the **West Gate**. The South Gate is the usual choice for a first visit; the West Gate is often described as a quieter start. Either works, as long as your driver knows which one you want.
 
+![A visitor entrance to the Chengdu Research Base of Giant Panda Breeding](/images/panda-base-entrance.webp)
+
+*One of the base's visitor entrances. Photo: [Kreisverkehrsampel](https://commons.wikimedia.org/wiki/File:Chengdu_Research_Base_Eingang.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons.*
+
 ## Getting around inside
 
 The base is big and hilly, so wear comfortable shoes. An official **sightseeing bus** loops between the South and West Gates, stopping at the main panda areas. The base lists:
@@ -100,3 +120,4 @@ A good pattern is to walk to the nearest enclosures first while the pandas are a
 - China Survival Kit, "Chengdu Panda Base 2026" (updated 8 Oct 2026; price, 14-day window, advance booking, Golden Week): https://chinasurvivalkit.com/blog/chengdu-panda-base-guide
 - RealChinaTrip, "Chengdu Panda Base in 2026" (south vs west gate, original passport, early arrival): https://realchinatrip.com/blogs/city-guide/panda-base-tickets-guide-panda-base-guide-tickets-best-time-2026-updated-rct
 - ChinaTripedia, Panda Base ticket and opening hours (transport options): https://chinatripedia.com/chengdu-research-base-of-giant-panda-breeding-ticket-opening-hours-highlights-and-tips/
+- Cover photo: young giant panda by [George Lu](https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons.
