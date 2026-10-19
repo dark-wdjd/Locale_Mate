@@ -77,7 +77,7 @@ type ArticleSummary = {
 
 function usePageMeta(title: string, description: string, image = HERO_IMAGE, type: "website" | "article" = "website") {
   useEffect(() => {
-    const fullTitle = `${title} | MeetChengdu`;
+    const fullTitle = title.startsWith("MeetChengdu") ? title : `${title} | MeetChengdu`;
     const canonicalUrl = new URL(window.location.pathname, window.location.origin).href;
     const absoluteImage = image.startsWith("http") ? image : new URL(image, window.location.origin).href;
     document.title = fullTitle;
@@ -112,6 +112,18 @@ function usePageMeta(title: string, description: string, image = HERO_IMAGE, typ
     }
     canonical.href = canonicalUrl;
   }, [description, image, title, type]);
+}
+
+// Homepage JSON-LD. WebSite.name/alternateName is what Google uses for the site name
+// in results; keep in sync with server/_core/seo.ts.
+function siteStructuredData(origin: string) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", name: "MeetChengdu", alternateName: ["Meet Chengdu", "meetchengdu.com"], url: `${origin}/` },
+      { "@type": "Organization", name: "MeetChengdu", alternateName: "Meet Chengdu", url: `${origin}/` },
+    ],
+  };
 }
 
 function useStructuredData(data: object | null) {
@@ -260,7 +272,7 @@ function ContentFallbackNote({ className }: { className?: string }) {
 export function HomePage() {
   const { t } = useLanguage();
   usePageMeta(t("home.metaTitle"), t("home.metaDescription"));
-  useStructuredData({ "@context": "https://schema.org", "@type": "Organization", name: "MeetChengdu", url: window.location.origin });
+  useStructuredData(siteStructuredData(window.location.origin));
   const featured = trpc.guides.list.useQuery({ featuredOnly: true, limit: 4, offset: 0 });
   const articles = trpc.blog.list.useQuery({ featuredOnly: true });
 

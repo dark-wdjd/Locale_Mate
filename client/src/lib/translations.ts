@@ -16,7 +16,7 @@ export const translations: Record<string, Record<Language, string>> = {
   "nav.browse": { en: "Browse guides", zh: "浏览向导" },
   "brand.home": { en: "MeetChengdu home", zh: "MeetChengdu 首页" },
   "brand.location": { en: "English-speaking local guides", zh: "成都英语本地向导" },
-  "footer.description": { en: "An independent English-language directory built from public evidence. We help travelers discover potential local guides; we do not process bookings or guarantee availability.", zh: "找到你的本地地陪" },
+  "footer.description": { en: "Meet Chengdu (MeetChengdu) is an independent English-language directory built from public evidence. We help travelers discover potential local guides; we do not process bookings or guarantee availability.", zh: "Meet Chengdu（MeetChengdu）是一个基于公开资料整理的独立英文导游目录，帮助旅行者发现成都本地向导；本站不处理预订，也不保证档期。" },
   "footer.explore": { en: "Explore", zh: "探索" },
   "footer.guideDirectory": { en: "Guide directory", zh: "向导目录" },
   "footer.methodology": { en: "Methodology", zh: "收录方法" },
@@ -56,7 +56,7 @@ export const translations: Record<string, Record<Language, string>> = {
   "category.Methodology": { en: "Methodology", zh: "方法说明" },
   "category.Trip planning": { en: "Trip planning", zh: "行程规划" },
 
-  "home.metaTitle": { en: "English-speaking local guides in Chengdu", zh: "成都英语本地向导" },
+  "home.metaTitle": { en: "MeetChengdu – English-Speaking Local Guides in Chengdu", zh: "MeetChengdu – 成都英语本地向导" },
   "home.metaDescription": { en: "Discover English-speaking Chengdu guide profiles compiled from public evidence, plus thoughtful trip-planning notes.", zh: "发现基于公开证据整理的成都英语向导资料，以及实用、审慎的旅行规划笔记。" },
   "home.eyebrow": { en: "Chengdu, interpreted locally", zh: "从本地视角读懂成都" },
   "home.title": { en: "Meet the city beyond the map.", zh: "在地图之外，遇见真实的成都。" },

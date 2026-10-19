@@ -60,7 +60,8 @@ const aboutFaq = () => ({
 // React's createRoot replaces this markup as soon as the app mounts.
 async function resolvePage(pathname: string): Promise<ResolvedPage> {
   const nav = `<nav>${link("/", "Home")} · ${link("/guides", "Guide directory")} · ${link("/blog", "Journal")} · ${link("/about", "Methodology")}</nav>`;
-  const page = (h1: string, intro: string, extra = "") => `${nav}<main><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(intro)}</p>${extra}</main>`;
+  const footer = `<footer><p>${escapeHtml(en("footer.description"))}</p></footer>`;
+  const page = (h1: string, intro: string, extra = "") => `${nav}<main><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(intro)}</p>${extra}</main>${footer}`;
   const ok = (meta: PageMeta): ResolvedPage => ({ status: 200, meta });
 
   if (pathname === "/") {
@@ -68,7 +69,14 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
       title: en("home.metaTitle"),
       description: en("home.metaDescription"),
       body: page(en("home.title"), en("home.metaDescription"), await guideListBody()),
-      jsonLd: { "@context": "https://schema.org", "@type": "Organization", name: "MeetChengdu", url: SITE_URL },
+      // WebSite.name/alternateName is what Google uses for the site name; keep in sync with PublicPages.tsx.
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "WebSite", name: "MeetChengdu", alternateName: ["Meet Chengdu", "meetchengdu.com"], url: `${SITE_URL}/` },
+          { "@type": "Organization", name: "MeetChengdu", alternateName: "Meet Chengdu", url: `${SITE_URL}/` },
+        ],
+      },
     });
   }
   if (pathname === "/guides") {
@@ -174,7 +182,7 @@ export async function renderPageHtml(template: string, pathname: string): Promis
   }
 
   const meta = resolved.meta;
-  const fullTitle = escapeHtml(`${meta.title} | MeetChengdu`);
+  const fullTitle = escapeHtml(meta.title.startsWith("MeetChengdu") ? meta.title : `${meta.title} | MeetChengdu`);
   const description = escapeHtml(clip(meta.description));
   const canonical = escapeHtml(`${SITE_URL}${pathname === "/" ? "/" : pathname}`);
   const image = escapeHtml(absolute(meta.image ?? DEFAULT_IMAGE));
