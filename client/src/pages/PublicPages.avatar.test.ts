@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("streamdown", () => ({
   Streamdown: () => null,
+  defaultRehypePlugins: { harden: [() => undefined, {}] },
 }));
 
 import { GuideAvatar } from "./PublicPages";
