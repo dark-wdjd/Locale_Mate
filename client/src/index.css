@@ -213,6 +213,24 @@
   .prose ol { list-style: decimal; }
   .prose strong { color: var(--foreground); }
   .prose a { color: var(--primary); font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* In-article photos (Streamdown wraps each <img> in a div.group): a consistent
+     16:9 crop instead of full natural height, with a small caption underneath. */
+  .prose div.group:has(> img) { display: block; margin-block: 2em 0; }
+  .prose div.group > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 1.25rem;
+  }
+  .prose div.group:has(> img) + p:has(> em:only-child) {
+    margin-top: 0.6em;
+    margin-bottom: 2em;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--muted-foreground);
+  }
   .prose blockquote { border-left: 3px solid var(--primary); border-radius: 0 1rem 1rem 0; font-style: italic; }
 
   @media (min-width: 640px) {
