@@ -1,6 +1,18 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-18. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-23. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🔍 2026-10-21 to 10-23: Search Console duplicates, journal layout, Reddit plan
+
+- **Search Console (2026-10-21):** 10 impressions, average position 10.7; visitors from the US, Italy, Taiwan, Hong Kong and Canada; only the homepage, /guides, /blog and /about had impressions so far. The Page indexing report was still "processing".
+- **"Duplicate, Google chose different canonical than user" (2026-10-23):** `/guides/rebirth-chengdu-guide` was not indexed; Google picked `/guides/hanfu-english-guide` as canonical. The owner confirmed they are **different people**. Fixes:
+  - `8cf5edc`: the server-rendered homepage no longer lists every guide (it was 97% identical to /guides; now 14%).
+  - `ff1a602`: server-rendered guide pages now include city, languages, tags, each source's evidence summary, similar guides and related articles. The two repeated closing sentences ("This profile is editorially compiled…" / "Ask the guide directly…") were removed from all longBios. **Don't add them back when creating new guides.**
+  - **Still thin:** april, yanny, penny and susan (Manus-era, Chinese-only bios, no evidence summaries; 70–80% similar to each other). They need re-research.
+  - "Alternate page with proper canonical tag" for `/guides?tag=…` is expected.
+- **Journal layout (`b90040a`):** row cards (image left, text right, about 260px tall), a 21:9 article cover, and in-article photos cropped to 16:9 with small grey captions. Streamdown's harden plugin needed `defaultOrigin` to stop blocking relative image URLs (`ccb4d6d`).
+- **Panda article photos (`53041de`):** 6 Wikimedia Commons photos (CC BY / BY-SA), credited in captions, with the cover also credited on the About page.
+- **Reddit:** the competitor runs r/meetlocalchengdu (about 1,000 weekly visitors after 9 months; insider-content posts work best). Our plan is in `marketing/reddit/plan.md` (r/MeetChengdu; not created yet). Reddit is blocked for Claude in Chrome and for WebFetch, so the owner has to share screenshots.
 
 ## 🐼 2026-10-18: site name and first new article
 
