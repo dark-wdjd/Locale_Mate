@@ -128,12 +128,31 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
     if (slug !== slug.toLowerCase()) return { status: 301, location: `/guides/${slug.toLowerCase()}` };
     const guide = await getGuideBySlug(slug);
     if (!guide) return { status: (await getGuideBySlug(slug, true)) ? 410 : 404 };
-    const sources = guide.sources.map(source => `<li>${link(source.url, source.publicTitle ?? "Public source")}</li>`).join("");
+    // Everything here is specific to this guide (facts, evidence summaries, related
+    // links) so guide pages don't read as near-duplicates of each other.
+    const facts = [
+      guide.city && `Based in ${guide.city}`,
+      guide.languages && `Languages: ${guide.languages}`,
+      guide.tags.length && `Interests: ${guide.tags.map(tag => tag.name).join(", ")}`,
+    ].filter(Boolean) as string[];
+    const sources = guide.sources
+      .map(source => `<li>${link(source.url, source.publicTitle ?? "Public source")} (${escapeHtml(PLATFORM_LABELS[source.platform] ?? source.platform)} ${escapeHtml(source.sourceType)})${source.evidenceSummary ? `<p>${escapeHtml(source.evidenceSummary)}</p>` : ""}</li>`)
+      .join("");
+    const similar = guide.similarGuides.length
+      ? `<h2>${escapeHtml(en("guide.similarGuides"))}</h2><ul>${guide.similarGuides.map(other => `<li>${link(`/guides/${other.slug}`, other.displayName)}</li>`).join("")}</ul>`
+      : "";
+    const articles = guide.relatedArticles.length
+      ? `<h2>${escapeHtml(en("guide.mentionedIn"))}</h2><ul>${guide.relatedArticles.map(article => `<li>${link(`/blog/${article.slug}`, article.title)}</li>`).join("")}</ul>`
+      : "";
     return ok({
       title: guide.displayName,
       description: guide.shortBio,
       image: guide.avatarUrl,
-      body: page(guide.displayName, guide.shortBio, `<p>${escapeHtml(guide.longBio ?? "")}</p><h2>Public sources</h2><ul>${sources}</ul><p>${escapeHtml(en("guide.disclaimer"))}</p>`),
+      body: page(
+        guide.displayName,
+        guide.shortBio,
+        `<p>${escapeHtml(guide.longBio ?? "")}</p><p>${escapeHtml(facts.join(" · "))}</p><h2>Public sources</h2><ul>${sources}</ul>${similar}${articles}<p>${escapeHtml(en("guide.disclaimer"))}</p>`,
+      ),
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -185,6 +204,8 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
 function setTag(html: string, pattern: RegExp, replacement: string) {
   return pattern.test(html) ? html.replace(pattern, replacement) : html.replace("</head>", `    ${replacement}\n  </head>`);
 }
+
+const PLATFORM_LABELS: Record<string, string> = { xiaohongshu: "Xiaohongshu", douyin: "Douyin", media: "Media", website: "Website" };
 
 const NOINDEX = `<meta name="robots" content="noindex" />`;
 
