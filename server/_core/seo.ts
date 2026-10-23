@@ -36,6 +36,31 @@ async function guideListBody() {
   return `<ul>${guides.map(guide => `<li>${link(`/guides/${guide.slug}`, guide.displayName)}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`;
 }
 
+// Mirrors the sections the client renders on the homepage (featured guides,
+// interests, featured notes). Keep it distinct from /guides: listing every guide
+// here made the two pages ~97% identical and Google treated them as duplicates.
+async function homeSectionsBody() {
+  const [featured, posts] = await Promise.all([listGuides({ featuredOnly: true, limit: 4, offset: 0 }), listBlogPosts({ publishedOnly: true, featuredOnly: true })]);
+  const interests = [
+    ["pandas", "home.interest.pandas"],
+    ["tea-culture", "home.interest.tea"],
+    ["sichuan-opera", "home.interest.opera"],
+    ["western-sichuan", "home.interest.west"],
+  ]
+    .map(([tag, key]) => `<li>${link(`/guides?tag=${tag}`, en(`${key}.title`))}: ${escapeHtml(en(`${key}.copy`))}</li>`)
+    .join("");
+  return [
+    `<p>${link("/guides", en("home.findGuide"))} · ${link("/about", en("home.seeMethod"))}</p>`,
+    `<h2>${escapeHtml(en("home.evidenceTitle"))}</h2>`,
+    `<ul>${featured.map(guide => `<li>${link(`/guides/${guide.slug}`, guide.displayName)}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`,
+    `<p>${link("/guides", en("home.viewAll"))}</p>`,
+    `<h2>${escapeHtml(en("home.interestTitle"))}</h2><ul>${interests}</ul>`,
+    `<h2>${escapeHtml(en("home.notesTitle"))}</h2><p>${escapeHtml(en("home.notesCopy"))}</p>`,
+    `<ul>${posts.map(post => `<li>${link(`/blog/${post.slug}`, post.title)}: ${escapeHtml(post.excerpt ?? "")}</li>`).join("")}</ul>`,
+    `<p>${link("/blog", en("home.openJournal"))}</p>`,
+  ].join("");
+}
+
 async function articleListBody() {
   const posts = await listBlogPosts({ publishedOnly: true });
   return `<ul>${posts.map(post => `<li>${link(`/blog/${post.slug}`, post.title)}: ${escapeHtml(post.excerpt ?? "")}</li>`).join("")}</ul>`;
@@ -68,7 +93,7 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
     return ok({
       title: en("home.metaTitle"),
       description: en("home.metaDescription"),
-      body: page(en("home.title"), en("home.metaDescription"), await guideListBody()),
+      body: page(en("home.title"), en("home.intro"), await homeSectionsBody()),
       // WebSite.name/alternateName is what Google uses for the site name; keep in sync with PublicPages.tsx.
       jsonLd: {
         "@context": "https://schema.org",
