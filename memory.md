@@ -8,7 +8,7 @@ _Last updated: 2026-10-23. This file records the project state, decisions, and n
 - **"Duplicate, Google chose different canonical than user" (2026-10-23):** `/guides/rebirth-chengdu-guide` was not indexed; Google picked `/guides/hanfu-english-guide` as canonical. The owner confirmed they are **different people**. Fixes:
   - `8cf5edc`: the server-rendered homepage no longer lists every guide (it was 97% identical to /guides; now 14%).
   - `ff1a602`: server-rendered guide pages now include city, languages, tags, each source's evidence summary, similar guides and related articles. The two repeated closing sentences ("This profile is editorially compiled…" / "Ask the guide directly…") were removed from all longBios. **Don't add them back when creating new guides.**
-  - **Still thin:** april, yanny, penny and susan (Manus-era, Chinese-only bios, no evidence summaries; 70–80% similar to each other). They need re-research.
+  - **april, yanny, penny and susan re-researched on 2026-10-23** (each Xiaohongshu profile reviewed via its xhslink): English short and long bios, evidence summaries and adjusted tags. They now run 234–273 server-rendered words; the most similar pair of guide pages across the whole site is about 57% (it was 80%).
   - "Alternate page with proper canonical tag" for `/guides?tag=…` is expected.
 - **Journal layout (`b90040a`):** row cards (image left, text right, about 260px tall), a 21:9 article cover, and in-article photos cropped to 16:9 with small grey captions. Streamdown's harden plugin needed `defaultOrigin` to stop blocking relative image URLs (`ccb4d6d`).
 - **Panda article photos (`53041de`):** 6 Wikimedia Commons photos (CC BY / BY-SA), credited in captions, with the cover also credited on the About page.

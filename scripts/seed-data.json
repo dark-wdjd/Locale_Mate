@@ -85,8 +85,8 @@
     {
       "slug": "april",
       "displayName": "成都英语导游April",
-      "shortBio": "A Chengdu-based English guide for guiding international visitors through Chengdu and western Sichuan.",
-      "longBio": "✨18岁考取英语导游证\n🌍人类学与世界民族硕士在读\n🌈Do whatever you want !",
+      "shortBio": "A Sichuan English tour guide (and anthropology master's student) whose tour diaries cover Dujiangyan, Leshan, Emei, Jiuzhaigou and panda-volunteer days.",
+      "longBio": "April's public Xiaohongshu profile describes her as a Sichuan English tour guide (四川英语导游) and a master's student in anthropology and world ethnology. Her pinned posts are tour diaries: Dujiangyan, which she says she explains on every tour, and weekend group days. Other posts show a Leshan Giant Buddha boat trip, a climb of Mount Emei with guests, Jiuzhaigou, a panda-volunteer day making panda 'wotou' buns, a group of American university students in Chengdu, teaching guests Chinese phrases, and a handwritten thank-you letter from Malaysian visitors.",
       "city": "Chengdu",
       "languages": "English, Mandarin",
       "status": "unclaimed",
@@ -94,7 +94,7 @@
       "isFeatured": 0,
       "isEditorsPick": 1,
       "avatarUrl": "/guide_profile/April.webp",
-      "lastVerifiedAt": "2026-07-19T23:32:05.000Z",
+      "lastVerifiedAt": "2026-10-23T20:00:00.000Z",
       "tags": [
         "city-classics",
         "english",
@@ -108,10 +108,10 @@
           "platform": "xiaohongshu",
           "sourceType": "profile",
           "url": "https://xhslink.com/m/1uFaQlInDNF",
-          "publicTitle": null,
-          "evidenceSummary": null,
+          "publicTitle": "成都英语导游April — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '四川英语导游' and '人类学与世界民族硕士在读'; tagged 导游, location 四川成都. 645 followers; pinned Dujiangyan and weekend-tour diaries; posts on Leshan, Emei, Jiuzhaigou, panda volunteering, American student groups and a Malaysian guest's thank-you letter. Reviewed 23 Oct 2026.",
           "isPrimary": 1,
-          "verifiedAt": "2026-07-19T23:32:27.000Z"
+          "verifiedAt": "2026-10-23T20:00:00.000Z"
         }
       ]
     },
@@ -158,8 +158,8 @@
     {
       "slug": "yanny",
       "displayName": "四川中级英文导游yanny",
-      "shortBio": "An English-major guide who wrote about hosting one- and two-person foreign-language tours around Chengdu's classic sights.",
-      "longBio": "四川中级中英文导游",
+      "shortBio": "An intermediate-grade Chinese–English guide in Sichuan who posts a running work diary of English-language tours, including Sanxingdui commentary and an 8-day Malaysian group.",
+      "longBio": "Yanny's public Xiaohongshu profile lists her as an intermediate-grade Chinese–English tour guide in Sichuan (四川中级中英文导游). Most of her 274 notes form a work diary of English-language guiding in Chengdu — group photos with foreign visitors, 'what my job looks like' posts and monthly recaps — including an 8-day itinerary for visitors from Malaysia and English commentary at the Sanxingdui Museum, where she also writes about how hard tickets are to get. One of her guiding-diary posts has more than 1,200 likes.",
       "city": "Chengdu",
       "languages": "English, Mandarin",
       "status": "unclaimed",
@@ -167,7 +167,7 @@
       "isFeatured": 0,
       "isEditorsPick": 1,
       "avatarUrl": "/guide_profile/Yanny.webp",
-      "lastVerifiedAt": "2026-07-19T23:30:48.000Z",
+      "lastVerifiedAt": "2026-10-23T20:00:00.000Z",
       "tags": [
         "city-classics",
         "english",
@@ -180,18 +180,18 @@
           "platform": "xiaohongshu",
           "sourceType": "profile",
           "url": "https://xhslink.com/m/3eaM0Iww7YN",
-          "publicTitle": null,
-          "evidenceSummary": null,
-          "isPrimary": 0,
-          "verifiedAt": "2026-07-19T23:30:58.000Z"
+          "publicTitle": "四川中级英文导游yanny — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '四川中级中英文导游' (intermediate-grade Chinese–English guide, Sichuan). 350 followers, 274 notes; posts include an 8-day Malaysian group itinerary, Sanxingdui English commentary and English-guide work diaries. Reviewed 23 Oct 2026.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-10-23T20:00:00.000Z"
         }
       ]
     },
     {
       "slug": "penny",
       "displayName": "成都英语导游Penny",
-      "shortBio": "A Chengdu-based English tour guide whose public Xiaohongshu profile describes her as a senior Chinese–English guide.",
-      "longBio": "高级中英文导游\n记录生活美好",
+      "shortBio": "A senior-grade Chinese–English guide whose work logs cover Panda Base commentary, Jiuzhaigou and Leshan trips, and business hosting such as the ATP Chengdu Open.",
+      "longBio": "Penny's public Xiaohongshu profile describes her as a senior-grade Chinese–English guide (高级中英文导游), tagged as a docent (讲解员) and travel blogger, based in Chengdu. Her 'Chengdu English guide work log' series records groups from Russia, Brazil, the US, Portugal, the UK, Australia, New Zealand, Switzerland and Germany. Posts include English commentary and business hosting at the Chengdu Panda Base, Jiuzhaigou and Leshan Giant Buddha trips, Qingcheng Mountain and Zoigê, and a pinned post about hosting players at the ATP Chengdu Open.",
       "city": "Chengdu",
       "languages": "English, Mandarin",
       "status": "unclaimed",
@@ -199,20 +199,23 @@
       "isFeatured": 0,
       "isEditorsPick": 0,
       "avatarUrl": "/guide_profile/Penny.webp",
-      "lastVerifiedAt": "2026-07-19T23:33:14.000Z",
+      "lastVerifiedAt": "2026-10-23T20:00:00.000Z",
       "tags": [
         "city-classics",
-        "english"
+        "english",
+        "pandas",
+        "private-tour",
+        "western-sichuan"
       ],
       "sources": [
         {
           "platform": "xiaohongshu",
           "sourceType": "profile",
           "url": "https://xhslink.com/m/Aq4OnhtD0mq",
-          "publicTitle": null,
-          "evidenceSummary": null,
+          "publicTitle": "成都英语导游Penny — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '高级中英文导游', tagged 讲解员 and 旅行博主, location 四川成都. 1,185 followers, 134 notes; pinned ATP Chengdu Open player-hosting post; work logs with groups from Russia, Brazil, the US, the UK, Switzerland and Germany; Panda Base, Jiuzhaigou and Leshan posts. Reviewed 23 Oct 2026.",
           "isPrimary": 1,
-          "verifiedAt": "2026-07-19T23:33:36.000Z"
+          "verifiedAt": "2026-10-23T20:00:00.000Z"
         }
       ]
     },
@@ -265,8 +268,8 @@
     {
       "slug": "susan",
       "displayName": "成都英语导游Susan",
-      "shortBio": "10年资深英语导游\n带团足迹遍布全球50多个国家\n10 years experience of guiding foreign groups\nLocal guide in Chengdu",
-      "longBio": "10年资深英语导游\n带团足迹遍布全球50多个国家\n10 years experience of guiding foreign groups\nLocal guide in Chengdu",
+      "shortBio": "A Chengdu English guide citing 10 years of guiding foreign groups, with posts on the Panda Base, teahouses, hot pot, mahjong classes, Dujiangyan and Qingcheng Mountain.",
+      "longBio": "Susan's public Xiaohongshu profile reads '10 years experience of guiding foreign groups / Local guide in Chengdu' and says her tours have reached visitors from more than 50 countries. Her pinned posts are a reflection on ten years as an English guide and a Panda Base visit she hosted for Alan Walker's team. Her 'Chengdu English guide' series covers teahouse visits, hot pot, a mahjong class, the People's Park marriage market, rabbit-head snacks, Dujiangyan's irrigation system, a Taoist class at Qingcheng Mountain and a Jin River night cruise, with guests from Italy, Portugal, the UK, Australia, New Zealand and the US. Note: this is a different account from '成都英文导游Susan', also listed here.",
       "city": "Chengdu",
       "languages": "English, Chinese",
       "status": "unclaimed",
@@ -274,9 +277,12 @@
       "isFeatured": 0,
       "isEditorsPick": 1,
       "avatarUrl": "/guide_profile/Susan.webp",
-      "lastVerifiedAt": "2026-07-19T23:29:28.000Z",
+      "lastVerifiedAt": "2026-10-23T20:00:00.000Z",
       "tags": [
+        "city-classics",
         "english",
+        "pandas",
+        "private-tour",
         "tea-culture"
       ],
       "sources": [
@@ -284,10 +290,10 @@
           "platform": "xiaohongshu",
           "sourceType": "profile",
           "url": "https://xhslink.com/m/1ThhJbnHooU",
-          "publicTitle": null,
-          "evidenceSummary": null,
-          "isPrimary": 0,
-          "verifiedAt": "2026-07-19T23:29:55.000Z"
+          "publicTitle": "成都英语导游Susan — Xiaohongshu profile",
+          "evidenceSummary": "Public bio: '10年资深英语导游 / 带团足迹遍布全球50多个国家 / 10 years experience of guiding foreign groups / Local guide in Chengdu'. 3,211 followers, 216 notes; pinned '一个英语导游的10年' and an Alan Walker team Panda Base visit; posts on teahouses, hot pot, mahjong, Dujiangyan, Qingcheng and Jin River cruises. Reviewed 23 Oct 2026.",
+          "isPrimary": 1,
+          "verifiedAt": "2026-10-23T20:00:00.000Z"
         }
       ]
     },
