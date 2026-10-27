@@ -1,6 +1,12 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-23. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-26. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## ⚠️ 2026-10-26: Render free-hour limit
+
+- Render's free tier allows **750 instance-hours per month for the whole workspace**. With UptimeRobot keeping `localmate-chengdu` awake, that one service alone uses about 744 h in a 31-day month. An old leftover service, `localmate`, was eating hours too: 616 of 750 were used by Oct 26, and the services would have been suspended until Nov 1.
+- The owner **deleted the old `localmate` service** on 2026-10-26. The live site was checked afterwards and is fine. October will be very tight (about 134 h left for about 132 h needed).
+- **Recommendation pending:** upgrade `localmate-chengdu` to **Starter ($7/mo)**. That means no hour cap and no sleeping, so UptimeRobot can be retired. **Never run a second free service on this workspace** while the site relies on UptimeRobot.
 
 ## 🔍 2026-10-21 to 10-23: Search Console duplicates, journal layout, Reddit plan
 
