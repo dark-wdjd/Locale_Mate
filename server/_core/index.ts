@@ -40,6 +40,11 @@ async function startServer() {
   registerSitemapRoute(app);
   registerRobotsRoute(app);
   // tRPC API
+  // API JSON is fetched by crawlers while rendering, but must never be indexed itself.
+  app.use("/api", (_req, res, next) => {
+    res.setHeader("X-Robots-Tag", "noindex");
+    next();
+  });
   app.use(
     "/api/trpc",
     createExpressMiddleware({

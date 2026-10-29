@@ -75,8 +75,11 @@ type ArticleSummary = {
   publishedAt: Date | null;
 };
 
-function usePageMeta(title: string, description: string, image = HERO_IMAGE, type: "website" | "article" = "website") {
+// A null title means the page's data is still loading: keep the meta tags the
+// server rendered instead of swapping in generic fallback copy.
+function usePageMeta(title: string | null, description: string, image = HERO_IMAGE, type: "website" | "article" = "website") {
   useEffect(() => {
+    if (title === null) return;
     const fullTitle = title.startsWith("MeetChengdu") ? title : `${title} | MeetChengdu`;
     const canonicalUrl = new URL(window.location.pathname, window.location.origin).href;
     const absoluteImage = image.startsWith("http") ? image : new URL(image, window.location.origin).href;
@@ -135,8 +138,10 @@ const articleRehypePlugins: Pluggable[] = Object.values({
   harden: [hardenPlugin, { ...hardenOptions, defaultOrigin: typeof window === "undefined" ? undefined : window.location.origin }] as Pluggable,
 });
 
-function useStructuredData(data: object | null) {
+// undefined means "still loading": leave the server-rendered JSON-LD in place.
+function useStructuredData(data: object | null | undefined) {
   useEffect(() => {
+    if (data === undefined) return;
     const existing = document.getElementById("ld-json");
     if (!data) {
       existing?.remove();
@@ -450,7 +455,7 @@ export function GuideDetailPage() {
   const { language, t } = useLanguage();
   const { slug } = useParams<{ slug: string }>();
   const guide = trpc.guides.getBySlug.useQuery({ slug: slug ?? "" }, { enabled: Boolean(slug) });
-  usePageMeta(guide.data?.displayName ?? t("guide.metaFallbackTitle"), guide.data?.shortBio ?? t("guide.metaFallbackDescription"));
+  usePageMeta(guide.data?.displayName ?? (guide.isLoading ? null : t("guide.metaFallbackTitle")), guide.data?.shortBio ?? t("guide.metaFallbackDescription"));
   useStructuredData(
     guide.data
       ? {
@@ -464,7 +469,7 @@ export function GuideDetailPage() {
           address: { "@type": "PostalAddress", addressLocality: guide.data.city },
           knowsLanguage: guide.data.languages.split(",").map(part => part.trim()),
         }
-      : null,
+      : guide.isLoading ? undefined : null,
   );
 
   if (guide.isLoading) return <PublicShell><div className="container py-20"><Skeleton className="h-[35rem] rounded-[2rem]" /></div></PublicShell>;
@@ -511,7 +516,7 @@ export function BlogArticlePage() {
   const post = trpc.blog.getBySlug.useQuery({ slug: slug ?? "" }, { enabled: Boolean(slug) });
   const recordEvent = trpc.operations.recordContentEvent.useMutation();
   const recordedPostId = useRef<number | null>(null);
-  usePageMeta(post.data?.seoTitle ?? post.data?.title ?? t("blog.articleFallback"), post.data?.seoDescription ?? post.data?.excerpt ?? t("blog.articleDescriptionFallback"), post.data?.coverImageUrl ?? HERO_IMAGE, "article");
+  usePageMeta(post.data?.seoTitle ?? post.data?.title ?? (post.isLoading ? null : t("blog.articleFallback")), post.data?.seoDescription ?? post.data?.excerpt ?? t("blog.articleDescriptionFallback"), post.data?.coverImageUrl ?? HERO_IMAGE, "article");
   useStructuredData(
     post.data
       ? {
@@ -524,7 +529,7 @@ export function BlogArticlePage() {
           dateModified: new Date(post.data.updatedAt).toISOString(),
           author: { "@type": "Organization", name: "MeetChengdu" },
         }
-      : null,
+      : post.isLoading ? undefined : null,
   );
 
   useEffect(() => {

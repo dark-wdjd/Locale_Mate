@@ -265,6 +265,10 @@ export function registerCanonicalHostRedirect(app: Express) {
 
 export function registerRobotsRoute(app: Express) {
   app.get("/robots.txt", (_req, res) => {
-    res.type("text/plain").send(`User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+    // /api/trpc must stay crawlable: Googlebot obeys robots.txt for the fetches it
+    // makes while rendering, and blocking it left every page stuck on a loading
+    // skeleton (all guide pages looked identical -> "Duplicate" in Search Console).
+    // The longer Allow rule wins over Disallow: /api/.
+    res.type("text/plain").send(`User-agent: *\nAllow: /\nDisallow: /admin\nAllow: /api/trpc/\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   });
 }
