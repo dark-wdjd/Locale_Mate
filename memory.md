@@ -1,6 +1,17 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-26. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-29. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🚨 2026-10-29: root cause of the "Duplicate" reports (Googlebot rendering)
+
+- Validation of the "Duplicate, Google chose different canonical" fix failed (rebirth-chengdu-guide), with 9 more pages pending (lynne, xiao-o, mala-big-bro, lucky, yanny, shirley, holly, kacha-kacha, plus the blog post first-48-hours-in-chengdu).
+- The owner's Search Console **live test of /guides/lucky** showed Google's rendered page stuck on the **loading skeleton**, with the generic title "Guide profile | MeetChengdu". **Cause:** robots.txt had `Disallow: /api/`, and Googlebot obeys robots.txt for the fetches it makes while rendering, so the `/api/trpc` data call was blocked. Every guide page rendered identically.
+- **Fix (`245893a`):**
+  - robots.txt adds `Allow: /api/trpc/` (the longer match wins over `Disallow: /api/`).
+  - Every `/api` response sends `X-Robots-Tag: noindex`.
+  - `usePageMeta(null)` and `useStructuredData(undefined)` keep the server-rendered meta and JSON-LD while data is loading.
+  - **Never disallow /api/trpc again.**
+- Next: the owner reruns the live test, then Request indexing and START NEW VALIDATION. If Google still renders a skeleton, the fallback plan is to embed the initial tRPC data in the server HTML and seed react-query.
 
 ## ⚠️ 2026-10-26: Render free-hour limit
 
