@@ -6,7 +6,8 @@ _Last updated: 2026-11-01. This file records the project state, decisions, and n
 
 - `/blog/sanxingdui-from-chengdu` ("Visiting Sanxingdui from Chengdu: A Simple Guide (2026)", about 1,100 words, commit `1643ba8`). Like the panda piece it is a plain visitor guide with **no named guides**, ending with one line linking to /guides. It has 5 Commons photos (Gary Todd CC0 ×4, plus a gold mask by Thoslee, CC BY-SA 4.0), credited in captions. Portrait photos were pre-cropped to 16:9.
 - Facts: 72 RMB, passport booking by time slot through sxd.cn / the official mini program (Trip.com and Klook as fallbacks), 08:30–18:00 with last entry at 17:00, closed only on Chinese New Year's Eve, train Chengdu East → Guanghan North about 20 minutes, then bus 13 or a taxi of about 7 km. Re-check them periodically.
-- **Next article:** "How to Hire an English-Speaking Guide in Chengdu" (draft ready, still awaiting the owner's review).
+- **Also published 2026-11-01:** `/blog/how-to-hire-english-speaking-guide-chengdu` (commit `0903b35`; SEO title "How to Hire & Verify an English Guide in Chengdu"; cover is the People's Park teahouse, Daderot CC0). Unlike the panda and Sanxingdui pieces, it **names 7 guides as evidence examples** (fiona, laura, libby, betty, charles, jenny, tommy), linked via blogGuideLinks. The owner was asked whether to keep the names; their answer is still pending. Price ranges were re-verified (QuietRoutes 20 Sep 2026; HeroGuide 2026). The QR-code note is hedged ("may open in WeChat").
+- Published articles: first-48-hours, tea-food-neighborhoods, after-sunset, chengdu-panda-base-guide, sanxingdui-from-chengdu, how-to-hire. **Next topic candidates** (content-plan.md): what an English guide in Chengdu costs, Leshan day trip, teahouses and mahjong, Chengdu→Jiuzhaigou by train, Dujiangyan.
 
 ## 🔤 2026-10-31: English-first guide names and titles
 
