@@ -7,7 +7,7 @@ excerpt: The bronze masks of Sanxingdui are one of China's great archaeological 
 category: Trip planning
 targetQuery: sanxingdui museum from chengdu / sanxingdui tickets foreigners passport / sanxingdui by train guanghan north
 relatedArticles: [chengdu-panda-base-guide, first-48-hours-in-chengdu]
-status: draft — not published
+status: published 2026-11-01
 lastChecked: 2026-11-01
 ---
 
@@ -19,6 +19,10 @@ What makes Sanxingdui so striking is how *different* it looks. These faces don't
 
 If you have an extra day in Chengdu, this is one of the best ways to spend it.
 
+![A bronze head with large stylised eyes from Sanxingdui](/images/sanxingdui-bronze-heads.webp)
+
+*Bronze heads like this one are among the most striking finds. Photo: [Gary Todd](https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_1.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.*
+
 ## What you'll see
 
 The museum has two connected buildings, and most visitors walk through both:
@@ -29,9 +33,21 @@ The museum has two connected buildings, and most visitors walk through both:
 Highlights to look out for:
 
 - **The Bronze Standing Figure** — about 2.6 metres tall including its base, often described as the oldest life-size bronze human figure in the world.
+
+![The upper body of the Bronze Standing Figure at Sanxingdui, with its oversized hands](/images/sanxingdui-standing-figure.webp)
+
+*The Bronze Standing Figure, with its huge hands that once held something now lost. Photo: [Gary Todd](https://commons.wikimedia.org/wiki/File:Bronze_Colossal_Standing_Figure,_Sanxingdui_b.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.*
 - **The masks with protruding eyes** — the largest is well over a metre wide, with cylindrical eyes jutting out from the face. They're the image most people associate with Sanxingdui.
 - **Bronze Sacred Tree No. 1** — nearly four metres tall, with birds perched on its branches.
+
+![Birds perched on the branches of a bronze sacred tree at Sanxingdui](/images/sanxingdui-sacred-tree.webp)
+
+*Birds on the branches of a bronze sacred tree. Photo: [Gary Todd](https://commons.wikimedia.org/wiki/File:Bronze_Tree,_Sanxingdui_1c.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.*
 - **The gold masks**, including the half-mask from Pit 5 found in the recent excavations, the largest Shang-era gold mask yet discovered in China.
+
+![A gold mask on display at the Sanxingdui Museum](/images/sanxingdui-gold-mask.webp)
+
+*One of Sanxingdui's gold masks. Photo: [Thoslee](https://commons.wikimedia.org/wiki/File:Sanxingdui_Gold_Mask.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons.*
 
 Signs are in Chinese and English, but the labels are short. Because there are no written records from this culture, the objects need interpreting more than most museum pieces — reading up beforehand, or going with someone who can explain them, makes a big difference.
 
@@ -92,3 +108,4 @@ If you'd like English commentary inside the museum, our [directory of English-sp
 - China Highlights, "Sanxingdui Museum: How to Visit from Chengdu" (train to Guanghan North, bus No. 13, taxi): https://www.chinahighlights.com/chengdu/attraction/sanxingdui-museum-in-guanghan.htm
 - Gov.cn, "New Sanxingdui Museum building starts trial operation" (July 2023; more than 1,500 relics on display): https://english.www.gov.cn/news/202307/28/content_WS64c31938c6d0868f4e8de257.html
 - Wikipedia, "Sanxingdui Museum" (background on the 1986 pits): https://en.wikipedia.org/wiki/Sanxingdui_Museum
+- Cover photo: bronze mask with protruding eyes by [Gary Todd](https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_with_Protruding_Eyes_%26_Ears_a.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.
