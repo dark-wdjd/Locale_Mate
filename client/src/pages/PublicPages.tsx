@@ -232,7 +232,7 @@ function GuideCard({ guide }: { guide: GuideSummary }) {
       <div className="mt-6 flex-1">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{guide.city} · {guide.languages}</p>
         <h3 className="mt-2 font-serif text-[1.65rem] font-semibold tracking-[-0.025em] text-card-foreground">{guideName(guide)}</h3>
-        {guide.englishName && <p className="mt-1 text-xs text-muted-foreground">{guide.displayName}</p>}
+        {guide.englishName && guide.englishName !== guide.displayName && <p className="mt-1 text-xs text-muted-foreground">{guide.displayName}</p>}
         <p className="mt-3 line-clamp-4 text-sm leading-6 text-muted-foreground">{guide.shortBio}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {guide.tags.slice(0, 4).map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}
@@ -470,7 +470,7 @@ export function GuideDetailPage() {
           "@context": "https://schema.org",
           "@type": "Person",
           name: guideName(guide.data),
-          ...(guide.data.englishName ? { alternateName: guide.data.displayName } : {}),
+          ...(guide.data.englishName && guide.data.englishName !== guide.data.displayName ? { alternateName: guide.data.displayName } : {}),
           description: guide.data.shortBio,
           ...(guide.data.avatarUrl ? { image: new URL(guide.data.avatarUrl, window.location.origin).href } : {}),
           url: new URL(`/guides/${guide.data.slug}`, window.location.origin).href,
@@ -492,7 +492,7 @@ export function GuideDetailPage() {
           <Link href="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4f5b53] hover:text-[#17382f]"><ArrowLeft className="size-4" /> {t("guide.back")}</Link>
           <div className="mt-9 grid gap-8 lg:grid-cols-[auto_1fr_.42fr] lg:items-start">
             <GuideAvatar name={item.displayName} avatarUrl={item.avatarUrl} large />
-            <div><div className="flex flex-wrap gap-2">{item.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}<Tag>{item.isClaimed ? t("common.claimed") : t("common.unclaimedProfile")}</Tag></div><h1 className="mt-5 font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{guideName(item)}</h1>{item.englishName && <p className="mt-3 text-sm text-muted-foreground">{t("guide.accountName", { name: item.displayName })}</p>}<p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5b53]">{item.shortBio}</p><div className="mt-6 flex flex-wrap gap-2">{item.tags.map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}</div></div>
+            <div><div className="flex flex-wrap gap-2">{item.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}<Tag>{item.isClaimed ? t("common.claimed") : t("common.unclaimedProfile")}</Tag></div><h1 className="mt-5 font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{guideName(item)}</h1>{item.englishName && item.englishName !== item.displayName && <p className="mt-3 text-sm text-muted-foreground">{t("guide.accountName", { name: item.displayName })}</p>}<p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5b53]">{item.shortBio}</p><div className="mt-6 flex flex-wrap gap-2">{item.tags.map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}</div></div>
             <div className="rounded-[1.5rem] border border-[#17382f]/12 bg-white/55 p-5"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#743926]">{t("guide.status")}</p><dl className="mt-4 grid gap-4 text-sm"><div><dt className="text-[#4f5b53]">{t("guide.location")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.city}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.languages")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.languages}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.reviewed")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.lastVerifiedAt ? new Date(item.lastVerifiedAt).toLocaleDateString(language === "zh" ? "zh-CN" : "en-US", { year: "numeric", month: "short", day: "numeric" }) : t("guide.reviewUnavailable")}</dd></div></dl></div>
           </div>
         </div>

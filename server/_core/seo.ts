@@ -154,13 +154,13 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
       body: page(
         guideName(guide),
         guide.shortBio,
-        `${guide.englishName ? `<p>Xiaohongshu account: ${escapeHtml(guide.displayName)}</p>` : ""}<p>${escapeHtml(guide.longBio ?? "")}</p><p>${escapeHtml(facts.join(" · "))}</p><h2>Public sources</h2><ul>${sources}</ul>${similar}${articles}<p>${escapeHtml(en("guide.disclaimer"))}</p>`,
+        `${guide.englishName && guide.englishName !== guide.displayName ? `<p>Xiaohongshu account: ${escapeHtml(guide.displayName)}</p>` : ""}<p>${escapeHtml(guide.longBio ?? "")}</p><p>${escapeHtml(facts.join(" · "))}</p><h2>Public sources</h2><ul>${sources}</ul>${similar}${articles}<p>${escapeHtml(en("guide.disclaimer"))}</p>`,
       ),
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "Person",
         name: guideName(guide),
-        ...(guide.englishName ? { alternateName: guide.displayName } : {}),
+        ...(guide.englishName && guide.englishName !== guide.displayName ? { alternateName: guide.displayName } : {}),
         description: guide.shortBio,
         ...(guide.avatarUrl ? { image: absolute(guide.avatarUrl) } : {}),
         url: `${SITE_URL}/guides/${guide.slug}`,

@@ -2,6 +2,13 @@
 
 _Last updated: 2026-10-31. This file records the project state, decisions, and next steps so work can resume at any time._
 
+## 🔤 2026-10-31: English-first guide names and titles
+
+- **Migration 0004** added nullable `guides.englishName` and `guides.seoTitle`. The owner applied it to production with **`!bash scripts/migrate-production.sh`**; Claude Code's auto-mode blocks Claude from running production schema migrations, so the owner runs that script. Code must deploy **after** the migration.
+- All 31 public guides have an English name and SEO title, taken from the approved table in `marketing/guide-english-titles.md` (e.g. "Kacha Kacha – English Guide & Photographer, Chengdu"). `<title>` uses seoTitle; the H1, cards, similar-guide links and server lists use englishName; the Xiaohongshu account name is shown under the heading and set as JSON-LD alternateName (only when it differs).
+- **New guides must get englishName + seoTitle** (≤ about 52 chars before " | MeetChengdu", with claims backed by the profile).
+- Local MySQL has root with an empty password, which drizzle-kit refuses, so local migrations were applied with a one-off node script.
+
 ## 📊 2026-10-31: analytics
 
 - Added the **Cloudflare Web Analytics** beacon (cookieless, no personal data; token `940fe7040cfd4bc6bd13ac5cbccc9e4c`, public by design) in `client/index.html` (commit `775ec2c`). The owner views it in the Cloudflare dashboard → Web Analytics. It shows referrers (reddit/tripadvisor/google), paths and countries, which fills the gap left by Search Console (Google only) and the built-in `/admin/analytics` (blog views, guide-card clicks and outbound clicks only; no visitor totals or external referrers).
