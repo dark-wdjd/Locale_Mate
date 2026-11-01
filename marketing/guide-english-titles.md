@@ -9,7 +9,7 @@ The Chinese account name stays visible on the page (for checking on Xiaohongshu)
 | # | slug | Current title (on Google) | English name (H1) | Proposed page title | Length |
 |---|---|---|---|---|---|
 | 1 | `huage-harry` | Huage Harry | Harry | Harry – English Guide in Chengdu (Pandas & Opera) | 63 |
-| 2 | `april` | 成都英语导游April | April | April – English Guide in Chengdu (Dujiangyan) | 59 ⚠️ |
+| 2 | `april` | 成都英语导游April | April | April – English Guide in Chengdu (Dujiangyan) | 59 |
 | 3 | `yanny` | 四川中级英文导游yanny | Yanny | Yanny – English Tour Guide in Chengdu (Sanxingdui) | 64 |
 | 4 | `penny` | 成都英语导游Penny | Penny | Penny – Senior English Guide in Chengdu (Pandas) | 62 |
 | 5 | `susan` | 成都英语导游Susan | Susan | Susan – 10-Year English Guide in Chengdu (Pandas) | 63 |
@@ -26,7 +26,7 @@ The Chinese account name stays visible on the page (for checking on Xiaohongshu)
 | 16 | `holly` | Holly the guide | Holly | Holly – English Guide in Chengdu, Leshan & Zigong | 63 |
 | 17 | `tangchaoer` | 唐朝儿in Chengdu | Tangchaoer | Tangchaoer – English Guide & Blogger in Chengdu | 61 |
 | 18 | `chengdu-susan` | 成都英文导游Susan | Susan (Leshan) | Susan – English Guide in Chengdu (Du Fu & Leshan) | 63 |
-| 19 | `tommy` | Tommy Chengdu 成都英语导游 | Tommy | Tommy – English Guide in Chengdu (Pandas) | 55 ⚠️ |
+| 19 | `tommy` | Tommy Chengdu 成都英语导游 | Tommy | Tommy – English Guide in Chengdu (Pandas) | 55 |
 | 20 | `fiona` | 成都英语导游Fiona | Fiona | Fiona – English Panda Base Guide in Chengdu | 57 |
 | 21 | `charles` | 成都英语导游Charles | Charles | Charles – English Guide for Jiuzhaigou & Sichuan | 62 |
 | 22 | `hanfu-english-guide` | 爱穿汉服的成都英语导游 | The Hanfu Guide | Hanfu-Wearing English Tour Guide in Chengdu | 57 |
