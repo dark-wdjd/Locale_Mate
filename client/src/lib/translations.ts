@@ -137,6 +137,7 @@ export const translations: Record<string, Record<Language, string>> = {
   "guide.incorrectQuestion": { en: "Is this you, or is something incorrect?", zh: "这是你的资料，或其中有信息不准确吗？" },
   "guide.incorrectCopy": { en: "Claim this profile, send a correction, opt out, or request removal.", zh: "你可以认领资料、提交纠错、选择退出或申请移除。" },
   "guide.startRequest": { en: "Start a request", zh: "发起申请" },
+  "guide.accountName": { en: "Xiaohongshu account: {{name}}", zh: "小红书账号：{{name}}" },
   "guide.similarGuides": { en: "Similar Chengdu guides", zh: "相似的成都向导" },
   "guide.mentionedIn": { en: "Mentioned in the journal", zh: "在期刊中被提及" },
 

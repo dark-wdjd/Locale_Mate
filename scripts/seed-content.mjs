@@ -25,14 +25,14 @@ for (const tag of tags) {
 for (const guide of guides) {
   await connection.execute(
     `INSERT INTO guides
-      (slug, displayName, shortBio, longBio, city, languages, status, isClaimed, isFeatured, isEditorsPick, avatarUrl, lastVerifiedAt)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-     ON DUPLICATE KEY UPDATE displayName = VALUES(displayName), shortBio = VALUES(shortBio), longBio = VALUES(longBio),
+      (slug, displayName, englishName, seoTitle, shortBio, longBio, city, languages, status, isClaimed, isFeatured, isEditorsPick, avatarUrl, lastVerifiedAt)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON DUPLICATE KEY UPDATE displayName = VALUES(displayName), englishName = VALUES(englishName), seoTitle = VALUES(seoTitle), shortBio = VALUES(shortBio), longBio = VALUES(longBio),
        city = VALUES(city), languages = VALUES(languages), status = VALUES(status), isClaimed = VALUES(isClaimed),
        isFeatured = VALUES(isFeatured), isEditorsPick = VALUES(isEditorsPick), avatarUrl = VALUES(avatarUrl),
        lastVerifiedAt = VALUES(lastVerifiedAt)`,
     [
-      guide.slug, guide.displayName, guide.shortBio, guide.longBio, guide.city, guide.languages, guide.status,
+      guide.slug, guide.displayName, guide.englishName ?? null, guide.seoTitle ?? null, guide.shortBio, guide.longBio, guide.city, guide.languages, guide.status,
       guide.isClaimed ? 1 : 0, guide.isFeatured ? 1 : 0, guide.isEditorsPick ? 1 : 0, guide.avatarUrl,
       toDate(guide.lastVerifiedAt),
     ],

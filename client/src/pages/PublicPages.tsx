@@ -49,6 +49,8 @@ type GuideSummary = {
   id: number;
   slug: string;
   displayName: string;
+  englishName?: string | null;
+  seoTitle?: string | null;
   shortBio: string;
   longBio: string | null;
   city: string;
@@ -61,7 +63,7 @@ type GuideSummary = {
   lastVerifiedAt: Date | null;
   tags: GuideTag[];
   sources: GuideSource[];
-  similarGuides?: { id: number; slug: string; displayName: string; shortBio: string; avatarUrl: string | null; isEditorsPick: boolean }[];
+  similarGuides?: { id: number; slug: string; displayName: string; englishName?: string | null; shortBio: string; avatarUrl: string | null; isEditorsPick: boolean }[];
   relatedArticles?: { id: number; slug: string; title: string; excerpt: string; coverImageUrl: string | null }[];
 };
 type ArticleSummary = {
@@ -74,6 +76,11 @@ type ArticleSummary = {
   readingMinutes: number;
   publishedAt: Date | null;
 };
+
+// English-first name for headings and links; displayName is the public account name.
+function guideName(guide: { displayName: string; englishName?: string | null }) {
+  return guide.englishName || guide.displayName;
+}
 
 // A null title means the page's data is still loading: keep the meta tags the
 // server rendered instead of swapping in generic fallback copy.
@@ -224,7 +231,8 @@ function GuideCard({ guide }: { guide: GuideSummary }) {
       </div>
       <div className="mt-6 flex-1">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">{guide.city} · {guide.languages}</p>
-        <h3 className="mt-2 font-serif text-[1.65rem] font-semibold tracking-[-0.025em] text-card-foreground">{guide.displayName}</h3>
+        <h3 className="mt-2 font-serif text-[1.65rem] font-semibold tracking-[-0.025em] text-card-foreground">{guideName(guide)}</h3>
+        {guide.englishName && <p className="mt-1 text-xs text-muted-foreground">{guide.displayName}</p>}
         <p className="mt-3 line-clamp-4 text-sm leading-6 text-muted-foreground">{guide.shortBio}</p>
         <div className="mt-5 flex flex-wrap gap-2">
           {guide.tags.slice(0, 4).map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}
@@ -455,13 +463,14 @@ export function GuideDetailPage() {
   const { language, t } = useLanguage();
   const { slug } = useParams<{ slug: string }>();
   const guide = trpc.guides.getBySlug.useQuery({ slug: slug ?? "" }, { enabled: Boolean(slug) });
-  usePageMeta(guide.data?.displayName ?? (guide.isLoading ? null : t("guide.metaFallbackTitle")), guide.data?.shortBio ?? t("guide.metaFallbackDescription"));
+  usePageMeta(guide.data ? guide.data.seoTitle ?? guide.data.displayName : guide.isLoading ? null : t("guide.metaFallbackTitle"), guide.data?.shortBio ?? t("guide.metaFallbackDescription"));
   useStructuredData(
     guide.data
       ? {
           "@context": "https://schema.org",
           "@type": "Person",
-          name: guide.data.displayName,
+          name: guideName(guide.data),
+          ...(guide.data.englishName ? { alternateName: guide.data.displayName } : {}),
           description: guide.data.shortBio,
           ...(guide.data.avatarUrl ? { image: new URL(guide.data.avatarUrl, window.location.origin).href } : {}),
           url: new URL(`/guides/${guide.data.slug}`, window.location.origin).href,
@@ -483,7 +492,7 @@ export function GuideDetailPage() {
           <Link href="/guides" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4f5b53] hover:text-[#17382f]"><ArrowLeft className="size-4" /> {t("guide.back")}</Link>
           <div className="mt-9 grid gap-8 lg:grid-cols-[auto_1fr_.42fr] lg:items-start">
             <GuideAvatar name={item.displayName} avatarUrl={item.avatarUrl} large />
-            <div><div className="flex flex-wrap gap-2">{item.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}<Tag>{item.isClaimed ? t("common.claimed") : t("common.unclaimedProfile")}</Tag></div><h1 className="mt-5 font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{item.displayName}</h1><p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5b53]">{item.shortBio}</p><div className="mt-6 flex flex-wrap gap-2">{item.tags.map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}</div></div>
+            <div><div className="flex flex-wrap gap-2">{item.isEditorsPick && <Tag active>{t("common.editorReviewed")}</Tag>}<Tag>{item.isClaimed ? t("common.claimed") : t("common.unclaimedProfile")}</Tag></div><h1 className="mt-5 font-serif text-5xl font-semibold tracking-[-0.05em] text-[#17382f] sm:text-6xl">{guideName(item)}</h1>{item.englishName && <p className="mt-3 text-sm text-muted-foreground">{t("guide.accountName", { name: item.displayName })}</p>}<p className="mt-5 max-w-3xl text-base leading-8 text-[#4f5b53]">{item.shortBio}</p><div className="mt-6 flex flex-wrap gap-2">{item.tags.map(tag => <Tag key={tag.id}>{language === "zh" ? t(`tag.${tag.slug}`) : tag.name}</Tag>)}</div></div>
             <div className="rounded-[1.5rem] border border-[#17382f]/12 bg-white/55 p-5"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#743926]">{t("guide.status")}</p><dl className="mt-4 grid gap-4 text-sm"><div><dt className="text-[#4f5b53]">{t("guide.location")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.city}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.languages")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.languages}</dd></div><div><dt className="text-[#4f5b53]">{t("guide.reviewed")}</dt><dd className="mt-1 font-semibold text-[#17382f]">{item.lastVerifiedAt ? new Date(item.lastVerifiedAt).toLocaleDateString(language === "zh" ? "zh-CN" : "en-US", { year: "numeric", month: "short", day: "numeric" }) : t("guide.reviewUnavailable")}</dd></div></dl></div>
           </div>
         </div>
@@ -494,7 +503,7 @@ export function GuideDetailPage() {
           {language === "zh" && <p className="mt-5 rounded-xl bg-muted px-4 py-3 text-xs leading-5 text-muted-foreground">{t("common.contentFallback")}</p>}
           <div className="mt-5 whitespace-pre-line text-base leading-8 text-foreground/82">{item.longBio}</div>
           <div className="mt-12"><SectionLabel>{t("guide.sources")}</SectionLabel><h2 className="mt-4 font-serif text-3xl font-semibold tracking-[-0.03em]">{t("guide.reviewYourself")}</h2><div className="mt-6 grid gap-4">{item.sources.map(source => <article key={source.id} className="rounded-[1.5rem] border border-border bg-card p-5 sm:p-6"><div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between"><div className="min-w-0"><p className="text-xs font-bold uppercase tracking-[0.14em] text-primary"><SourcePlatform source={source} /></p><h3 className="mt-3 font-serif text-xl font-semibold">{source.publicTitle ?? t("guide.publicEvidence")}</h3>{source.evidenceSummary && <p className="mt-3 text-sm leading-6 text-muted-foreground">{source.evidenceSummary}</p>}<p className="mt-3 text-xs text-muted-foreground">{t("guide.reviewDate", { date: new Date(source.verifiedAt).toLocaleDateString(language === "zh" ? "zh-CN" : "en-US", { year: "numeric", month: "short", day: "numeric" }) })}</p></div><OffsiteSourceButton guide={item} source={source} /></div></article>)}</div></div>
-          {item.similarGuides && item.similarGuides.length > 0 && <div className="mt-12"><SectionLabel>{t("guide.similarGuides")}</SectionLabel><div className="mt-6 grid gap-4 sm:grid-cols-3">{item.similarGuides.map(similar => <Link key={similar.id} href={`/guides/${similar.slug}`} className="group rounded-[1.5rem] border border-border bg-card p-4 transition-colors hover:border-primary/40"><GuideAvatar name={similar.displayName} avatarUrl={similar.avatarUrl} /><p className="mt-3 font-serif text-lg font-semibold">{similar.displayName}</p><p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{similar.shortBio}</p></Link>)}</div></div>}
+          {item.similarGuides && item.similarGuides.length > 0 && <div className="mt-12"><SectionLabel>{t("guide.similarGuides")}</SectionLabel><div className="mt-6 grid gap-4 sm:grid-cols-3">{item.similarGuides.map(similar => <Link key={similar.id} href={`/guides/${similar.slug}`} className="group rounded-[1.5rem] border border-border bg-card p-4 transition-colors hover:border-primary/40"><GuideAvatar name={guideName(similar)} avatarUrl={similar.avatarUrl} /><p className="mt-3 font-serif text-lg font-semibold">{guideName(similar)}</p><p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{similar.shortBio}</p></Link>)}</div></div>}
         </div>
         <aside className="lg:sticky lg:top-28 lg:self-start"><div className="rounded-[1.75rem] bg-[#17382f] p-6 text-[#f7f0df] sm:p-7"><ShieldCheck className="size-7 text-[#efb055]" /><h2 className="mt-5 font-serif text-2xl font-semibold">{t("guide.verifyTitle")}</h2><ul className="mt-5 grid gap-4 text-sm leading-6 text-white/72">{[t("guide.verify.identity"), t("guide.verify.credentials"), t("guide.verify.terms"), t("guide.verify.privacy")].map(text => <li key={text} className="flex gap-3"><Check className="mt-1 size-4 shrink-0 text-[#efb055]" />{text}</li>)}</ul><p className="mt-5 border-t border-white/15 pt-4 text-xs leading-5 text-white/60">{t("guide.disclaimer")}</p></div><div className="mt-5 rounded-[1.5rem] border border-border bg-card p-6"><p className="text-sm font-semibold">{t("guide.incorrectQuestion")}</p><p className="mt-2 text-sm leading-6 text-muted-foreground">{t("guide.incorrectCopy")}</p><Button asChild variant="outline" className="mt-5 w-full rounded-full bg-card"><Link href={`/claim?guide=${item.id}`}>{t("guide.startRequest")}</Link></Button></div>{item.relatedArticles && item.relatedArticles.length > 0 && <div className="mt-5 rounded-[1.75rem] border border-border bg-card p-5"><p className="text-xs font-bold uppercase tracking-[0.17em] text-primary">{t("guide.mentionedIn")}</p><div className="mt-5 grid gap-4">{item.relatedArticles.map(article => <Link key={article.id} href={`/blog/${article.slug}`} className="group flex items-center gap-3 rounded-xl bg-muted/65 p-3"><div className="min-w-0"><p className="font-serif text-lg font-semibold">{article.title}</p><p className="mt-1 line-clamp-1 text-xs text-muted-foreground">{article.excerpt}</p></div><ChevronRight className="ml-auto size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1" /></Link>)}</div></div>}</aside>
       </section>

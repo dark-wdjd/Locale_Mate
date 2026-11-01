@@ -29,11 +29,14 @@ function clip(text: string, max = 155) {
   return `${(lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[,;:.\s]+$/, "")}…`;
 }
 
+// English-first name for headings and links; displayName is the public account name.
+const guideName = (guide: { displayName: string; englishName?: string | null }) => guide.englishName || guide.displayName;
+
 const absolute = (path: string) => (path.startsWith("http") ? path : `${SITE_URL}${path}`);
 
 async function guideListBody() {
   const guides = await listGuides({ limit: 100, offset: 0 });
-  return `<ul>${guides.map(guide => `<li>${link(`/guides/${guide.slug}`, guide.displayName)}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`;
+  return `<ul>${guides.map(guide => `<li>${link(`/guides/${guide.slug}`, guideName(guide))}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`;
 }
 
 // Mirrors the sections the client renders on the homepage (featured guides,
@@ -52,7 +55,7 @@ async function homeSectionsBody() {
   return [
     `<p>${link("/guides", en("home.findGuide"))} · ${link("/about", en("home.seeMethod"))}</p>`,
     `<h2>${escapeHtml(en("home.evidenceTitle"))}</h2>`,
-    `<ul>${featured.map(guide => `<li>${link(`/guides/${guide.slug}`, guide.displayName)}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`,
+    `<ul>${featured.map(guide => `<li>${link(`/guides/${guide.slug}`, guideName(guide))}: ${escapeHtml(guide.shortBio)}</li>`).join("")}</ul>`,
     `<p>${link("/guides", en("home.viewAll"))}</p>`,
     `<h2>${escapeHtml(en("home.interestTitle"))}</h2><ul>${interests}</ul>`,
     `<h2>${escapeHtml(en("home.notesTitle"))}</h2><p>${escapeHtml(en("home.notesCopy"))}</p>`,
@@ -139,24 +142,25 @@ async function resolvePage(pathname: string): Promise<ResolvedPage> {
       .map(source => `<li>${link(source.url, source.publicTitle ?? "Public source")} (${escapeHtml(PLATFORM_LABELS[source.platform] ?? source.platform)} ${escapeHtml(source.sourceType)})${source.evidenceSummary ? `<p>${escapeHtml(source.evidenceSummary)}</p>` : ""}</li>`)
       .join("");
     const similar = guide.similarGuides.length
-      ? `<h2>${escapeHtml(en("guide.similarGuides"))}</h2><ul>${guide.similarGuides.map(other => `<li>${link(`/guides/${other.slug}`, other.displayName)}</li>`).join("")}</ul>`
+      ? `<h2>${escapeHtml(en("guide.similarGuides"))}</h2><ul>${guide.similarGuides.map(other => `<li>${link(`/guides/${other.slug}`, guideName(other))}</li>`).join("")}</ul>`
       : "";
     const articles = guide.relatedArticles.length
       ? `<h2>${escapeHtml(en("guide.mentionedIn"))}</h2><ul>${guide.relatedArticles.map(article => `<li>${link(`/blog/${article.slug}`, article.title)}</li>`).join("")}</ul>`
       : "";
     return ok({
-      title: guide.displayName,
+      title: guide.seoTitle || guide.displayName,
       description: guide.shortBio,
       image: guide.avatarUrl,
       body: page(
-        guide.displayName,
+        guideName(guide),
         guide.shortBio,
-        `<p>${escapeHtml(guide.longBio ?? "")}</p><p>${escapeHtml(facts.join(" · "))}</p><h2>Public sources</h2><ul>${sources}</ul>${similar}${articles}<p>${escapeHtml(en("guide.disclaimer"))}</p>`,
+        `${guide.englishName ? `<p>Xiaohongshu account: ${escapeHtml(guide.displayName)}</p>` : ""}<p>${escapeHtml(guide.longBio ?? "")}</p><p>${escapeHtml(facts.join(" · "))}</p><h2>Public sources</h2><ul>${sources}</ul>${similar}${articles}<p>${escapeHtml(en("guide.disclaimer"))}</p>`,
       ),
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: guide.displayName,
+        name: guideName(guide),
+        ...(guide.englishName ? { alternateName: guide.displayName } : {}),
         description: guide.shortBio,
         ...(guide.avatarUrl ? { image: absolute(guide.avatarUrl) } : {}),
         url: `${SITE_URL}/guides/${guide.slug}`,

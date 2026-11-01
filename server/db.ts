@@ -183,6 +183,7 @@ async function getSimilarGuides(guideId: number, tagIds: number[], limit = 3) {
       id: guides.id,
       slug: guides.slug,
       displayName: guides.displayName,
+      englishName: guides.englishName,
       shortBio: guides.shortBio,
       avatarUrl: guides.avatarUrl,
       isEditorsPick: guides.isEditorsPick,

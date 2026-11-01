@@ -30,6 +30,9 @@ export const guides = mysqlTable(
     id: int("id").autoincrement().primaryKey(),
     slug: varchar("slug", { length: 160 }).notNull(),
     displayName: varchar("displayName", { length: 160 }).notNull(),
+    // English-first name and page title for SEO; displayName keeps the public account name.
+    englishName: varchar("englishName", { length: 160 }),
+    seoTitle: varchar("seoTitle", { length: 200 }),
     shortBio: varchar("shortBio", { length: 320 }).notNull(),
     longBio: text("longBio"),
     city: varchar("city", { length: 80 }).default("Chengdu").notNull(),

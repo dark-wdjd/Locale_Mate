@@ -11,7 +11,7 @@ const connection = await mysql.createConnection(dbConnectionConfig());
 const [tags] = await connection.execute("SELECT slug, name, category, description FROM tags ORDER BY id");
 
 const [guideRows] = await connection.execute(
-  `SELECT id, slug, displayName, shortBio, longBio, city, languages, status,
+  `SELECT id, slug, displayName, englishName, seoTitle, shortBio, longBio, city, languages, status,
           isClaimed, isFeatured, isEditorsPick, avatarUrl, lastVerifiedAt
    FROM guides ORDER BY id`,
 );
