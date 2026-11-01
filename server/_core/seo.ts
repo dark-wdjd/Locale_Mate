@@ -87,7 +87,7 @@ const aboutFaq = () => ({
 // that don't run JavaScript (or Google's first pass) see real, distinct content.
 // React's createRoot replaces this markup as soon as the app mounts.
 async function resolvePage(pathname: string): Promise<ResolvedPage> {
-  const nav = `<nav>${link("/", "Home")} · ${link("/guides", "Guide directory")} · ${link("/blog", "Journal")} · ${link("/about", "Methodology")}</nav>`;
+  const nav = `<nav>${link("/", "Home")} · ${link("/blog/chengdu-travel-guide", "Chengdu travel guide")} · ${link("/guides", "Guide directory")} · ${link("/blog", "Journal")} · ${link("/about", "Methodology")}</nav>`;
   const footer = `<footer><p>${escapeHtml(en("footer.description"))}</p></footer>`;
   const page = (h1: string, intro: string, extra = "") => `${nav}<main><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(intro)}</p>${extra}</main>${footer}`;
   const ok = (meta: PageMeta): ResolvedPage => ({ status: 200, meta });

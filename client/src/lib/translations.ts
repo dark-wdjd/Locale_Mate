@@ -8,6 +8,7 @@ export const translations: Record<string, Record<Language, string>> = {
   "nav.primary": { en: "Primary navigation", zh: "主导航" },
   "nav.mobile": { en: "Mobile navigation", zh: "移动端导航" },
   "nav.toggle": { en: "Toggle navigation", zh: "展开或收起导航" },
+  "nav.travelGuide": { en: "Travel guide", zh: "成都旅行指南" },
   "nav.findGuide": { en: "Find a guide", zh: "寻找向导" },
   "nav.journal": { en: "Chengdu journal", zh: "成都旅行笔记" },
   "nav.method": { en: "How it works", zh: "收录方法" },

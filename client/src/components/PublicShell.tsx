@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
 const navigation = [
+  { href: "/blog/chengdu-travel-guide", labelKey: "nav.travelGuide" },
   { href: "/guides", labelKey: "nav.findGuide" },
   { href: "/blog", labelKey: "nav.journal" },
 ];
@@ -61,7 +62,8 @@ export function PublicShell({ children }: { children: ReactNode }) {
           <BrandMark />
           <nav className="hidden items-center gap-2 lg:flex" aria-label={t("nav.primary")}>
             {navigation.map(item => {
-              const active = location === item.href || location.startsWith(`${item.href}/`);
+              // An exact match on another item (e.g. the travel guide under /blog) wins over a prefix match.
+              const active = location === item.href || (location.startsWith(`${item.href}/`) && !navigation.some(other => other.href === location));
               return (
                 <Link
                   key={item.href}
@@ -125,6 +127,7 @@ export function PublicShell({ children }: { children: ReactNode }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#efb055]">{t("footer.explore")}</p>
             <div className="mt-4 grid gap-3 text-sm text-[#f7f0df]/78">
+              <Link href="/blog/chengdu-travel-guide" className="hover:text-white">{t("nav.travelGuide")}</Link>
               <Link href="/guides" className="hover:text-white">{t("footer.guideDirectory")}</Link>
               <Link href="/blog" className="hover:text-white">{t("nav.journal")}</Link>
             </div>
