@@ -1,14 +1,14 @@
 ---
 slug: how-to-hire-english-speaking-guide-chengdu
 title: How to Hire an English-Speaking Guide in Chengdu
-seoTitle: How to Hire an English-Speaking Guide in Chengdu (and Verify Them)
+seoTitle: How to Hire & Verify an English Guide in Chengdu
 seoDescription: A calm checklist for finding an English-speaking local guide in Chengdu, checking China's official guide ID card, and agreeing price and scope in writing.
 excerpt: What a licensed guide's ID card shows, how to read public-post evidence, and the questions to settle before you agree on a day together.
 category: Guide matching
 targetQuery: how to hire a local guide in Chengdu / is it safe to hire a private tour guide in China
 suggestedGuides: [libby, tommy, fiona, betty, charles, jenny]
 relatedArticles: [tea-food-and-neighborhoods-chengdu, first-48-hours-in-chengdu]
-status: draft — not published
+status: published 2026-11-01
 ---
 
 ## Start with what you need help with
@@ -28,7 +28,7 @@ The practical part for travelers is newer. On 30 June 2025, the Ministry of Cult
 - The back shows the registering organisation, the managing authority, the validity period, and a **QR code that travelers can scan** to check the electronic certificate.
 - Old-style cards were valid alongside the new ones until 31 December 2025 and lapsed from 1 January 2026.
 
-So in 2026 you can reasonably ask a guide to show the newer card, and you can scan its QR code yourself. A professional guide expects this and won't take offence. [VERIFY: what the QR code page looks like to a foreign phone without WeChat, and whether it opens in a normal browser.]
+So in 2026 you can reasonably ask a guide to show the newer card, and you can scan its QR code yourself. A professional guide expects this and won't take offence. (The verification page may open in WeChat rather than an ordinary browser. If you can't open it, ask the guide to show their electronic certificate on their own phone.)
 
 A licence is not the only sign of a good guide. Some useful companions, such as interpreters, students or friends of friends, aren't licensed guides and don't claim to be. That can be fine for an informal city walk. It matters more when someone is selling a multi-day itinerary, collecting money for tickets and hotels, or taking you somewhere remote.
 
@@ -51,7 +51,7 @@ A short written exchange protects both sides. Ask for:
 
 1. **Identity and credentials.** Their name as it appears on the guide card, and a photo of the card's front if they hold one. Scan the QR code when you meet.
 2. **The exact plan.** Meeting point (in Chinese characters), start and finish times, and the order of stops.
-3. **What the price includes.** Guide fee, car and driver, fuel and parking, entrance tickets, sightseeing buses, meals, train fares. Agencies' own published ranges for a private guide in Chengdu run from roughly US$75 to US$450 a day, depending on hours, transport and group size. Those are sellers' figures, so get your own quote. [VERIFY before publishing: re-check the ranges on the cited pages.]
+3. **What the price includes.** Guide fee, car and driver, fuel and parking, entrance tickets, sightseeing buses, meals, train fares. Agencies' own published ranges for a private guide in Chengdu run from roughly US$75 to US$450 a day, depending on hours, transport and group size. Those are sellers' figures, so get your own quote.
 4. **Who books what.** Panda base, Sanxingdui and many other sites need real-name advance booking with your passport details. Agree whether you book or they do, and never send a passport photo through a channel you haven't verified.
 5. **Payment and cancellation.** When payment is due, by what method, and what happens if it rains, a site closes, or you get sick.
 6. **No-shopping terms.** If you don't want shop stops, say so in writing.
@@ -90,6 +90,7 @@ MeetChengdu doesn't book, take payment or vouch for anyone. When you click throu
 - People's Daily, "2025版电子导游证及导游身份标识卡6月30日启用" (card design, colours, QR verification, transition to 31 Dec 2025): http://ent.people.com.cn/n1/2025/0613/c1012-40500284.html
 - CCTV News, same announcement: https://news.cctv.com/2025/06/13/ARTIes8K8JU8DbRDwsKxuDsT250613.shtml
 - Travel China With Me, "Is My Guide Certified? Decoding the China Tour Guide License" (agency registration, "black guide" terminology): https://travelchinawith.me/china-facts/china-tour-guide-license/
-- QuietRoutes, Chengdu private tour guide page (published range USD 75–450 / RMB 500–3,000 per day): https://quietroutes.com/travel-guide/chengdu-private-tour-guide/
-- HeroGuide, English tour guide in Chengdu (published US$90–220 half day, US$160–380 full day, excluding tickets): https://www.hero-guide.com/chengdu-guide/english
+- QuietRoutes, Chengdu private tour guide page (updated 20 Sep 2026; published range USD 75–450 / RMB 500–3,000 per day): https://quietroutes.com/travel-guide/chengdu-private-tour-guide/
+- HeroGuide, English tour guide in Chengdu (2026 edition; published US$90–220 half day, US$160–380 full day, excluding tickets): https://www.hero-guide.com/chengdu-guide/english
 - Guide descriptions: MeetChengdu profiles (scripts/seed-data.json; source cards last reviewed October 2026) for fiona, laura, libby, betty, charles, jenny, tommy.
+- Cover photo: teahouse in People's Park, Chengdu, by [Daderot](https://commons.wikimedia.org/wiki/File:Teahouse_in_Peoples_Park_-_Chengdu,_China_-_DSC05348.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.
