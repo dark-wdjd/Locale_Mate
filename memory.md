@@ -1,6 +1,12 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-31. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-11-01. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🗿 2026-11-01: Sanxingdui article published
+
+- `/blog/sanxingdui-from-chengdu` ("Visiting Sanxingdui from Chengdu: A Simple Guide (2026)", about 1,100 words, commit `1643ba8`). Like the panda piece it is a plain visitor guide with **no named guides**, ending with one line linking to /guides. It has 5 Commons photos (Gary Todd CC0 ×4, plus a gold mask by Thoslee, CC BY-SA 4.0), credited in captions. Portrait photos were pre-cropped to 16:9.
+- Facts: 72 RMB, passport booking by time slot through sxd.cn / the official mini program (Trip.com and Klook as fallbacks), 08:30–18:00 with last entry at 17:00, closed only on Chinese New Year's Eve, train Chengdu East → Guanghan North about 20 minutes, then bus 13 or a taxi of about 7 km. Re-check them periodically.
+- **Next article:** "How to Hire an English-Speaking Guide in Chengdu" (draft ready, still awaiting the owner's review).
 
 ## 🔤 2026-10-31: English-first guide names and titles
 
