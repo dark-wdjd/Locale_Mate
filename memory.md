@@ -2,6 +2,13 @@
 
 _Last updated: 2026-11-01. This file records the project state, decisions, and next steps so work can resume at any time._
 
+## 🧭 2026-11-01: goal re-framed and hub page
+
+- **Owner's goal (2026-11-01):** show up for **English** searches across the whole "Chengdu travel" topic (things to do, local guide, itinerary…), not just the brand name. Chinese-language search is out of scope. Plan: `marketing/growth-plan.md` (topic clusters plus a hub page; one article a week; links; Reddit and Pinterest as traffic channels). Render stays on the free plan for now (owner's decision).
+- **Hub page live:** `/blog/chengdu-travel-guide` (sortOrder -1, featured; commit `e200f78`). It's linked from the header nav ("Travel guide"), the footer and the server-rendered nav on every page. **Add every new article to the matching hub section when publishing.**
+- **Search Console access:** the owner added `xhsdraft1@gmail.com` (the account in Claude in Chrome) as a Full user, so Claude can run URL Inspection / Request indexing in-session. The daily quota (about 10) is **shared per property** with the owner; ask before using it. 2026-11-01 status: 9 indexed, 21 Discovered, 10 Duplicate (validation started), 2 Alternate.
+- Google's Indexing API is only for JobPosting/BroadcastEvent, so **don't use it**. IndexNow plus Bing Webmaster Tools import was suggested (the owner hasn't done it yet).
+
 ## 🗿 2026-11-01: Sanxingdui article published
 
 - `/blog/sanxingdui-from-chengdu` ("Visiting Sanxingdui from Chengdu: A Simple Guide (2026)", about 1,100 words, commit `1643ba8`). Like the panda piece it is a plain visitor guide with **no named guides**, ending with one line linking to /guides. It has 5 Commons photos (Gary Todd CC0 ×4, plus a gold mask by Thoslee, CC BY-SA 4.0), credited in captions. Portrait photos were pre-cropped to 16:9.
