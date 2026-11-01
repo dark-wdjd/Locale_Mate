@@ -1,6 +1,12 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-10-29. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-10-31. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 📊 2026-10-31: analytics
+
+- Added the **Cloudflare Web Analytics** beacon (cookieless, no personal data; token `940fe7040cfd4bc6bd13ac5cbccc9e4c`, public by design) in `client/index.html` (commit `775ec2c`). The owner views it in the Cloudflare dashboard → Web Analytics. It shows referrers (reddit/tripadvisor/google), paths and countries, which fills the gap left by Search Console (Google only) and the built-in `/admin/analytics` (blog views, guide-card clicks and outbound clicks only; no visitor totals or external referrers).
+- Paid SEO tools (Ahrefs/Semrush) aren't needed yet. Free options: Ahrefs Webmaster Tools and the Semrush free tier.
+- "Discovered – currently not indexed" (21 URLs, never crawled) is normal crawl-budget queueing for a new, link-less site. Remedies: request indexing for about 10 URLs a day, earn backlinks, and keep the server fast and stable (another reason for Render Starter).
 
 ## 🚨 2026-10-29: root cause of the "Duplicate" reports (Googlebot rendering)
 
