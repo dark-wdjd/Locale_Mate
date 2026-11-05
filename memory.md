@@ -1,6 +1,13 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-11-01. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-11-05. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## ✅ 2026-11-02 to 11-05: first full indexing round done
+
+- Claude submitted Request indexing for **all 39 sitemap URLs** over 4 days through Claude in Chrome (about 10–11 a day; quota exceeded at #12 on 11-04). Skipped `rebirth-chengdu-guide`, already indexed with itself as canonical since the 10-31 crawl, confirming the rendering fix worked.
+- Inspection findings: many pages showed as indexed before the report updated (fiona, charles, jenny, libby, nick, lucky, betty, xiao-o, penny, susan, yanny, holly, /guides, /blog, /about, home, first-48, panda). Not yet known or never crawled: tommy, lin, hanfu, laura, mala-big-bro, kacha-kacha, lynne, shirley, april, chengdu-susan, chengdu-shirley, xiaoyu, tina, melody, shanyu, tangchaoer, huage-harry, maya, tea-food, after-sunset, and the three new articles.
+- **Browser tips for Search Console:** the first keystrokes into the top "Inspect any URL" box after a page load are dropped, so click and type twice. REQUEST INDEXING sits at about (1250, 315) in a 1568-wide viewport. Keep each browser batch under ~50 s (split into inspect-and-click, then wait-and-find) or it times out. Use `find` to get the **current** dialog's Dismiss ref: clicking a stale ref once re-requested a URL and wasted quota.
+- From now on: request indexing only for new or changed URLs after each deploy, per the standing reminder rule.
 
 ## 🧭 2026-11-01: goal re-framed and hub page
 
