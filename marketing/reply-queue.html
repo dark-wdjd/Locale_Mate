@@ -1,0 +1,272 @@
+<title>MeetChengdu Reply Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single working column of post cards, grouped by platform, each with one-click copy and a "posted" tick. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --fg: #1c2420;
+  --muted: #5d6a63;
+  --line: #d9e0db;
+  --accent: #2f6b4f;          /* bamboo green */
+  --accent-soft: #e2efe8;
+  --ta: #0f7a58;              /* TripAdvisor chip */
+  --ta-soft: #dff1ea;
+  --pin: #b3263a;             /* Pinterest chip */
+  --pin-soft: #f8e3e6;
+  --warn: #8a5a00;
+  --warn-soft: #fbf0d6;
+  --done: #6b7a72;
+  --quote: #f7f9f7;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121714; --surface: #1a211d; --fg: #e4ebe6; --muted: #9aa8a0; --line: #2c3631;
+    --accent: #7cc4a0; --accent-soft: #1f3329;
+    --ta: #6fd1ab; --ta-soft: #183a2e; --pin: #f08a99; --pin-soft: #3d1f25;
+    --warn: #f0c46a; --warn-soft: #3a2e14; --done: #7d8a83; --quote: #151b18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121714; --surface: #1a211d; --fg: #e4ebe6; --muted: #9aa8a0; --line: #2c3631;
+  --accent: #7cc4a0; --accent-soft: #1f3329;
+  --ta: #6fd1ab; --ta-soft: #183a2e; --pin: #f08a99; --pin-soft: #3d1f25;
+  --warn: #f0c46a; --warn-soft: #3a2e14; --done: #7d8a83; --quote: #151b18;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 64px;
+}
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 8px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 65ch; }
+.progress { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 13px; color: var(--muted); }
+.bar { flex: 1 1 200px; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar > span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+.rules { background: var(--warn-soft); color: var(--fg); border-radius: 10px; padding: 12px 14px; font-size: 14px; display: grid; gap: 4px; }
+.rules strong { color: var(--warn); }
+section { display: grid; gap: 14px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 0; display: flex; gap: 10px; align-items: center; }
+.chip { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; }
+.chip.ta { background: var(--ta-soft); color: var(--ta); }
+.chip.pin { background: var(--pin-soft); color: var(--pin); }
+.chip.reddit { background: var(--line); color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.card.done { opacity: .62; }
+.card.done .title a { text-decoration: line-through; }
+.head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; }
+.title { font-weight: 600; font-size: 16px; min-width: 0; }
+.title a { color: var(--fg); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+.prio { font-weight: 600; color: var(--accent); }
+.ctx { font-size: 14px; color: var(--muted); margin: 0; }
+.ctx b { color: var(--fg); font-weight: 600; }
+.reply { background: var(--quote); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; white-space: pre-wrap; font-size: 14.5px; margin: 0; overflow-wrap: anywhere; }
+.check { background: var(--warn-soft); border-radius: 8px; padding: 8px 12px; font-size: 13.5px; }
+.check strong { color: var(--warn); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button.copy, a.open {
+  font: 600 13px var(--font-body); border-radius: 8px; padding: 7px 12px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--surface); text-decoration: none;
+}
+a.open { background: transparent; color: var(--accent); }
+button.copy.small { border-color: var(--line); background: transparent; color: var(--fg); padding: 4px 9px; font-weight: 500; }
+button.copy:focus-visible, a.open:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+label.posted { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; margin-left: auto; cursor: pointer; }
+.pinrow { display: grid; grid-template-columns: 7.5em 1fr auto; gap: 6px 10px; align-items: start; font-size: 14px; }
+.pinrow dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; padding-top: 3px; }
+.pinrow dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 13px; }
+ol.steps { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; }
+@media (max-width: 520px) {
+  .pinrow { grid-template-columns: 1fr auto; }
+  .pinrow dt { grid-column: 1 / -1; padding-top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>MeetChengdu reply queue</h1>
+    <p class="lede">Threads worth answering and pins ready to publish, gathered on 8 Nov 2026. Copy a reply, adjust it to your own voice, post it, then tick "Posted".</p>
+    <div class="progress"><div class="bar" aria-hidden="true"><span id="bar"></span></div><span id="count">0 of 8 posted</span></div>
+    <div class="rules">
+      <div><strong>No links in TripAdvisor replies.</strong> Your profile already shows www.meetchengdu.com, and a reply in thread 1 was removed, probably for advertising.</div>
+      <div>Post one thing at a time, and rewrite a sentence or two so it sounds like you.</div>
+    </div>
+  </header>
+
+  <section aria-labelledby="ta-h">
+    <h2 id="ta-h"><span class="chip ta">TripAdvisor</span> Forum replies</h2>
+
+    <article class="card" data-id="ta-1">
+      <div class="head">
+        <div class="title"><a href="https://www.tripadvisor.com/ShowTopic-g297463-i8702-k15589772-Chengdu_with_elderly_parent-Chengdu_Sichuan.html" target="_blank" rel="noopener">Chengdu with elderly parent</a></div>
+        <div class="meta"><span class="prio">Do first</span> · Chengdu forum · last reply 21 Oct</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> travelling with her elderly mother, who can walk but slowly. Her follow-up question, where to rent a wheelchair, only got a one-line answer.</p>
+<pre class="reply" id="r-ta-1">Adding to the good advice above on the wheelchair question:
+
+- Ask your hotel first. Email them before you arrive. Many of the larger Chengdu hotels can lend one or arrange it for you, and the concierge can also write your plans in Chinese for the driver.
+- At the sights, ask at the visitor centre. As Frank mentioned, the Dujiangyan visitor hall has wheelchairs and shuttle carts. At other big sites it's worth asking at the entrance or service desk.
+- Tell your private driver in advance that you're bringing a wheelchair, so they send a car with enough boot space.
+
+One more tip for the Panda Base if you add it: go for the morning session, when it's cooler and the pandas are most active, and use the sightseeing bus between areas. It saves a lot of walking on the hilly paths.
+
+Have a lovely trip with your mum!</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-ta-1">Copy reply</button>
+        <a class="open" href="https://www.tripadvisor.com/ShowTopic-g297463-i8702-k15589772-Chengdu_with_elderly_parent-Chengdu_Sichuan.html" target="_blank" rel="noopener">Open thread</a>
+        <label class="posted"><input type="checkbox" id="done-ta-1"> Posted</label>
+      </div>
+    </article>
+
+    <article class="card" data-id="ta-2">
+      <div class="head">
+        <div class="title"><a href="https://www.tripadvisor.com/ShowTopic-g297463-i8702-k15513307-Dujiangyan_Panda_Valley_to_Chengdu_Central-Chengdu_Sichuan.html" target="_blank" rel="noopener">Dujiangyan Panda Valley to Chengdu Central</a></div>
+        <div class="meta"><span class="prio">Second</span> · Chengdu forum · unanswered since 11 Oct</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> Nabila wrote in Malay: "Is there transport from the Chengdu Panda Base to Dujiangyan?" Nobody has replied yet.</p>
+<pre class="reply" id="r-ta-2">Hi Nabila, there's no direct public bus from the Chengdu Panda Base to Dujiangyan. They're on opposite sides of Chengdu (the Panda Base is in the north-east, Dujiangyan is about 60 km north-west).
+
+The easiest options:
+1. Taxi or DiDi straight there. Roughly 1–1.5 hours depending on traffic. This is the simplest option if you're two or more people.
+2. Metro + intercity train. Take the metro to Xipu station, then the Chengdu–Dujiangyan intercity train (about 30 minutes). Book the train ahead on Trip.com, and take a taxi from Dujiangyan station to the scenic area or Panda Valley.
+
+If you're doing both on the same day, go to the Panda Base first thing in the morning (the pandas are most active early) and head to Dujiangyan after lunch.</pre>
+      <div class="check"><strong>Check before posting:</strong> search "Xipu to Dujiangyan" on Trip.com trains to confirm the intercity train leaves from Xipu.</div>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-ta-2">Copy reply</button>
+        <a class="open" href="https://www.tripadvisor.com/ShowTopic-g297463-i8702-k15513307-Dujiangyan_Panda_Valley_to_Chengdu_Central-Chengdu_Sichuan.html" target="_blank" rel="noopener">Open thread</a>
+        <label class="posted"><input type="checkbox" id="done-ta-2"> Posted</label>
+      </div>
+    </article>
+
+    <article class="card" data-id="ta-3">
+      <div class="head">
+        <div class="title"><a href="https://www.tripadvisor.com/ShowTopic-g297462-i8701-k15598708-Gratuity_for_guide-Sichuan.html" target="_blank" rel="noopener">Gratuity for guide</a></div>
+        <div class="meta"><span class="prio">Optional</span> · Sichuan forum · 14 replies, last 28 Oct</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> a 9–10 day private tour with one local guide. They want the going rate per day in RMB. The replies argue about whether China has a tipping culture, and none gives a practical approach.</p>
+<pre class="reply" id="r-ta-3">You're hearing both views because both are true: Chinese clients generally don't tip, but on private tours with foreign visitors, many guides do receive a tip at the end and appreciate it. It's a thank-you, not an obligation.
+
+For a 9–10 day private tour, rather than working out a per-day rate, a common approach is:
+- decide at the end, based on how the trip went;
+- give it on the last day in an envelope (a red envelope, 红包, is a nice touch), separately to the guide and the driver, since they're often paid separately;
+- if you booked through an agency, ask them what's customary. They'll know what their guides normally receive and won't be offended by the question.
+
+A sincere thank-you note or a good online review also means a lot to independent guides, since that's how they get their next clients.</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-ta-3">Copy reply</button>
+        <a class="open" href="https://www.tripadvisor.com/ShowTopic-g297462-i8701-k15598708-Gratuity_for_guide-Sichuan.html" target="_blank" rel="noopener">Open thread</a>
+        <label class="posted"><input type="checkbox" id="done-ta-3"> Posted</label>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="pin-h">
+    <h2 id="pin-h"><span class="chip pin">Pinterest</span> Pins to publish</h2>
+    <p class="ctx">Create a free business account named <b>MeetChengdu</b> and a board called <b>Chengdu Travel Tips</b>. Publish one pin a day. Open the image link, save the picture, then upload it to the pin. The photo credit line is required by each photo's licence.</p>
+    <div id="pins"></div>
+  </section>
+
+  <section aria-labelledby="rd-h">
+    <h2 id="rd-h"><span class="chip reddit">Reddit</span> Waiting on you</h2>
+    <div class="card">
+      <p class="ctx" style="margin:0">Claude can't open Reddit, so these replies need a starting point from you:</p>
+      <ol class="steps">
+        <li>Open r/chengdu and r/chinatravel and sort by <b>New</b>.</li>
+        <li>Send Claude links or screenshots of 3–5 posts from the past week asking about Chengdu.</li>
+        <li>Claude adds a drafted reply for each one to this page.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+const PINS = [
+  { id: "pin-1", title: "Chengdu Panda Base Guide 2026: How to Book, Best Time & Tips",
+    desc: "Planning to see the giant pandas in Chengdu? How foreigners book with a passport, why the morning session is best, how to get there and how long to spend. #Chengdu #GiantPanda #ChinaTravel #Sichuan #PandaBase\nPhoto: George Lu, CC BY 2.0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/chengdu-panda-base-guide",
+    image: "https://www.meetchengdu.com/images/panda-base-cover.webp" },
+  { id: "pin-2", title: "Sanxingdui Museum from Chengdu: Tickets, Train & What to See",
+    desc: "The Bronze Age masks of Sanxingdui are one of China's great mysteries, and only 20 minutes from Chengdu by train. Booking with a passport, getting there, and the must-see pieces. #Sanxingdui #Chengdu #ChinaTravel #Museum\nPhoto: Gary Todd, CC0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/sanxingdui-from-chengdu",
+    image: "https://www.meetchengdu.com/images/sanxingdui-cover.webp" },
+  { id: "pin-3", title: "Chengdu Travel Guide 2026: What to See, Do & Know",
+    desc: "Your starting point for a Chengdu trip: when to go, how many days, the best day trips, getting around and paying as a foreigner, and how to find an English-speaking guide. #Chengdu #ChinaTravel #Sichuan #TravelGuide\nPhoto: Daniel Lu, CC BY-SA 4.0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/chengdu-travel-guide",
+    image: "https://www.meetchengdu.com/images/chengdu-hero-anshun-bridge.jpg" },
+  { id: "pin-4", title: "How to Hire an English-Speaking Guide in Chengdu (and Check Them)",
+    desc: "China's new official guide ID card has a QR code you can scan. How to check a guide, what to agree in writing, and red flags to watch for. #Chengdu #ChinaTravel #TourGuide #TravelTips\nPhoto: Daderot, CC0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/how-to-hire-english-speaking-guide-chengdu",
+    image: "https://www.meetchengdu.com/images/chengdu-teahouse-peoples-park.webp" },
+  { id: "pin-5", title: "Red Pandas at the Chengdu Panda Base: Don't Miss Them",
+    desc: "Red pandas are smaller, fox-like and far livelier than giant pandas, and you'll find them at the Chengdu Panda Base too. Tips for timing your visit. #RedPanda #Chengdu #ChinaTravel #Panda\nPhoto: MSK, CC BY-SA 3.0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/chengdu-panda-base-guide",
+    image: "https://www.meetchengdu.com/images/panda-base-red-pandas.webp" },
+];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pinsEl = document.getElementById("pins");
+pinsEl.style.display = "grid"; pinsEl.style.gap = "14px";
+PINS.forEach((p, i) => {
+  const card = document.createElement("article");
+  card.className = "card"; card.dataset.id = p.id;
+  card.innerHTML = `
+    <div class="head"><div class="title">Pin ${i + 1} · ${esc(p.title)}</div><div class="meta">Day ${i + 1}</div></div>
+    <dl class="pinrow">
+      <dt>Title</dt><dd id="${p.id}-t">${esc(p.title)}</dd><button class="copy small" type="button" data-copy="${p.id}-t">Copy</button>
+      <dt>Description</dt><dd id="${p.id}-d" style="white-space:pre-wrap">${esc(p.desc)}</dd><button class="copy small" type="button" data-copy="${p.id}-d">Copy</button>
+      <dt>Link</dt><dd id="${p.id}-l" class="mono">${esc(p.link)}</dd><button class="copy small" type="button" data-copy="${p.id}-l">Copy</button>
+      <dt>Image</dt><dd class="mono"><a href="${esc(p.image)}" target="_blank" rel="noopener">${esc(p.image.replace("https://www.meetchengdu.com", ""))}</a></dd><span></span>
+    </dl>
+    <div class="actions"><label class="posted"><input type="checkbox" id="done-${p.id}"> Posted</label></div>`;
+  pinsEl.appendChild(card);
+});
+
+const toast = document.getElementById("toast");
+let toastTimer;
+function say(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => (toast.hidden = true), 1600); }
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const el = document.getElementById(btn.dataset.copy);
+  const text = el.innerText;
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say("Text selected. Press Cmd+C to copy"); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => say("Copied"), fallback);
+  } else fallback();
+});
+
+const KEY = "meetchengdu-reply-queue-2026-11-08";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (_) { state = {}; }
+const boxes = [...document.querySelectorAll('label.posted input[type="checkbox"]')];
+function render() {
+  let done = 0;
+  boxes.forEach(b => { const card = b.closest(".card"); const on = !!state[b.id]; b.checked = on; card.classList.toggle("done", on); if (on) done++; });
+  document.getElementById("count").textContent = `${done} of ${boxes.length} posted`;
+  document.getElementById("bar").style.width = `${(done / boxes.length) * 100}%`;
+}
+boxes.forEach(b => b.addEventListener("change", () => {
+  state[b.id] = b.checked;
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (_) {}
+  render();
+}));
+render();
+</script>
