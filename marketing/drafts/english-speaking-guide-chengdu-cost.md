@@ -8,7 +8,7 @@ category: Guide matching
 coverImageUrl: /images/chengdu-kuanzhai-alley.webp
 targetQuery: english speaking guide chengdu price / chengdu private tour guide cost / how much is a tour guide in china
 relatedArticles: [how-to-hire-english-speaking-guide-chengdu, chengdu-travel-guide, chengdu-panda-base-guide, sanxingdui-from-chengdu]
-status: DRAFT 2026-11-12 (awaiting owner review)
+status: published 2026-11-12
 lastChecked: 2026-11-12
 ---
 

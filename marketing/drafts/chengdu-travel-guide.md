@@ -7,7 +7,7 @@ excerpt: Our starting point for planning a trip to Chengdu: when to go, how long
 category: Trip planning
 targetQuery: chengdu travel guide / things to do in chengdu / chengdu itinerary / chengdu local guide
 status: published 2026-11-01 (hub page; update whenever a new article is published)
-lastChecked: 2026-11-01
+lastChecked: 2026-11-12
 ---
 
 ## Why Chengdu
@@ -71,6 +71,7 @@ Tea culture is a big part of daily life here. Our guide to [tea, food and neighb
 You don't need a guide to enjoy Chengdu, but a good one adds context: which panda is which, what the Sanxingdui masks might mean, how to order in a local restaurant, and how to get the most out of a day trip.
 
 - Read [How to Hire an English-Speaking Guide in Chengdu](/blog/how-to-hire-english-speaking-guide-chengdu) for how to check China's official guide ID card and what to agree in writing.
+- Read [How Much Does an English-Speaking Guide in Chengdu Cost?](/blog/english-speaking-guide-chengdu-cost) for typical 2026 day rates, what a quote includes, and tipping.
 - Browse our [directory of English-speaking guides in Chengdu](/guides), compiled from their public profiles. You can filter by interest: [pandas](/guides?tag=pandas), [tea culture](/guides?tag=tea-culture), [city classics](/guides?tag=city-classics) and [western Sichuan](/guides?tag=western-sichuan).
 
 MeetChengdu doesn't book or take payment; you contact guides directly. Always check identity, credentials and price yourself.
