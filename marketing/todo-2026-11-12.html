@@ -1,0 +1,342 @@
+<title>MeetChengdu To-Do List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single working column of post cards, grouped by platform, each with one-click copy and a "posted" tick. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --fg: #1c2420;
+  --muted: #5d6a63;
+  --line: #d9e0db;
+  --accent: #2f6b4f;          /* bamboo green */
+  --accent-soft: #e2efe8;
+  --ta: #0f7a58;              /* TripAdvisor chip */
+  --ta-soft: #dff1ea;
+  --pin: #b3263a;             /* Pinterest chip */
+  --pin-soft: #f8e3e6;
+  --warn: #8a5a00;
+  --warn-soft: #fbf0d6;
+  --done: #6b7a72;
+  --quote: #f7f9f7;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121714; --surface: #1a211d; --fg: #e4ebe6; --muted: #9aa8a0; --line: #2c3631;
+    --accent: #7cc4a0; --accent-soft: #1f3329;
+    --ta: #6fd1ab; --ta-soft: #183a2e; --pin: #f08a99; --pin-soft: #3d1f25;
+    --warn: #f0c46a; --warn-soft: #3a2e14; --done: #7d8a83; --quote: #151b18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121714; --surface: #1a211d; --fg: #e4ebe6; --muted: #9aa8a0; --line: #2c3631;
+  --accent: #7cc4a0; --accent-soft: #1f3329;
+  --ta: #6fd1ab; --ta-soft: #183a2e; --pin: #f08a99; --pin-soft: #3d1f25;
+  --warn: #f0c46a; --warn-soft: #3a2e14; --done: #7d8a83; --quote: #151b18;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-inline: 16px; padding-block: 28px 64px;
+}
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 8px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.1; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 65ch; }
+.progress { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 13px; color: var(--muted); }
+.bar { flex: 1 1 200px; height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar > span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+.rules { background: var(--warn-soft); color: var(--fg); border-radius: 10px; padding: 12px 14px; font-size: 14px; display: grid; gap: 4px; }
+.rules strong { color: var(--warn); }
+section { display: grid; gap: 14px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin: 0; display: flex; gap: 10px; align-items: center; }
+.chip { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; }
+.chip.ta { background: var(--ta-soft); color: var(--ta); }
+.chip.pin { background: var(--pin-soft); color: var(--pin); }
+.chip.reddit { background: var(--line); color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.card.done { opacity: .62; }
+.card.done .title a { text-decoration: line-through; }
+.head { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; }
+.title { font-weight: 600; font-size: 16px; min-width: 0; }
+.title a { color: var(--fg); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+.prio { font-weight: 600; color: var(--accent); }
+.ctx { font-size: 14px; color: var(--muted); margin: 0; }
+.ctx b { color: var(--fg); font-weight: 600; }
+.reply { background: var(--quote); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; white-space: pre-wrap; font-size: 14.5px; margin: 0; overflow-wrap: anywhere; }
+.check { background: var(--warn-soft); border-radius: 8px; padding: 8px 12px; font-size: 13.5px; }
+.check strong { color: var(--warn); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button.copy, a.open {
+  font: 600 13px var(--font-body); border-radius: 8px; padding: 7px 12px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--surface); text-decoration: none;
+}
+a.open { background: transparent; color: var(--accent); }
+button.copy.small { border-color: var(--line); background: transparent; color: var(--fg); padding: 4px 9px; font-weight: 500; }
+button.copy:focus-visible, a.open:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+label.posted { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; margin-left: auto; cursor: pointer; }
+.pinrow { display: grid; grid-template-columns: 7.5em 1fr auto; gap: 6px 10px; align-items: start; font-size: 14px; }
+.pinrow dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; padding-top: 3px; }
+.pinrow dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 13px; }
+ol.steps { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; }
+@media (max-width: 520px) {
+  .pinrow { grid-template-columns: 1fr auto; }
+  .pinrow dt { grid-column: 1 / -1; padding-top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } }
+.chip.reddit { background: #ffe4d6; color: #b33a00; }
+.chip.site { background: var(--accent-soft); color: var(--accent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip.reddit { background: #3d2318; color: #ff9b6a; } }
+:root[data-theme="dark"] .chip.reddit { background: #3d2318; color: #ff9b6a; }
+.optional { border-left: 3px solid var(--warn); padding-left: 10px; }
+ul.todo { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; font-size: 14px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>MeetChengdu to-do · 12 Nov</h1>
+    <p class="lede">This week's replies, pins and website tasks. Copy a reply, adjust it to your own voice, post it, then tick it off. Your ticks are saved in this browser.</p>
+    <div class="progress"><div class="bar" aria-hidden="true"><span id="bar"></span></div><span id="count">0 done</span></div>
+    <div class="rules">
+      <div><strong>TripAdvisor: no links.</strong> Reddit: link only where marked optional, always with the "I run…" disclosure.</div>
+      <div>Rewrite a sentence or two so each reply sounds like you, and post one at a time.</div>
+    </div>
+  </header>
+
+  <section aria-labelledby="rd-h">
+    <h2 id="rd-h"><span class="chip reddit">Reddit</span> r/chinatravel replies</h2>
+    <p class="ctx">From your 3 screenshots. Search each title in r/chinatravel to find the post.</p>
+
+    <article class="card" data-id="rd-1">
+      <div class="head">
+        <div class="title">"Private tour guides for hire that has some English knowledge"</div>
+        <div class="meta"><span class="prio">Do first</span> · u/travelwithj · 5 cities</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> private English-speaking guides for 1–2 days each in Zhangjiajie, Chongqing, Chengdu, Xi'an and Beijing. Where to find and book them?</p>
+<pre class="reply" id="r-rd-1">A few things that help when looking for private English-speaking guides in China:
+
+Where to find them
+- Local travel agencies in each city. They employ licensed guides and can add a car and driver, which is the easiest option if you want one company to handle the day.
+- Booking platforms (Trip.com, Klook, GetYourGuide, Viator) list private day tours with English guides, with reviews. That works well for 1–2 days per stop.
+- Your hotel's front desk or concierge can often recommend someone.
+- The TripAdvisor forum for each city, where people post guides they've used.
+
+What to check
+- Licensed guides carry an official guide ID card (newer ones have a QR code you can scan). It's fine to ask to see it.
+- Get it in writing: hours (a full day is usually 8), what's included (car, tickets, the guide's lunch), and no shopping stops.
+
+Rough prices: published 2026 rates for the guide alone are about ¥600–800 per group per day in Chengdu, Chongqing and Zhangjiajie, and ¥800–1,000 in Beijing. A car and driver costs extra. Rates are per group, not per person.
+
+Where a guide helps most, in my view:
+- Zhangjiajie: the park is huge, with shuttle buses, cable cars and lifts. A guide saves a lot of time.
+- Xi'an: the Terracotta Army, where the history makes the visit.
+- Beijing: a Great Wall day (transport is the hard part) and the Forbidden City.
+- Chengdu: the Panda Base (go at opening time) plus a day trip like Leshan or Sanxingdui.
+- Chongqing: easy on your own by metro. A guide is optional, mainly for food and night views.</pre>
+      <div class="check optional"><strong>Optional last line (your call):</strong> "For Chengdu specifically, I run a small free directory of English-speaking guides there (meetchengdu.com). No bookings or commissions; you contact guides directly." With low karma, a link can get the comment removed. Post it without this line first; you can add it in a follow-up if they ask about Chengdu.</div>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-rd-1">Copy reply</button>
+        <label class="posted"><input type="checkbox" id="done-rd-1"> Posted</label>
+      </div>
+    </article>
+
+    <article class="card" data-id="rd-2">
+      <div class="head">
+        <div class="title">"28 inch luggage on high speed train"</div>
+        <div class="meta"><span class="prio">Second</span> · u/estepeestepe · 6 comments</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> is a 28-inch case (about 155 cm in total dimensions) allowed, and is there a weight limit?</p>
+<pre class="reply" id="r-rd-2">The official rule for adults: free carry-on luggage up to 20 kg, and length + width + height must add up to no more than 130 cm on high-speed trains (G/D/C). On conventional trains (K/T/Z) the limit is 160 cm. Children get 10 kg.
+
+So a 155 cm case is officially over the high-speed limit, though it would be fine on a conventional train. Keep it under 20 kg either way.
+
+A few options:
+- Measure your bags. Even some 24-inch cases add up to more than 130 cm, so check before you buy or pack.
+- Ship the big case ahead. Hotels can usually arrange a courier (SF Express is the common one) to your next hotel, and you travel with a smaller bag.
+- Big stations have a luggage check-in (托运) service. Your bag may travel separately and arrive later than you, so ask about timing.
+
+On board, large cases go in the space behind the last row of seats or at the end of the carriage, since the overhead racks only take smaller bags. Board early so you get a spot.</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-rd-2">Copy reply</button>
+        <label class="posted"><input type="checkbox" id="done-rd-2"> Posted</label>
+      </div>
+    </article>
+
+    <article class="card" data-id="rd-3">
+      <div class="head">
+        <div class="title">"How do I get a local Chinese SIM card?"</div>
+        <div class="meta"><span class="prio">Third</span> · u/Gullible_Food_7171 · 1 month in Shanghai</div>
+      </div>
+      <p class="ctx"><b>What they asked:</b> where foreigners can buy one, tourist SIM vs. monthly plan, privacy around real-name registration, whether a local address is needed. They already have a RedteaGO eSIM and speak little Mandarin. <b>No link in this one.</b></p>
+<pre class="reply" id="r-rd-3">Since you already have a RedteaGO eSIM for data, the main reason to get a local SIM is a Chinese phone number. Some apps and services send verification codes by SMS (DiDi, food delivery, some bookings).
+
+Where: an official China Mobile, China Unicom or China Telecom store (the carrier's own shop, not a small phone shop), or the carrier counters in the airport arrivals hall. Third-party online sales have stopped; online, only the carriers' own apps sell SIMs. Not every branch handles foreign passports, so if one sends you away, try a bigger flagship store. China Unicom is often said to be the most used to foreign customers.
+
+What to bring: your original passport (not a copy). Registration is real-name by law, and they'll take a live face scan. Have your hotel address written in Chinese in case they ask for a contact address.
+
+Tourist SIM or monthly plan: airport counters sell short-term tourist packages, and stores sell monthly plans. Most plans include some data. If you only want the number, a basic plan is enough; keep using your eSIM for data. A roaming eSIM usually lets you use Google, WhatsApp and so on without a VPN, which a local SIM won't.
+
+Privacy: any Chinese number is registered to your passport, and there's no way around that. If that bothers you, stay on the eSIM and choose apps that don't need SMS. Before you leave, ask how to cancel the plan so it doesn't keep billing.
+
+Language: show this to the staff:
+你好，我想办一张手机卡。我是外国人，有护照。我在上海待一个月。
+(Hello, I'd like a SIM card. I'm a foreigner and have my passport. I'm staying in Shanghai for a month.)</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-rd-3">Copy reply</button>
+        <label class="posted"><input type="checkbox" id="done-rd-3"> Posted</label>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="ta-h">
+    <h2 id="ta-h"><span class="chip ta">TripAdvisor</span> Forum replies</h2>
+    <p class="ctx">The Chengdu and Sichuan forums have had no new questions since your replies on 9–10 Nov. The best open thread is in the main China forum, where a 38-day itinerary includes 4 nights in Chengdu and no one has commented on the Chengdu part yet.</p>
+
+    <article class="card" data-id="ta-4">
+      <div class="head">
+        <div class="title"><a href="https://www.tripadvisor.com/ShowTopic-g294211-i642-k15491909-Itinerary_Help_on_First_Trip_to_China-China.html" target="_blank" rel="noopener">Itinerary Help on First Trip to China</a></div>
+        <div class="meta"><span class="prio">Do this</span> · China forum · 11 posts, active today</div>
+      </div>
+      <p class="ctx"><b>Their plan:</b> mid-May to end of June. Chengdu days 20–23: arrive from Lijiang · Day 21 "Dujiangyan Panda Base + People's Park" · Day 22 Leshan (boat view) · Day 23 Jinli, Wuhou Shrine, teahouse · Day 24 train to Xi'an. The replies so far only cover Shanghai, Suzhou, Pingyao and flights.</p>
+<pre class="reply" id="r-ta-4">Your Chengdu days look good. A few small tweaks:
+
+- Day 21: Dujiangyan Panda Base and People's Park are about 60 km apart, roughly 1–1.5 hours each way by car. Either do the Chengdu Panda Base instead (north of the centre) at opening time, when the pandas are most active, and spend the afternoon at People's Park with tea; or keep Dujiangyan and pair it with the Dujiangyan Irrigation System nearby, then move People's Park to Day 23.
+- Both panda bases need booking ahead with your passport, and you need the original passport at the gate.
+- Day 22 Leshan: the fastest high-speed trains from Chengdu East take around 40 minutes, then a bus or taxi to the scenic area. The boat gives you the full view in a short trip; walking down the cliff staircase beside the Buddha is the more memorable experience, but it queues badly, so go early on a weekday. Book the train in advance.
+- Day 23: Jinli is quite similar to Kuanzhai Alley. If you'd like something different, the Sanxingdui Museum (the bronze masks) is about 20 minutes by train to Guanghan North.
+- Chengdu to Xi'an: high-speed trains take about 3–4.5 hours, with plenty every day, so a train on Day 24 plus the Muslim Quarter that evening works well.
+- Mid-May to June gets hot and humid in Chengdu, with more rain in June, so plan outdoor sights for the mornings.</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-ta-4">Copy reply</button>
+        <a class="open" href="https://www.tripadvisor.com/ShowTopic-g294211-i642-k15491909-Itinerary_Help_on_First_Trip_to_China-China.html" target="_blank" rel="noopener">Open thread</a>
+        <label class="posted"><input type="checkbox" id="done-ta-4"> Posted</label>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="site-h">
+    <h2 id="site-h"><span class="chip site">Website</span> New article</h2>
+    <article class="card" data-id="site-1">
+      <div class="head">
+        <div class="title">Review: "How Much Does an English-Speaking Guide in Chengdu Cost?"</div>
+        <div class="meta"><span class="prio">Do first</span> · ~1,400 words · 7 sources</div>
+      </div>
+      <p class="ctx">Draft file: <span class="mono">marketing/drafts/english-speaking-guide-chengdu-cost.md</span>. Typical 2026 day rates (¥600–800 per group for the guide only), what a "day" includes, car-and-driver prices, extra costs, rough budgets for the Panda Base, Panda Base + Sanxingdui and Leshan, tipping, and a pre-booking checklist. It names no guides and links to the hub, the hiring guide and /guides. New cover photo: Kuanzhai Alley (CC0).</p>
+      <ul class="todo">
+        <li>Read it and tell Claude "publish" (or what to change).</li>
+        <li>Claude publishes it and adds it to the Chengdu Travel Guide hub.</li>
+      </ul>
+      <div class="actions"><label class="posted"><input type="checkbox" id="done-site-1"> Reviewed</label></div>
+    </article>
+    <article class="card" data-id="site-2">
+      <div class="head">
+        <div class="title">After it's live: request indexing</div>
+        <div class="meta">Search Console · 2 URLs</div>
+      </div>
+<pre class="reply" id="r-site-2">https://www.meetchengdu.com/blog/english-speaking-guide-chengdu-cost
+https://www.meetchengdu.com/blog/chengdu-travel-guide</pre>
+      <div class="actions">
+        <button class="copy" type="button" data-copy="r-site-2">Copy URLs</button>
+        <label class="posted"><input type="checkbox" id="done-site-2"> Requested</label>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="pin-h">
+    <h2 id="pin-h"><span class="chip pin">Pinterest</span> Pins to publish</h2>
+    <p class="ctx">Board: <b>Chengdu Travel Tips</b>. Finish any of pins 2–5 left on the previous list first, then one pin a day. Pin 6 only once the article is live (the link will 404 before then). The photo credit line is required by each photo's licence.</p>
+    <div id="pins"></div>
+  </section>
+
+  <section aria-labelledby="wk-h">
+    <h2 id="wk-h"><span class="chip site">Weekly check</span> Send Claude screenshots</h2>
+    <article class="card" data-id="wk-1">
+      <ul class="todo">
+        <li>Search Console → <b>Pages</b> (indexed vs. not indexed, plus the "Duplicate" validation status)</li>
+        <li>Search Console → <b>Performance</b>, last 7 days (Queries and Pages tabs)</li>
+        <li>Cloudflare Web Analytics: visitors and referrers, last 7 days</li>
+        <li>Pinterest Analytics: impressions and outbound clicks</li>
+      </ul>
+      <div class="actions"><label class="posted"><input type="checkbox" id="done-wk-1"> Sent</label></div>
+    </article>
+    <article class="card" data-id="wk-2">
+      <p class="ctx" style="margin:0"><b>Reddit next week:</b> send 3–5 new posts from r/chengdu or r/chinatravel (sort by New) and Claude drafts the replies.</p>
+      <div class="actions"><label class="posted"><input type="checkbox" id="done-wk-2"> Sent</label></div>
+    </article>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+const PINS = [
+  { id: "pin-6", day: "After the article is live", title: "How Much Does a Private Guide in Chengdu Cost? (2026 Prices)",
+    desc: "Typical 2026 day rates for an English-speaking guide in Chengdu, what a quote includes, car and driver prices, overtime and tipping, so you can compare quotes like for like. #Chengdu #ChinaTravel #TourGuide #TravelBudget #Sichuan\nPhoto: Daderot, CC0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/english-speaking-guide-chengdu-cost",
+    image: "https://www.meetchengdu.com/images/chengdu-kuanzhai-alley.webp" },
+  { id: "pin-7", day: "Any day", title: "Your First 48 Hours in Chengdu: Pandas, Teahouses & Old Lanes",
+    desc: "A calm, first-timer-friendly route through Chengdu: the pandas early in the morning, a park teahouse, the old lanes and the everyday rhythm that makes the city memorable. #Chengdu #ChinaTravel #Itinerary #GiantPanda #Sichuan\nPhoto: MspreilsCN, CC BY 4.0, via Wikimedia Commons.",
+    link: "https://www.meetchengdu.com/blog/first-48-hours-in-chengdu",
+    image: "https://www.meetchengdu.com/images/cover-first-48-hours-panda.jpg" },
+];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pinsEl = document.getElementById("pins");
+pinsEl.style.display = "grid"; pinsEl.style.gap = "14px";
+PINS.forEach(p => {
+  const card = document.createElement("article");
+  card.className = "card"; card.dataset.id = p.id;
+  card.innerHTML = `
+    <div class="head"><div class="title">${esc(p.id.replace("pin-", "Pin "))} · ${esc(p.title)}</div><div class="meta">${esc(p.day)}</div></div>
+    <dl class="pinrow">
+      <dt>Title</dt><dd id="${p.id}-t">${esc(p.title)}</dd><button class="copy small" type="button" data-copy="${p.id}-t">Copy</button>
+      <dt>Description</dt><dd id="${p.id}-d" style="white-space:pre-wrap">${esc(p.desc)}</dd><button class="copy small" type="button" data-copy="${p.id}-d">Copy</button>
+      <dt>Link</dt><dd id="${p.id}-l" class="mono">${esc(p.link)}</dd><button class="copy small" type="button" data-copy="${p.id}-l">Copy</button>
+      <dt>Image</dt><dd class="mono"><a href="${esc(p.image)}" target="_blank" rel="noopener">${esc(p.image.replace("https://www.meetchengdu.com", ""))}</a></dd><span></span>
+    </dl>
+    <div class="actions"><label class="posted"><input type="checkbox" id="done-${p.id}"> Posted</label></div>`;
+  pinsEl.appendChild(card);
+});
+
+const toast = document.getElementById("toast");
+let toastTimer;
+function say(msg) { toast.textContent = msg; toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => (toast.hidden = true), 1600); }
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const el = document.getElementById(btn.dataset.copy);
+  const text = el.innerText;
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say("Text selected. Press Cmd+C to copy"); };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => say("Copied"), fallback);
+  } else fallback();
+});
+
+const KEY = "meetchengdu-todo-2026-11-12";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (_) { state = {}; }
+const boxes = [...document.querySelectorAll('label.posted input[type="checkbox"]')];
+function render() {
+  let done = 0;
+  boxes.forEach(b => { const card = b.closest(".card"); const on = !!state[b.id]; b.checked = on; card.classList.toggle("done", on); if (on) done++; });
+  document.getElementById("count").textContent = `${done} of ${boxes.length} done`;
+  document.getElementById("bar").style.width = `${(done / boxes.length) * 100}%`;
+}
+boxes.forEach(b => b.addEventListener("change", () => {
+  state[b.id] = b.checked;
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (_) {}
+  render();
+}));
+render();
+</script>
