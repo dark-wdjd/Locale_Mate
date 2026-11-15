@@ -8,7 +8,7 @@ category: Trip planning
 coverImageUrl: /images/panda-base-trio-autumn.webp
 targetQuery: best time to visit chengdu panda base / best season to visit the panda base / when are panda cubs born chengdu
 relatedArticles: [chengdu-panda-base-guide, first-48-hours-in-chengdu, chengdu-travel-guide]
-status: DRAFT 2026-11-15 (awaiting owner review)
+status: published 2026-11-15
 lastChecked: 2026-11-15
 ---
 

@@ -41,7 +41,7 @@ Check which airport your flight uses before you book a hotel or a transfer. Chen
 
 ## What to see in Chengdu
 
-- **The Chengdu Panda Base.** The visit most people plan their trip around. Book ahead with your passport and go in the morning, when the pandas are most active. Full guide: [Chengdu Panda Base: A Simple Visitor's Guide](/blog/chengdu-panda-base-guide).
+- **The Chengdu Panda Base.** The visit most people plan their trip around. Book ahead with your passport and go in the morning, when the pandas are most active. Full guide: [Chengdu Panda Base: A Simple Visitor's Guide](/blog/chengdu-panda-base-guide). Which month to go: [Best Time to Visit the Chengdu Panda Base](/blog/best-time-to-visit-chengdu-panda-base).
 - **People's Park and its teahouses.** The best place to see everyday Chengdu: tea, card games, dancing and the famous matchmaking corner.
 - **The old lanes.** Kuanzhai Alley and Jinli are busy and touristy but fun, especially in the evening. Wenshu Monastery is a calmer, working Buddhist temple nearby.
 - **Du Fu Thatched Cottage and Wuhou Shrine.** Two of the city's best historic sites, for Tang poetry and Three Kingdoms history.

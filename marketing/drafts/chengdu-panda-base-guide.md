@@ -47,7 +47,7 @@ Go in the **morning**, as early as you can. Pandas are most active around feedin
 
 *By late morning, many pandas are asleep. Photo: [Colin W](https://commons.wikimedia.org/wiki/File:Panda_at_the_Chengdu_Research_Base_of_Giant_Panda_Breeding,_Chengdu_-_panoramio.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons.*
 
-Weekdays are noticeably calmer than weekends. Chinese public holidays — especially the October Golden Week and the Spring Festival — are the busiest days of the year.
+Weekdays are noticeably calmer than weekends. Chinese public holidays — especially the October Golden Week and the Spring Festival — are the busiest days of the year. For the best season and month (and when the new cubs go on show), see [Best Time to Visit the Chengdu Panda Base](/blog/best-time-to-visit-chengdu-panda-base).
 
 Plan on **three to four hours** for an unhurried visit.
 
