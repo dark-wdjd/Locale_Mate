@@ -1,15 +1,26 @@
 ---
 slug: sanxingdui-from-chengdu
-title: Visiting Sanxingdui from Chengdu: A Simple Guide (2026)
-seoTitle: Sanxingdui Museum from Chengdu 2026: Tickets, Train & Tips
-seoDescription: How to visit the Sanxingdui Museum from Chengdu: what it is, booking tickets with a passport, the train to Guanghan North, and what to see in 3–4 hours.
+title: "Sanxingdui from Chengdu: Tickets, Price & Train (2026)"
+seoTitle: "Sanxingdui Museum Tickets 2026: Price, Booking & Train"
+seoDescription: Sanxingdui Museum tickets cost 72 RMB. How to book with a passport, discounts, the 18-minute train from Chengdu, day-trip costs and what to see.
 excerpt: The bronze masks of Sanxingdui are one of China's great archaeological mysteries, and they're only 20 minutes from Chengdu by train. Here's how to book, get there and make sense of what you see.
 category: Trip planning
-targetQuery: sanxingdui museum from chengdu / sanxingdui tickets foreigners passport / sanxingdui by train guanghan north
+targetQuery: sanxingdui museum / sanxingdui ticket price / sanxingdui travel price / sanxingdui museum from chengdu / sanxingdui tickets foreigners passport / sanxingdui by train guanghan north
 relatedArticles: [chengdu-panda-base-guide, first-48-hours-in-chengdu]
-status: published 2026-11-01
-lastChecked: 2026-11-01
+status: published 2026-11-01; revision DRAFT 2026-11-20 (awaiting owner review)
+lastChecked: 2026-11-20
 ---
+
+## Sanxingdui at a glance
+
+| | |
+|---|---|
+| **Ticket price** | 72 RMB for adults; 36 RMB for students with a valid student ID (see discounts below) |
+| **Booking** | Online in advance, with your passport. No tickets are sold at the gate |
+| **Opening hours** | 08:30–18:00, last entry 17:00. Closed only on Chinese New Year's Eve |
+| **Getting there** | High-speed train from Chengdu East to Guanghan North (about 18–20 minutes), then bus No. 13 or a short taxi ride |
+| **Time needed** | Three to four hours inside |
+| **Day-trip cost** | Roughly 150–200 RMB per person by train, including the ticket, transport and an audio guide |
 
 ## What Sanxingdui is
 
@@ -54,9 +65,12 @@ Signs are in Chinese and English, but the labels are short. Because there are no
 ## Tickets and booking with a passport
 
 - **Price:** 72 RMB for general admission.
-- **Book in advance.** Tickets are sold by date and time slot (morning and afternoon, plus evening slots on some dates), and weekends, public holidays and school breaks sell out. Book a few days ahead; for holidays, book as early as the system allows.
+- **Discounts:** 2026 guides list a 36 RMB student ticket (full-time students with a valid physical student ID) and free entry for visitors aged 60 and over and children under 1.3 m. These rules are written mainly with Chinese ID holders in mind, so if you think you qualify, choose that ticket type when booking, bring proof, and expect staff at the gate to make the final call.
+- **Book in advance.** Tickets are sold by date and time slot (morning and afternoon, plus evening slots on some dates), and weekends, public holidays and school breaks sell out. Book a few days ahead; for holidays, book as early as the system allows. One 2026 guide reports that tickets are released at 20:00 each day for dates up to about five days ahead.
 - **Where to book:** the museum's official website (sxd.cn) or its official WeChat mini program ("三星堆博物馆"), which accept passports according to a September 2026 test of the booking process. If the official channels give you trouble, Trip.com and Klook also sell tickets to foreign visitors.
 - **Bring your original passport.** It's scanned at the entrance, and a photo or copy may not be accepted.
+
+- **Audio guide:** available to rent at the museum, including in English. 2026 guides list prices of about 30–50 RMB.
 
 Don't plan on buying a ticket at the gate.
 
@@ -72,11 +86,25 @@ Hours and slots can change, so check the time on your booking.
 
 Sanxingdui is in Guanghan, about 40 km north of central Chengdu.
 
-- **High-speed train + bus or taxi (best):** trains from Chengdu East (some also from other Chengdu stations) reach **Guanghan North** in about 20 minutes. From the station, **bus No. 13** runs to the museum, or a taxi covers the 7 km in about 15 minutes for roughly 20 RMB. In busy periods the taxi queue at Guanghan North can be long, so the bus is often quicker.
+- **High-speed train + bus or taxi (best):** trains from Chengdu East (some also from other Chengdu stations) reach **Guanghan North** in about 18–20 minutes, with second-class fares from about 20 RMB. From the station, **bus No. 13** runs to the museum, or a taxi covers the 7 km in about 15 minutes for roughly 20 RMB. In busy periods the taxi queue at Guanghan North can be long, so the bus is often quicker.
 - **Taxi or DiDi from Chengdu:** about an hour each way, roughly 150–200 RMB. Easiest with a group or children.
 - **Tourist buses:** direct buses from Chengdu take 70–90 minutes; schedules vary.
 
 Keep the name in Chinese on your phone: **三星堆博物馆，四川省广汉市** (Sanxingdui Museum, Guanghan, Sichuan).
+
+## What a day trip from Chengdu costs
+
+By train, per person:
+
+- Museum ticket: **72 RMB** (36 RMB for students)
+- High-speed train Chengdu East ↔ Guanghan North: from about **20 RMB each way**
+- Bus No. 13 (a few yuan) or a taxi (about **20 RMB**) between Guanghan North and the museum, each way
+- Audio guide (optional): about **30–50 RMB**
+- Lunch in Guanghan or at the museum
+
+That comes to roughly **150–200 RMB per person**, before lunch. A taxi or DiDi all the way from Chengdu costs about 150–200 RMB **per car** each way, which can be worth it for a group of three or four.
+
+If you'd like a guide for the day, our article on [what an English-speaking guide in Chengdu costs](/blog/english-speaking-guide-chengdu-cost) explains typical rates and what they include.
 
 ## How long to spend, and when to go
 
@@ -107,5 +135,7 @@ If you'd like English commentary inside the museum, our [directory of English-sp
 - Wander in China, "Sanxingdui Museum 2026" (25 Feb 2026; museum layout, highlights and dimensions, time needed, transport options, crowds): https://www.wanderinchina.com/destinations/chengdu/sanxingdui-museum-guide/
 - China Highlights, "Sanxingdui Museum: How to Visit from Chengdu" (train to Guanghan North, bus No. 13, taxi): https://www.chinahighlights.com/chengdu/attraction/sanxingdui-museum-in-guanghan.htm
 - Gov.cn, "New Sanxingdui Museum building starts trial operation" (July 2023; more than 1,500 relics on display): https://english.www.gov.cn/news/202307/28/content_WS64c31938c6d0868f4e8de257.html
+- ChinaGuide101, "Sanxingdui Museum Travel Guide 2026" (16 Sep 2026; student ticket, free-entry groups, audio guide, booking release time): https://www.chinaguide101.com/sanxingdui-museum/
+- Trip.com, Chengdu to Guanghan North trains (fastest about 18 minutes; fares from about US$3): https://us.trip.com/trains/china/route/chengdu-to-guanghan-north/
 - Wikipedia, "Sanxingdui Museum" (background on the 1986 pits): https://en.wikipedia.org/wiki/Sanxingdui_Museum
 - Cover photo: bronze mask with protruding eyes by [Gary Todd](https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_with_Protruding_Eyes_%26_Ears_a.jpg), [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en), via Wikimedia Commons.
