@@ -40,7 +40,7 @@ So a cool morning is the best combination you can get.
 | **November** | Cool (around 13°C on average) | Very active | Quietest | Best |
 | **December** | Cold | Active; cubs still small | Quiet | Very good |
 
-Weather figures are long-term averages; check the forecast for your dates.
+Weather figures are long-term averages; check the forecast for your dates. Visiting between November and February? See [Chengdu in Winter](/blog/chengdu-in-winter) for what else the city offers in winter.
 
 ## When can you see panda cubs?
 

@@ -18,7 +18,7 @@ This page is our starting point for planning a trip. Each section gives you the 
 
 ## When to go
 
-Spring (March to May) and autumn (September to November) are the most comfortable times to visit, with mild temperatures and fewer very hot or wet days. October and November tend to be the driest months. Summer is hot and humid, and winter is cool and damp, but neither is a reason to stay away: pandas are often more active on cool mornings.
+Spring (March to May) and autumn (September to November) are the most comfortable times to visit, with mild temperatures and fewer very hot or wet days. October and November tend to be the driest months. Summer is hot and humid, and winter is cool and damp, but neither is a reason to stay away: pandas are often more active on cool mornings. Thinking of a winter trip? See [Chengdu in Winter](/blog/chengdu-in-winter) for what to expect from November to February.
 
 Avoid Chinese public holidays if you can, especially the October Golden Week and the Spring Festival. Sights, trains and hotels are at their busiest then, and popular attractions sell out.
 

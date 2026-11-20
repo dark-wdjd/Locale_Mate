@@ -1,6 +1,23 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-11-05. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-11-20. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 📈 2026-11-12 to 11-20: three new articles, favicon, speed, first clicks
+
+**Content change log (use this to match ranking changes in Search Console to edits):**
+| Date | Page | Change |
+|---|---|---|
+| 2026-11-12 | /blog/english-speaking-guide-chengdu-cost | Published (guide prices; linked from hub) |
+| 2026-11-15 | /blog/best-time-to-visit-chengdu-panda-base | Published (month-by-month; linked from hub and panda guide) |
+| 2026-11-20 | /blog/chengdu-in-winter | Published (Nov–Feb; linked from hub "When to go" and best-time article) |
+| 2026-11-20 | /blog/sanxingdui-from-chengdu | Revised, URL unchanged: at-a-glance table, discounts, audio guide, "What a day trip costs" section, title now ticket-focused. Baseline before edit: avg position 13.8 (7 days to 11-18). Re-check around 12-05 |
+
+- **Site:** favicon added (red "MC" badge, option C from `marketing/favicon-options.html`); Google's favicon service showed it by 11-17, search results still lagging. Images converted/recompressed to WebP (hero 271 KB → 89 KB), hero and article covers get `fetchPriority="high"`; JPGs kept for og:image and existing pins.
+- **Search Console (7 days to 11-18):** 332 impressions, 5 clicks, avg position 19.3. Best-time article ranks ~5 within days (99 impressions, 0 clicks so far; re-check CTR at ~300 impressions). Clicks came from guide-profile name searches (penny, libby) and the cost article; "meet chengdu" impressions are mostly the owner's own searches. 11-16 spike = one-day burst of odd machine-like queries at positions 44–131, ignore.
+- **Editing rules agreed with the owner (11-20):** never change URLs; at most one edit per page every 3–4 weeks; edit 1–2 pages at a time and log them here; don't touch pages already on page 1 (best-time article, guide profiles).
+- **Backlinks:** chengdu-expat.com "Add Place" listing submitted by the owner 11-15, still under review on 11-20. Next ideas: a guest article for chengdu-expat, Featured.com/HARO, Bing Webmaster Tools. No paid links or directory blasts.
+- **Next content queue:** Sanxingdui is done; then the cost article revision (charter/package prices) the week of 11-23; panda-guide refocus on booking after the best-time article settles; Chengdu–Chongqing day trip; getting around; switch "2026" titles to "2027" in late December.
+- **Working files:** `marketing/todo-2026-11-12.html` (to-do list artifact https://claude.ai/artifact/PFiX2JkaNhbtviZb6FzHbv), `marketing/favicon-options/`, `marketing/meetchengdu-avatar-512.png`.
 
 ## ✅ 2026-11-02 to 11-05: first full indexing round done
 

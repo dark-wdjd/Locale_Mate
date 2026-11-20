@@ -7,7 +7,7 @@ excerpt: The bronze masks of Sanxingdui are one of China's great archaeological 
 category: Trip planning
 targetQuery: sanxingdui museum / sanxingdui ticket price / sanxingdui travel price / sanxingdui museum from chengdu / sanxingdui tickets foreigners passport / sanxingdui by train guanghan north
 relatedArticles: [chengdu-panda-base-guide, first-48-hours-in-chengdu]
-status: published 2026-11-01; revision DRAFT 2026-11-20 (awaiting owner review)
+status: published 2026-11-01; revised 2026-11-20 (at-a-glance table, discounts, day-trip costs, ticket-focused title)
 lastChecked: 2026-11-20
 ---
 

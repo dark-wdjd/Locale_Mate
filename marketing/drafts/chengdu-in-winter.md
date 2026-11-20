@@ -8,7 +8,7 @@ category: Trip planning
 coverImageUrl: /images/chengdu-winter-hotpot.webp
 targetQuery: chengdu in winter / chengdu in november / chengdu in december / chengdu in january / is november a good time to visit chengdu
 relatedArticles: [best-time-to-visit-chengdu-panda-base, chengdu-travel-guide, tea-food-and-neighborhoods-chengdu]
-status: DRAFT 2026-11-20 (awaiting owner review)
+status: published 2026-11-20
 lastChecked: 2026-11-20
 ---
 
