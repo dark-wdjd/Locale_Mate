@@ -1,6 +1,13 @@
 # LocalMate China — Project Memory
 
-_Last updated: 2026-11-20. This file records the project state, decisions, and next steps so work can resume at any time._
+_Last updated: 2026-11-27. This file records the project state, decisions, and next steps so work can resume at any time._
+
+## 🔁 2026-11-27: weekly routine and long-term goal
+
+- **Ultimate goal (owner):** a two-sided marketplace. Phase 1 traffic (now) → 2 invite Xiaohongshu-sourced guides to claim profiles → 3 enquiries/reviews/verified badge → 4 bookings/payments (research China licensing and payments law first). Proposed phase-2 trigger: ≥1,000 impressions and ≥30 clicks a week for 4 weeks, or ~300 Cloudflare visitors/month; the owner decides. No guide outreach until then.
+- **Weekly routine:** every Saturday morning Claude runs `/weekly` (`.claude/commands/weekly.md`; playbook in Chinese: `marketing/weekly-system.md`). Report in `marketing/reports/`, ≥5 guides a week added directly within the rules (`marketing/guide-candidates.md`), 1 new article + 1 SEO revision a week (both wait for approval), TripAdvisor/Reddit drafts, 2 pins, technical SEO check, one fixed to-do artifact (https://claude.ai/artifact/PFiX2JkaNhbtviZb6FzHbv, file `marketing/weekly-todo.html`). Scheduling is in-session CronCreate (one-shot Saturday 08:57 + Wednesday 19:07 reminder, re-armed each run); if missed, type `/weekly`.
+- `.gitignore` now ignores `.claude/*` except `.claude/commands/` so the command is versioned.
+- Phase-1 prep to propose separately (needs approval): per-guide page-view counts and a "For guides" page.
 
 ## 📈 2026-11-12 to 11-20: three new articles, favicon, speed, first clicks
 

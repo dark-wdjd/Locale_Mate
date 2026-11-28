@@ -10,6 +10,25 @@ _Prepared 2026-10-15. Draft for owner review. Nothing here has been published._
 4. Top two to draft now: (1) how to hire and verify an English-speaking guide in Chengdu, using the official 2025 guide ID card with its QR code; (2) Panda Base 2026 logistics (passport booking, entry sessions, gates) with a section on when an English docent actually helps.
 5. Publish one article every two weeks. Each needs about an hour of owner review, mostly re-checking the facts marked [VERIFY] against official channels, because ticket rules change often.
 
+## Current queue (updated 2026-11-27; the weekly routine picks from here)
+
+**Published so far:** first-48-hours, tea-food-neighborhoods, after-sunset, panda-base guide, Sanxingdui (revised 11-20), how-to-hire, travel-guide hub, guide cost (11-12), best time for the Panda Base (11-15), Chengdu in winter (11-20).
+
+**New articles (1 a week; reorder when Search Console shows demand):**
+1. Chengdu to Chongqing day trip (asked on Reddit 11-16)
+2. Getting around Chengdu as a foreigner (metro, DiDi, Alipay/WeChat Pay)
+3. Leshan Giant Buddha day trip from Chengdu
+4. Dujiangyan & Qingcheng Mountain day trip
+5. Teahouses and mahjong: how to join in
+6. Chengdu–Jiuzhaigou by train
+7. Chengdu in spring (publish in February)
+
+**SEO revisions (1 a week; same page at most every 3–4 weeks):**
+- Week of 11-28: guide-cost article (add charter-car and package-tour prices; queries "chengdu travel service price", "charter prices")
+- Later: Panda Base guide refocused on booking as a foreigner ("where to sign up for the giant panda base"), once the best-time article is stable
+- Late December: switch "2026" to "2027" in titles
+- Evaluate the Sanxingdui revision around 12-05 (baseline position 13.8)
+
 ## Prioritized topics
 
 Internal links use live routes: guides at `/guides/<slug>`, journal at `/blog/<slug>`. Don't link `how-we-review-public-guide-profiles` while it's archived (consider restoring it, since it's the ideal trust link). Don't link removed profiles (`xu-yao`, `chengdu-english-guide-susan`, `chengdu-english-guide-penny`).
