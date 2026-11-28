@@ -37,5 +37,5 @@ Node: `export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use 20`. Seed: 
 
 ## 7. Wrap up and schedule
 - Commit and push all files (`marketing/reports`, drafts, candidates, to-do, memory.md). Update `memory.md` (change log + a short dated note).
-- CronCreate one-shot jobs (pinned dates, `recurring: false`): next Saturday 08:57 → prompt `/weekly`; this Wednesday 19:07 → prompt "MeetChengdu Wednesday reminder: read marketing/weekly-todo.html and the latest report, list (in Chinese) what is still waiting for the owner (approvals, posts, screenshots), in a short message." Check CronList first to avoid duplicates.
+- CronCreate one-shot jobs (pinned dates, `recurring: false`): next Saturday 08:57 → prompt "Run the MeetChengdu weekly routine: read /Users/rl/claude/local_mate/.claude/commands/weekly.md and follow every step in it (this is the scheduled Saturday /weekly run)." (self-contained, so it works even if the slash command isn't loaded); this Wednesday 19:07 → prompt "MeetChengdu Wednesday reminder: read marketing/weekly-todo.html and the latest report, list (in Chinese) what is still waiting for the owner (approvals, posts, screenshots), in a short message." Check CronList first to avoid duplicates.
 - Final message in Chinese: the scorecard line, guides added, what's waiting for approval, the to-do link, and the URLs whose indexing was requested.
